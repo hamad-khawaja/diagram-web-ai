@@ -119,6 +119,7 @@ const Home: NextPage = () => {
 
 
 const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngUrl: (url: string | null) => void, clearAll: () => void }> = ({ setEditorCode, setPngUrl, clearAll }) => {
+  // Note: Encourage users to feed back the code for iterative improvement
   const [input, setInput] = React.useState("");
   const [provider, setProvider] = React.useState("aws");
   const [loading, setLoading] = React.useState(false);
@@ -191,6 +192,9 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <h2 style={{ fontWeight: 'bold', marginBottom: '1rem', fontSize: '2rem', color: '#2563eb', letterSpacing: '1px' }}>Generate Cloud Architecture Diagram</h2>
+      <div style={{ maxWidth: '600px', marginBottom: '1rem', color: '#64748b', fontSize: '1.05rem', background: '#f1f5f9', borderRadius: '6px', padding: '0.75rem 1rem', textAlign: 'center' }}>
+        <strong>Tip:</strong> Want AI to make the diagram better or change somthing? Feed back the code and generate again!
+      </div>
       <div style={{ width: '100%', maxWidth: '600px', marginBottom: '1rem' }} />
       <textarea
         value={input}
