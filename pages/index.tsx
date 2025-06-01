@@ -186,8 +186,32 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
           provider,
         }),
       });
-      if (!response.ok) throw new Error('API error');
-      const data = await response.json();
+      let data;
+      if (!response.ok) {
+        // Log the entire response for debugging
+        console.log('API error response:', response);
+        try {
+          const errorData = await response.json();
+          console.log('API error JSON:', errorData);
+          // If errorData is an object with an error property, show it directly in the UI
+          if (errorData && (errorData.error || errorData.message)) {
+            setResult('Error: ' + (errorData.error || errorData.message));
+            return;
+          }
+          throw new Error(JSON.stringify(errorData) || 'API error');
+        } catch (e) {
+          try {
+            const errorText = await response.text();
+            console.log('API error text:', errorText);
+            setResult('Error: ' + errorText);
+            return;
+          } catch {
+            setResult('Error: API error');
+            return;
+          }
+        }
+      }
+      data = await response.json();
       setResult(typeof data === 'string' ? data : JSON.stringify(data, null, 2));
       if (data && data.raw_code_url) {
         // Fetch the code from the raw_code_url and set it in the editor
@@ -228,7 +252,7 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
         setEditableUrl(null);
       }
     } catch (err: any) {
-      setResult('Error: ' + (err.message || 'Unknown error'));
+      setResult('Error: ' + (err?.message || JSON.stringify(err) || 'Unknown error'));
     } finally {
       setLoading(false);
     }
@@ -407,18 +431,18 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
       <div
         style={{
           maxWidth: '820px',
-          margin: '0.75rem auto 1.25rem auto',
+          margin: '0.5rem auto 0.15rem auto',
           color: '#2563eb',
           fontSize: '1.09rem',
           background: 'linear-gradient(90deg, #e0e7ff 0%, #f0f9ff 100%)',
           borderRadius: '18px',
-          padding: '1.05rem 1.5rem',
+          padding: '0.85rem 1.2rem',
           textAlign: 'left',
           fontWeight: 500,
           boxShadow: '0 2px 16px 0 rgba(37,99,235,0.07)',
           display: 'flex',
           alignItems: 'center',
-          gap: '0.7rem',
+          gap: '0.6rem',
         }}
       >
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }} xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#2563eb" fillOpacity="0.13"/><path d="M12 7.5V13" stroke="#2563eb" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/><circle cx="12" cy="16" r="1" fill="#2563eb"/></svg>
@@ -482,10 +506,11 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
       {loading && <div style={{ marginTop: '1rem', color: '#2563eb' }}>Generating...</div>}
       {result && result.startsWith('Error:') && (
         <pre style={{
-          marginTop: '1.5rem',
+          marginTop: '0.15rem',
+          marginBottom: '0.15rem',
           background: '#f3f4f6',
           color: '#b91c1c',
-          padding: '1rem',
+          padding: '0.7rem',
           borderRadius: '8px',
           maxWidth: '600px',
           width: '100%',
