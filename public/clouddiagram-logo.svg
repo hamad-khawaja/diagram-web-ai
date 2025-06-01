@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="16" fill="#2563eb"/>
+  <g>
+    <ellipse cx="32" cy="38" rx="16" ry="10" fill="#fff"/>
+    <ellipse cx="24" cy="34" rx="8" ry="6" fill="#e0e7ef"/>
+    <ellipse cx="40" cy="34" rx="8" ry="6" fill="#e0e7ef"/>
+    <circle cx="32" cy="38" r="4" fill="#38bdf8"/>
+    <rect x="30.5" y="24" width="3" height="10" rx="1.5" fill="#38bdf8"/>
+    <circle cx="32" cy="24" r="2.5" fill="#facc15"/>
+  </g>
+  <text x="50%" y="60" text-anchor="middle" fill="#2563eb" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="bold">AI</text>
+</svg>

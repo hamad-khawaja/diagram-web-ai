@@ -22,31 +22,72 @@ const Home: NextPage = () => {
     <div>
       <header style={{
         width: '100%',
-        background: 'linear-gradient(90deg, #2563eb 0%, #60a5fa 100%)',
+        background: 'linear-gradient(132deg, #ffb347, #ff5858 54%, #a259ff 86%)',
         color: '#fff',
-        padding: '2.5rem 0 2rem 0',
-        textAlign: 'center',
-        boxShadow: '0 2px 24px 0 rgba(37,99,235,0.10)',
+        padding: '0.65rem 0',
+        textAlign: 'left',
+        boxShadow: '0 2px 16px 0 rgba(162,89,255,0.10)',
         marginBottom: 0,
-        letterSpacing: '0.5px',
-        borderBottom: '1px solid #e5e7eb',
+        borderBottom: 'none',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        minHeight: 0,
+        position: 'relative',
       }}>
-        <h1 style={{ fontSize: '2.5rem', fontWeight: 800, margin: 0, letterSpacing: '1px', textShadow: '0 2px 8px #2563eb22' }}>
-          Diagram Web AI
-        </h1>
-        <p style={{ fontSize: '1.25rem', fontWeight: 500, margin: '1rem 0 0 0', opacity: 0.92, letterSpacing: '0.5px' }}>
-          Next-Gen <span style={{ color: '#38bdf8', fontWeight: 700 }}>AI-Powered</span> Diagram Generation &nbsp;|&nbsp; <span style={{ color: '#facc15', fontWeight: 700 }}>LLM</span> + <span style={{ color: '#a3e635', fontWeight: 700 }}>Cloud</span> + <span style={{ color: '#f472b6', fontWeight: 700 }}>Automation</span>
-        </p>
+        <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '1.1rem' }}>
+          <img src="/clouddiagram-logo.svg" alt="CloudDiagram.AI Logo" style={{ width: 38, height: 38, marginLeft: 32, borderRadius: 12, boxShadow: '0 1px 6px #2563eb22' }} />
+          <span style={{
+            fontSize: '1.35rem',
+            fontWeight: 700,
+            letterSpacing: '0.03em',
+            fontFamily: 'Sora, Inter, Montserrat, Arial, sans-serif',
+            color: '#fff',
+            textShadow: '0 2px 8px #a259ff33, 0 1px 0 #fff',
+            background: 'none',
+            lineHeight: 1.1,
+            display: 'block',
+          }}>
+            CloudDiagram.AI
+          </span>
+        </div>
+        <a
+          href="https://github.com/hamad-khawaja/diagram-web-ai"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            color: '#fff',
+            textDecoration: 'none',
+            fontWeight: 600,
+            fontSize: '1.08rem',
+            letterSpacing: '0.04em',
+            marginRight: 32,
+            padding: '0.45rem 1.2rem',
+            borderRadius: 8,
+            background: 'rgba(37,99,235,0.12)',
+            boxShadow: '0 1px 6px #2563eb22',
+            transition: 'background 0.18s, color 0.18s',
+            display: 'inline-block',
+            position: 'relative',
+            top: 0,
+          }}
+          onMouseOver={e => { e.currentTarget.style.background = '#fff'; e.currentTarget.style.color = '#2563eb'; }}
+          onMouseOut={e => { e.currentTarget.style.background = 'rgba(37,99,235,0.12)'; e.currentTarget.style.color = '#fff'; }}
+        >
+          View on GitHub
+        </a>
       </header>
       <Script
-        defer
         data-domain="diagrams-web.vercel.app"
         src="https://plausible.io/js/plausible.js"
-      ></Script>
+        strategy="lazyOnload"
+      />
 
       <Head>
-        <title>Diagrams</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>CloudDiagram.AI</title>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="alternate icon" href="/favicon.ico" />
       </Head>
 
       {/* New Generate Section at the top */}
@@ -65,6 +106,8 @@ const Home: NextPage = () => {
       <Header />
 
       <EditorWithPreview code={editorCode} />
+      {/* Cloud provider logos bar at the top for branding */}
+
       <footer style={{
         width: '100%',
         marginTop: '2rem',
@@ -94,23 +137,14 @@ const Home: NextPage = () => {
           opacity: 0.18,
           zIndex: 0,
         }} />
-        <span style={{ fontWeight: 700, fontSize: '1.2rem', letterSpacing: '1px', display: 'flex', alignItems: 'center', gap: '0.5rem', zIndex: 1 }}>
-          <svg width="28" height="28" fill="none" viewBox="0 0 24 24" style={{ verticalAlign: 'middle', filter: 'drop-shadow(0 2px 8px #0ea5e9)' }}>
-            <path fill="#fff" d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.1-1.46-1.1-1.46-.9-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85.004 1.71.12 2.51.35 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.85 0 1.33-.01 2.4-.01 2.73 0 .27.18.58.69.48A10.01 10.01 0 0 0 22 12c0-5.52-4.48-10-10-10Z"/>
-          </svg>
-          <a
-            href="https://github.com/hamad-khawaja/diagram-web-ai"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: '#fff', textDecoration: 'underline', fontWeight: 'bold', fontSize: '1.15rem', letterSpacing: '0.5px', transition: 'color 0.2s' }}
-            onMouseOver={e => (e.currentTarget.style.color = '#38bdf8')}
-            onMouseOut={e => (e.currentTarget.style.color = '#fff')}
-          >
-            View on GitHub
-          </a>
+        <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', zIndex: 1 }}>
+          <img src="/clouddiagram-logo.svg" alt="CloudDiagram.AI Logo" style={{ width: 28, height: 28, borderRadius: 8, boxShadow: '0 1px 4px #2563eb22' }} />
+          <span style={{ fontWeight: 600, fontSize: '1.08rem', letterSpacing: '0.5px', color: '#fff', opacity: 0.92 }}>
+            CloudDiagram.AI &mdash; Effortless Cloud Architecture Diagrams
+          </span>
         </span>
         <span style={{ fontSize: '1rem', opacity: 0.85, marginTop: '0.25rem', zIndex: 1 }}>
-          &copy; {new Date().getFullYear()} <span style={{ fontWeight: 600, letterSpacing: '0.5px' }}>Hamad Khawaja</span>
+          &copy; {new Date().getFullYear()} CloudDiagram.AI
         </span>
       </footer>
     </div>
@@ -127,8 +161,18 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
   const [downloadUrl, setDownloadUrl] = React.useState<string | null>(null);
   const [diagramDataUrl, setDiagramDataUrl] = React.useState<string | null>(null);
   const [editableUrl, setEditableUrl] = React.useState<string | null>(null);
+  const [inputError, setInputError] = React.useState<string | null>(null);
 
   const handleGenerate = async () => {
+    setInputError(null);
+    if (!input.trim()) {
+      setInputError('Please enter a description.');
+      return;
+    }
+    if (input.trim().split(/\s+/).length < 6) {
+      setInputError('Please enter at least 6 words for a meaningful diagram.');
+      return;
+    }
     setLoading(true);
     setResult(null);
     try {
@@ -191,98 +235,225 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
   };
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <h2 style={{ fontWeight: 'bold', marginBottom: '1rem', fontSize: '2rem', color: '#2563eb', letterSpacing: '1px' }}>Generate Cloud Architecture Diagram</h2>
-      <div style={{ maxWidth: '600px', marginBottom: '1rem', color: '#64748b', fontSize: '1.05rem', background: '#f1f5f9', borderRadius: '6px', padding: '0.75rem 1rem', textAlign: 'center' }}>
-        <strong>Tip:</strong> Want AI to make the diagram better or change something? Feed back the code and generate again!
-      </div>
+      {/* Tip moved below the input box */}
       <div style={{ width: '100%', maxWidth: '600px', marginBottom: '1rem' }} />
-      <textarea
-        value={input}
-        onChange={e => setInput(e.target.value)}
-        placeholder={
-          `e.g. "3-tier web app with load balancer, 2 app servers, and a database\n\n` +
-          `Or: 'VPC with 2 public subnets, 2 private subnets, an EC2 instance, and an RDS instance'\n\n` +
-          `Describe your cloud architecture...`
-        }
-        rows={4}
+      <div style={{ width: '100%', maxWidth: '820px', marginBottom: '1.5rem' }}>
+        <form
+          onSubmit={e => { e.preventDefault(); handleGenerate(); }}
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            gap: 0,
+            width: '100%',
+            maxWidth: 900,
+            minWidth: 320,
+            margin: '0 auto',
+            background: 'linear-gradient(132deg, #ffb347, #ff5858 54%, #a259ff 86%)',
+            borderRadius: '28px',
+            boxShadow: '0 16px 56px 0 rgba(162,89,255,0.13), 0 2px 12px 0 rgba(100,116,139,0.08)',
+            border: 'none',
+            position: 'relative',
+            overflow: 'hidden',
+            padding: '2.5px',
+            transition: 'box-shadow 0.4s cubic-bezier(.4,2,.6,1)',
+            animation: 'fadeInForm 0.7s cubic-bezier(.4,2,.6,1)',
+          }}
+        >
+          {/* Provider dropdown inside the input bar */}
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            background: 'rgba(255,255,255,0.97)',
+            borderTopLeftRadius: '24px',
+            borderBottomLeftRadius: '24px',
+            padding: '0 0.7rem 0 1.1rem',
+            borderRight: '1.5px solid #e5e7eb',
+            height: 48,
+            minWidth: 0,
+            zIndex: 2,
+          }}>
+            <select
+              id="provider"
+              value={provider}
+              onChange={e => setProvider(e.target.value)}
+              style={{
+                fontSize: '1.08rem',
+                padding: '0.45rem 1.1rem 0.45rem 0.7rem',
+                border: 'none',
+                borderRadius: '12px',
+                background: '#f8fafc',
+                color: '#2563eb',
+                fontWeight: 700,
+                outline: 'none',
+                minWidth: '90px',
+                boxShadow: '0 1px 4px #2563eb11',
+                transition: 'background 0.18s',
+                marginRight: 0,
+                marginLeft: 0,
+                cursor: 'pointer',
+              }}
+            >
+              <option value="aws">AWS</option>
+              <option value="azure">Azure</option>
+              <option value="gcp">GCP</option>
+            </select>
+          </div>
+          <div style={{
+            flex: 1,
+            background: 'rgba(255,255,255,0.97)',
+            borderRadius: 0,
+            display: 'flex',
+            alignItems: 'center',
+            transition: 'box-shadow 0.3s cubic-bezier(.4,2,.6,1), background 0.2s',
+            boxShadow: '0 2px 12px 0 rgba(37,99,235,0.08)',
+            padding: 0,
+          }}>
+            <textarea
+              value={input}
+              onChange={e => setInput(e.target.value)}
+              placeholder='e.g. "A 3-tier web app with load balancer, 2 app servers, and a database"'
+              rows={1}
+              style={{
+                flex: 1,
+                fontSize: '1.15rem',
+                padding: '0.9rem 1.25rem',
+                border: 'none',
+                borderRadius: 0,
+                boxShadow: 'none',
+                fontFamily: 'inherit',
+                background: 'transparent',
+                color: '#1e293b',
+                whiteSpace: 'nowrap',
+                outline: 'none',
+                resize: 'none',
+                minHeight: 38,
+                maxHeight: 60,
+                letterSpacing: '0.01em',
+                animation: 'slideInInput 0.7s cubic-bezier(.4,2,.6,1)',
+                overflow: 'hidden',
+              }}
+              aria-invalid={!!inputError}
+              onFocus={e => {
+                if (e.currentTarget.parentElement) {
+                  e.currentTarget.parentElement.style.background = '#f0f6ff';
+                  e.currentTarget.parentElement.style.boxShadow = '0 0 0 2px #2563eb33';
+                }
+              }}
+              onBlur={e => {
+                if (e.currentTarget.parentElement) {
+                  e.currentTarget.parentElement.style.background = 'rgba(255,255,255,0.97)';
+                  e.currentTarget.parentElement.style.boxShadow = '0 2px 12px 0 rgba(37,99,235,0.08)';
+                }
+              }}
+            />
+          </div>
+          <button
+            type="submit"
+            style={{
+              padding: '0 2.5rem',
+              background: 'linear-gradient(90deg, #2563eb 0%, #60a5fa 100%)',
+              color: 'white',
+              border: 'none',
+              borderRadius: '0 22px 22px 0',
+              fontWeight: 700,
+              fontSize: '1.15rem',
+              boxShadow: '0 6px 24px 0 #2563eb33',
+              cursor: 'pointer',
+              transition: 'background 0.2s, box-shadow 0.2s, transform 0.18s cubic-bezier(.4,2,.6,1)',
+              minHeight: 38,
+              display: 'flex',
+              alignItems: 'center',
+              outline: 'none',
+              position: 'relative',
+              overflow: 'hidden',
+              letterSpacing: '0.04em',
+              animation: 'slideInButton 0.7s cubic-bezier(.4,2,.6,1)',
+            }}
+            onMouseOver={e => {
+              e.currentTarget.style.background = 'linear-gradient(90deg, #2563eb 0%, #38bdf8 100%)';
+              e.currentTarget.style.boxShadow = '0 12px 32px 0 #2563eb44';
+              e.currentTarget.style.transform = 'scale(1.045)';
+            }}
+            onMouseOut={e => {
+              e.currentTarget.style.background = 'linear-gradient(90deg, #2563eb 0%, #60a5fa 100%)';
+              e.currentTarget.style.boxShadow = '0 6px 24px 0 #2563eb33';
+              e.currentTarget.style.transform = 'scale(1)';
+            }}
+            disabled={loading}
+          >
+            <span style={{
+              display: 'inline-block',
+              transition: 'transform 0.18s cubic-bezier(.4,2,.6,1)',
+              transform: loading ? 'scale(0.95)' : 'scale(1)',
+            }}>
+              {loading ? 'Generating...' : 'Generate'}
+            </span>
+            {loading && (
+              <span style={{
+                marginLeft: 10,
+                width: 18,
+                height: 18,
+                border: '2.5px solid #fff',
+                borderTop: '2.5px solid #2563eb',
+                borderRadius: '50%',
+                display: 'inline-block',
+                animation: 'spin 0.7s linear infinite',
+                verticalAlign: 'middle',
+              }} />
+            )}
+          </button>
+        </form>
+      {/* Tip now appears here, directly below the textarea */}
+      <div
         style={{
-          width: '100%',
-          maxWidth: '600px',
-          fontSize: '1.25rem',
-          padding: '1rem',
-          border: '1.5px solid #2563eb',
-          borderRadius: '8px',
-          marginBottom: '1.5rem',
-          boxShadow: '0 2px 8px rgba(37,99,235,0.08)',
-          fontFamily: 'inherit',
-          background: '#f8fafc',
-          color: '#1e293b',
-          whiteSpace: 'pre-line',
+          maxWidth: '820px',
+          margin: '0.75rem auto 1.25rem auto',
+          color: '#2563eb',
+          fontSize: '1.09rem',
+          background: 'linear-gradient(90deg, #e0e7ff 0%, #f0f9ff 100%)',
+          borderRadius: '18px',
+          padding: '1.05rem 1.5rem',
+          textAlign: 'left',
+          fontWeight: 500,
+          boxShadow: '0 2px 16px 0 rgba(37,99,235,0.07)',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.7rem',
         }}
-      />
-      <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem', alignItems: 'center' }}>
-        <label htmlFor="provider" style={{ fontWeight: 'bold', color: '#2563eb' }}>Provider:</label>
-        <select
-          id="provider"
-          value={provider}
-          onChange={e => setProvider(e.target.value)}
-          style={{
-            fontSize: '1.1rem',
-            padding: '0.5rem 1rem',
-            border: '1.5px solid #2563eb',
-            borderRadius: '8px',
-            background: 'white',
-            color: '#1e293b',
-            fontWeight: 'bold',
-            outline: 'none',
-            minWidth: '120px'
-          }}
-        >
-          <option value="aws">AWS</option>
-          <option value="azure">Azure</option>
-          <option value="gcp">GCP</option>
-        </select>
-        <button
-          onClick={handleGenerate}
-          style={{
-            padding: '0.75rem 2.5rem',
-            background: 'linear-gradient(90deg, #2563eb 0%, #60a5fa 100%)',
-            color: 'white',
-            border: 'none',
-            borderRadius: '6px',
-            fontWeight: 'bold',
-            fontSize: '1.1rem',
-            boxShadow: '0 2px 8px rgba(37,99,235,0.12)',
-            cursor: 'pointer',
-            transition: 'background 0.2s'
-          }}
-          onMouseOver={e => (e.currentTarget.style.background = '#1d4ed8')}
-          onMouseOut={e => (e.currentTarget.style.background = 'linear-gradient(90deg, #2563eb 0%, #60a5fa 100%)')}
-        >
-          Generate
-        </button>
-        <button
-          onClick={() => {
-            setInput("");
-            setResult(null);
-            clearAll();
-          }}
-          style={{
-            padding: '0.75rem 2.5rem',
-            background: '#e5e7eb',
-            color: '#1e293b',
-            border: 'none',
-            borderRadius: '6px',
-            fontWeight: 'bold',
-            fontSize: '1.1rem',
-            boxShadow: '0 2px 8px rgba(100,116,139,0.12)',
-            cursor: 'pointer',
-            transition: 'background 0.2s'
-          }}
-        >
-          Clear
-        </button>
+      >
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }} xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#2563eb" fillOpacity="0.13"/><path d="M12 7.5V13" stroke="#2563eb" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/><circle cx="12" cy="16" r="1" fill="#2563eb"/></svg>
+        <span>
+          <span style={{ fontWeight: 700, color: '#2563eb' }}>Tip:</span> Want AI to improve or change your diagram? Paste the generated code back in and generate again for iterative refinement.
+        </span>
       </div>
+      </div>
+      {inputError && (
+        <div style={{
+          display: 'flex',
+          justifyContent: 'flex-end',
+          maxWidth: '600px',
+          margin: '-1rem auto 1rem auto',
+        }}>
+          <span
+            style={{
+              background: '#fef2f2',
+              color: '#b91c1c',
+              border: '1px solid #fecaca',
+              borderRadius: '6px',
+              padding: '0.4rem 0.9rem',
+              fontSize: '1rem',
+              fontWeight: 500,
+              zIndex: 10,
+              boxShadow: '0 2px 8px rgba(185,28,28,0.08)',
+              whiteSpace: 'nowrap',
+            }}
+            role="tooltip"
+          >
+            {inputError}
+          </span>
+        </div>
+      )}
+      {/* Clear button removed */}
       {downloadUrl && !loading && !result?.startsWith('Error:') && (
         <div style={{ margin: '1rem 0' }}>
           <a
