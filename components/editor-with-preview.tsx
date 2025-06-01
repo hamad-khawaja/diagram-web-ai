@@ -8,7 +8,13 @@ import React, { useState, useMemo, useEffect } from "react";
 
 const DEFAULT_CODE = "";
 
-export const EditorWithPreview = ({ code }: { code?: string }) => {
+// Accept both code and pngUrl props for compatibility
+interface EditorWithPreviewProps {
+  code?: string;
+  pngUrl?: string | null;
+}
+
+export const EditorWithPreview: React.FC<EditorWithPreviewProps> = ({ code }) => {
   const [rendering, setRendering] = useState(false);
   const [loading, setLoading] = useState(false);
   const [editorCode, setEditorCode] = useState(code ?? DEFAULT_CODE);
