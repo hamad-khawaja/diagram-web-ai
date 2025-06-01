@@ -283,7 +283,8 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
         <div style={{ margin: '1rem 0' }}>
           <a
             href={downloadUrl}
-            download="diagram.png"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               padding: '0.75rem 2.5rem',
               background: 'linear-gradient(90deg, #38bdf8 0%, #2563eb 100%)',
