@@ -64,7 +64,7 @@ const Home: NextPage = () => {
 
       <Header />
 
-      <EditorWithPreview code={editorCode} pngUrl={pngUrl} />
+      <EditorWithPreview code={editorCode} />
       <footer style={{
         width: '100%',
         marginTop: '2rem',
