@@ -193,7 +193,7 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <h2 style={{ fontWeight: 'bold', marginBottom: '1rem', fontSize: '2rem', color: '#2563eb', letterSpacing: '1px' }}>Generate Cloud Architecture Diagram</h2>
       <div style={{ maxWidth: '600px', marginBottom: '1rem', color: '#64748b', fontSize: '1.05rem', background: '#f1f5f9', borderRadius: '6px', padding: '0.75rem 1rem', textAlign: 'center' }}>
-        <strong>Tip:</strong> Want AI to make the diagram better or change somthing? Feed back the code and generate again!
+        <strong>Tip:</strong> Want AI to make the diagram better or change something? Feed back the code and generate again!
       </div>
       <div style={{ width: '100%', maxWidth: '600px', marginBottom: '1rem' }} />
       <textarea
