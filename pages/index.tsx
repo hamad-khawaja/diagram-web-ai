@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Script from "next/script";
 import React from "react";
+import { MarkdownSlide } from "../components/MarkdownSlide";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 
@@ -769,7 +770,7 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
               ‹
             </button>
             <span style={{ flex: 1, minWidth: 0, color: '#334155', fontWeight: 500, fontSize: '0.97rem', whiteSpace: 'pre-line', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-              {slides[current]}
+              <MarkdownSlide content={slides[current]} />
             </span>
             <button
               onClick={() => setExplanationSlide((current + 1) % totalSlides)}
