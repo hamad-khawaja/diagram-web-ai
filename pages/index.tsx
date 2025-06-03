@@ -108,6 +108,151 @@ const Home: NextPage = () => {
       <EditorWithPreview code={editorCode} />
       {/* Cloud provider logos bar at the top for branding */}
 
+      {/* Step-by-step guide section */}
+      <section style={{
+        width: '100%',
+        maxWidth: 700,
+        margin: '2.5rem auto 0 auto',
+        padding: '2.2rem 1.5rem 1.5rem 1.5rem',
+        background: 'linear-gradient(90deg, #f0f9ff 0%, #e0e7ff 100%)',
+        borderRadius: 18,
+        boxShadow: '0 4px 32px 0 rgba(37,99,235,0.07)',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '1.2rem',
+        position: 'relative',
+        zIndex: 2,
+      }}>
+        <h2 style={{
+          fontSize: '1.35rem',
+          fontWeight: 700,
+          color: '#2563eb',
+          marginBottom: '0.5rem',
+          letterSpacing: '0.01em',
+          fontFamily: 'Sora, Inter, Montserrat, Arial, sans-serif',
+          textAlign: 'center',
+        }}>
+          How to generate an AI diagram
+        </h2>
+        <p style={{
+          color: '#334155',
+          fontSize: '1.08rem',
+          textAlign: 'center',
+          margin: 0,
+          maxWidth: 540,
+          opacity: 0.92,
+        }}>
+          Follow these simple steps to create a professional cloud architecture diagram in seconds:
+        </p>
+        <ol style={{
+          listStyle: 'none',
+          padding: 0,
+          margin: '1.2rem 0 0 0',
+          width: '100%',
+          maxWidth: 540,
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '1.1rem',
+        }}>
+          <li style={{ display: 'flex', alignItems: 'flex-start', gap: '1.1rem' }}>
+            <span style={{
+              background: 'linear-gradient(132deg, #ffb347, #ff5858 54%, #a259ff 86%)',
+              color: '#fff',
+              fontWeight: 700,
+              borderRadius: '50%',
+              width: 36,
+              height: 36,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '1.18rem',
+              boxShadow: '0 2px 8px #a259ff22',
+              flexShrink: 0,
+            }}>1</span>
+            <span style={{ fontSize: '1.08rem', color: '#334155', fontWeight: 500 }}>
+              <b>Describe your architecture</b> in plain English (e.g., "A 3-tier web app with load balancer, 2 app servers, and a database").
+            </span>
+          </li>
+          <li style={{ display: 'flex', alignItems: 'flex-start', gap: '1.1rem' }}>
+            <span style={{
+              background: 'linear-gradient(132deg, #ffb347, #ff5858 54%, #a259ff 86%)',
+              color: '#fff',
+              fontWeight: 700,
+              borderRadius: '50%',
+              width: 36,
+              height: 36,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '1.18rem',
+              boxShadow: '0 2px 8px #a259ff22',
+              flexShrink: 0,
+            }}>2</span>
+            <span style={{ fontSize: '1.08rem', color: '#334155', fontWeight: 500 }}>
+              <b>Select your cloud provider</b> (AWS, Azure, or GCP) from the dropdown.
+            </span>
+          </li>
+          <li style={{ display: 'flex', alignItems: 'flex-start', gap: '1.1rem' }}>
+            <span style={{
+              background: 'linear-gradient(132deg, #ffb347, #ff5858 54%, #a259ff 86%)',
+              color: '#fff',
+              fontWeight: 700,
+              borderRadius: '50%',
+              width: 36,
+              height: 36,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '1.18rem',
+              boxShadow: '0 2px 8px #a259ff22',
+              flexShrink: 0,
+            }}>3</span>
+            <span style={{ fontSize: '1.08rem', color: '#334155', fontWeight: 500 }}>
+              <b>Click &quot;Generate&quot;</b> to let AI create your diagram and code instantly.
+            </span>
+          </li>
+          <li style={{ display: 'flex', alignItems: 'flex-start', gap: '1.1rem' }}>
+            <span style={{
+              background: 'linear-gradient(132deg, #ffb347, #ff5858 54%, #a259ff 86%)',
+              color: '#fff',
+              fontWeight: 700,
+              borderRadius: '50%',
+              width: 36,
+              height: 36,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '1.18rem',
+              boxShadow: '0 2px 8px #a259ff22',
+              flexShrink: 0,
+            }}>4</span>
+            <span style={{ fontSize: '1.08rem', color: '#334155', fontWeight: 500 }}>
+              <b>Download</b> your diagram in your preferred format (PNG, SVG, PDF, etc.) or copy the code for further editing.
+            </span>
+          </li>
+          <li style={{ display: 'flex', alignItems: 'flex-start', gap: '1.1rem' }}>
+            <span style={{
+              background: 'linear-gradient(132deg, #ffb347, #ff5858 54%, #a259ff 86%)',
+              color: '#fff',
+              fontWeight: 700,
+              borderRadius: '50%',
+              width: 36,
+              height: 36,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '1.18rem',
+              boxShadow: '0 2px 8px #a259ff22',
+              flexShrink: 0,
+            }}>5</span>
+            <span style={{ fontSize: '1.08rem', color: '#334155', fontWeight: 500 }}>
+              <b>Iterate</b>: Paste the generated code back in to refine or expand your diagram with AI.
+            </span>
+          </li>
+        </ol>
+      </section>
+
       <footer style={{
         width: '100%',
         marginTop: '2rem',
