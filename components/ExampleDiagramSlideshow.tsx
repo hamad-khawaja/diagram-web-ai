@@ -45,7 +45,23 @@ export const ExampleDiagramSlideshow: React.FC = () => {
         }}
         aria-label="Previous example"
       >‹</button>
-      <Image src={current.src} alt={current.alt} width={340} height={340} style={{ width: '100%', maxWidth: 340, height: 'auto', borderRadius: 12, boxShadow: '0 2px 12px #2563eb11', marginBottom: '1.1rem', background: '#f8fafc' }} />
+      <Image
+        src={current.src}
+        alt={current.alt}
+        width={340}
+        height={340}
+        priority
+        style={{
+          width: '100%',
+          maxWidth: 340,
+          height: 'auto',
+          borderRadius: 12,
+          boxShadow: '0 2px 12px #2563eb11',
+          marginBottom: '1.1rem',
+          background: '#f8fafc',
+          aspectRatio: '1 / 1',
+        }}
+      />
       <div style={{ color: '#334155', fontSize: '1.05rem', fontWeight: 500, textAlign: 'center', marginBottom: '0.2rem' }}>
         <b>{current.title}</b>
       </div>

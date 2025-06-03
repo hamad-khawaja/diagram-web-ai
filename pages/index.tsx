@@ -9,7 +9,9 @@ import Image from "next/image";
 
 import Link from "next/link";
 
+
 import { Header } from "../components/header";
+import { CookieConsent } from "../components/CookieConsent";
 
 const EditorWithPreview = dynamic(
   // @ts-ignore
@@ -25,6 +27,7 @@ const Home: NextPage = () => {
   const [pngUrl, setPngUrl] = React.useState<string | null>(null);
   return (
     <div>
+      <CookieConsent />
       <header style={{
         width: '100%',
         background: 'linear-gradient(132deg, #ffb347, #ff5858 54%, #a259ff 86%)',
@@ -90,9 +93,21 @@ const Home: NextPage = () => {
       />
 
       <Head>
-        <title>CloudDiagram.AI</title>
+        <title>CloudDiagram.AI | AI Cloud Architecture Diagram Generator</title>
+        <meta name="description" content="Generate professional cloud architecture diagrams for AWS, Azure, and GCP using AI. Visualize, edit, and share your cloud diagrams instantly. No signup required." />
+        <meta name="keywords" content="cloud diagram, architecture diagram, AWS, Azure, GCP, AI, generator, SaaS, cloud architecture, infrastructure, devops, cloud design" />
+        <meta property="og:title" content="CloudDiagram.AI | AI Cloud Architecture Diagram Generator" />
+        <meta property="og:description" content="Generate professional cloud architecture diagrams for AWS, Azure, and GCP using AI. Visualize, edit, and share your cloud diagrams instantly." />
+        <meta property="og:image" content="/clouddiagram-logo.svg" />
+        <meta property="og:url" content="https://clouddiagram.ai/" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="CloudDiagram.AI | AI Cloud Architecture Diagram Generator" />
+        <meta name="twitter:description" content="Generate professional cloud architecture diagrams for AWS, Azure, and GCP using AI. Visualize, edit, and share your cloud diagrams instantly." />
+        <meta name="twitter:image" content="/clouddiagram-logo.svg" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="alternate icon" href="/favicon.ico" />
+        <link rel="canonical" href="https://clouddiagram.ai/" />
+        <meta name="robots" content="index, follow" />
       </Head>
 
       {/* New Generate Section at the top */}
@@ -402,9 +417,10 @@ const Home: NextPage = () => {
             <span style={{ fontSize: '1.01rem', opacity: 0.82, marginTop: 2 }}>
               Visualize, edit, and share cloud diagrams for AWS, Azure, GCP, and more.
             </span>
-            <div style={{ marginTop: '0.7rem', display: 'flex', gap: '0.7rem' }}>
-              <Link href="/" legacyBehavior>
-                <a style={{
+            <div style={{ marginTop: '0.7rem', display: 'flex', gap: '0.7rem', flexWrap: 'wrap' }}>
+              <Link
+                href="/"
+                style={{
                   background: 'linear-gradient(90deg, #38bdf8 0%, #2563eb 100%)',
                   color: '#fff',
                   fontWeight: 700,
@@ -415,8 +431,14 @@ const Home: NextPage = () => {
                   boxShadow: '0 2px 8px #2563eb22',
                   transition: 'background 0.18s',
                   display: 'inline-block',
-                }}>Start diagramming for free</a>
+                }}
+              >
+                Start diagramming for free
               </Link>
+              <Link href="/faq" style={{ color: '#fff', fontWeight: 500, fontSize: '1.07rem', opacity: 0.85, textDecoration: 'underline', borderRadius: 8, padding: '0.55rem 1.1rem', background: 'rgba(162,89,255,0.13)', boxShadow: '0 1px 4px #a259ff11', transition: 'background 0.18s', display: 'inline-block' }}>FAQ</Link>
+              <Link href="/blog" style={{ color: '#fff', fontWeight: 500, fontSize: '1.07rem', opacity: 0.85, textDecoration: 'underline', borderRadius: 8, padding: '0.55rem 1.1rem', background: 'rgba(162,89,255,0.13)', boxShadow: '0 1px 4px #a259ff11', transition: 'background 0.18s', display: 'inline-block' }}>Blog</Link>
+              <Link href="/privacy" style={{ color: '#fff', fontWeight: 500, fontSize: '1.07rem', opacity: 0.85, textDecoration: 'underline', borderRadius: 8, padding: '0.55rem 1.1rem', background: 'rgba(162,89,255,0.13)', boxShadow: '0 1px 4px #a259ff11', transition: 'background 0.18s', display: 'inline-block' }}>Privacy</Link>
+              <Link href="/terms" style={{ color: '#fff', fontWeight: 500, fontSize: '1.07rem', opacity: 0.85, textDecoration: 'underline', borderRadius: 8, padding: '0.55rem 1.1rem', background: 'rgba(162,89,255,0.13)', boxShadow: '0 1px 4px #a259ff11', transition: 'background 0.18s', display: 'inline-block' }}>Terms</Link>
               <a href="mailto:support@clouddiagram.ai" style={{
                 color: '#fff',
                 fontWeight: 500,
@@ -431,6 +453,33 @@ const Home: NextPage = () => {
                 display: 'inline-block',
               }}>Contact</a>
             </div>
+      {/* SEO: Keyword-rich intro for homepage */}
+      <section style={{ maxWidth: 900, margin: '2.5rem auto 0 auto', padding: '1.5rem', background: 'linear-gradient(90deg, #f0f9ff 0%, #e0e7ff 100%)', borderRadius: 18, boxShadow: '0 4px 32px 0 rgba(37,99,235,0.07)', textAlign: 'center' }}>
+        <h1 style={{ fontSize: '2.1rem', fontWeight: 800, color: '#2563eb', marginBottom: '1.1rem', letterSpacing: '0.01em', fontFamily: 'Sora, Inter, Montserrat, Arial, sans-serif' }}>
+          AI Cloud Architecture Diagram Generator for AWS, Azure, and GCP
+        </h1>
+        <p style={{ color: '#334155', fontSize: '1.18rem', maxWidth: 700, margin: '0 auto', opacity: 0.96 }}>
+          Instantly generate, visualize, and share professional cloud architecture diagrams for AWS, Azure, and Google Cloud using AI. No signup required. Perfect for DevOps, architects, and cloud engineers who want fast, accurate, and beautiful diagrams.
+        </p>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "CloudDiagram.AI",
+          "url": "https://clouddiagram.ai/",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "All",
+          "description": "Generate professional cloud architecture diagrams for AWS, Azure, and GCP using AI. Visualize, edit, and share your cloud diagrams instantly.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "CloudDiagram.AI"
+          }
+        }) }} />
+      </section>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.7rem', minWidth: 180 }}>
             <a href="https://github.com/hamad-khawaja/diagram-web-ai" target="_blank" rel="noopener noreferrer" style={{
