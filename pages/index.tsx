@@ -355,18 +355,23 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <footer style={{
-        width: '100%',
-        marginTop: '2.5rem',
-        padding: '0',
-        background: 'linear-gradient(120deg, #0f172a 0%, #2563eb 60%, #a259ff 100%)',
-        color: '#fff',
-        borderRadius: 0,
-        boxShadow: '0 -4px 32px 0 rgba(37,99,235,0.10)',
-        position: 'relative',
-        overflow: 'hidden',
-        zIndex: 1,
-      }}>
+      <footer
+        style={{
+          border: '4px solid #ff5858', // DEBUG: Add a visible border to confirm rendering
+          minHeight: 80,
+          width: '100%',
+          marginTop: '2.5rem',
+          padding: '0',
+          background: 'linear-gradient(120deg, #0f172a 0%, #2563eb 60%, #a259ff 100%)',
+          color: '#fff',
+          borderRadius: 0,
+          boxShadow: '0 -4px 32px 0 rgba(37,99,235,0.10)',
+          position: 'relative',
+          overflow: 'hidden',
+          zIndex: 1,
+        }}
+        data-debug-footer="true"
+      >
         <div style={{
           position: 'absolute',
           top: 0,
@@ -403,8 +408,9 @@ const Home: NextPage = () => {
               Visualize, edit, and share cloud diagrams for AWS, Azure, GCP, and more.
             </span>
             <div style={{ marginTop: '0.7rem', display: 'flex', gap: '0.7rem' }}>
-              <Link href="/" legacyBehavior>
-                <a style={{
+              <Link
+                href="/"
+                style={{
                   background: 'linear-gradient(90deg, #38bdf8 0%, #2563eb 100%)',
                   color: '#fff',
                   fontWeight: 700,
@@ -415,7 +421,9 @@ const Home: NextPage = () => {
                   boxShadow: '0 2px 8px #2563eb22',
                   transition: 'background 0.18s',
                   display: 'inline-block',
-                }}>Start diagramming for free</a>
+                }}
+              >
+                Start diagramming for free
               </Link>
               <a href="mailto:support@clouddiagram.ai" style={{
                 color: '#fff',
