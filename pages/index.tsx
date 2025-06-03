@@ -7,6 +7,8 @@ import { ExampleDiagramSlideshow } from "../components/ExampleDiagramSlideshow";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 
+import Link from "next/link";
+
 import { Header } from "../components/header";
 
 const EditorWithPreview = dynamic(
@@ -355,22 +357,15 @@ const Home: NextPage = () => {
 
       <footer style={{
         width: '100%',
-        marginTop: '2rem',
-        padding: '2.5rem 0 2rem 0',
-        background: 'linear-gradient(90deg, #0f172a 0%, #2563eb 60%, #60a5fa 100%)',
-        textAlign: 'center',
-        fontSize: '1.15rem',
+        marginTop: '2.5rem',
+        padding: '0',
+        background: 'linear-gradient(120deg, #0f172a 0%, #2563eb 60%, #a259ff 100%)',
         color: '#fff',
-        letterSpacing: '0.5px',
         borderRadius: 0,
         boxShadow: '0 -4px 32px 0 rgba(37,99,235,0.10)',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '0.75rem',
         position: 'relative',
         overflow: 'hidden',
+        zIndex: 1,
       }}>
         <div style={{
           position: 'absolute',
@@ -382,15 +377,81 @@ const Home: NextPage = () => {
           opacity: 0.18,
           zIndex: 0,
         }} />
-        <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', zIndex: 1 }}>
-          <Image src="/clouddiagram-logo.svg" alt="CloudDiagram.AI Logo" width={28} height={28} style={{ borderRadius: 8, boxShadow: '0 1px 4px #2563eb22' }} />
-          <span style={{ fontWeight: 600, fontSize: '1.08rem', letterSpacing: '0.5px', color: '#fff', opacity: 0.92 }}>
-            CloudDiagram.AI &mdash; Effortless Cloud Architecture Diagrams
-          </span>
-        </span>
-        <span style={{ fontSize: '1rem', opacity: 0.85, marginTop: '0.25rem', zIndex: 1 }}>
-          &copy; {new Date().getFullYear()} CloudDiagram.AI
-        </span>
+        <div style={{
+          maxWidth: 1200,
+          margin: '0 auto',
+          padding: '2.5rem 1.5rem 1.2rem 1.5rem',
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          gap: '2.5rem',
+          zIndex: 2,
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1.1rem' }}>
+            <Image src="/clouddiagram-logo.svg" alt="CloudDiagram.AI Logo" width={38} height={38} style={{ borderRadius: 10, boxShadow: '0 1px 6px #2563eb22' }} />
+            <span style={{ fontWeight: 700, fontSize: '1.25rem', letterSpacing: '0.03em', color: '#fff', textShadow: '0 2px 8px #a259ff33, 0 1px 0 #fff' }}>
+              CloudDiagram.AI
+            </span>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '0.5rem', minWidth: 220 }}>
+            <span style={{ fontSize: '1.08rem', fontWeight: 500, opacity: 0.96 }}>
+              Effortless Cloud Architecture Diagrams
+            </span>
+            <span style={{ fontSize: '1.01rem', opacity: 0.82, marginTop: 2 }}>
+              Visualize, edit, and share cloud diagrams for AWS, Azure, GCP, and more.
+            </span>
+            <div style={{ marginTop: '0.7rem', display: 'flex', gap: '0.7rem' }}>
+              <Link href="/" legacyBehavior>
+                <a style={{
+                  background: 'linear-gradient(90deg, #38bdf8 0%, #2563eb 100%)',
+                  color: '#fff',
+                  fontWeight: 700,
+                  fontSize: '1.07rem',
+                  borderRadius: 8,
+                  padding: '0.55rem 1.4rem',
+                  textDecoration: 'none',
+                  boxShadow: '0 2px 8px #2563eb22',
+                  transition: 'background 0.18s',
+                  display: 'inline-block',
+                }}>Start diagramming for free</a>
+              </Link>
+              <a href="mailto:support@clouddiagram.ai" style={{
+                color: '#fff',
+                fontWeight: 500,
+                fontSize: '1.07rem',
+                opacity: 0.85,
+                textDecoration: 'underline',
+                borderRadius: 8,
+                padding: '0.55rem 1.1rem',
+                background: 'rgba(162,89,255,0.13)',
+                boxShadow: '0 1px 4px #a259ff11',
+                transition: 'background 0.18s',
+                display: 'inline-block',
+              }}>Contact</a>
+            </div>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.7rem', minWidth: 180 }}>
+            <a href="https://github.com/hamad-khawaja/diagram-web-ai" target="_blank" rel="noopener noreferrer" style={{
+              color: '#fff',
+              fontWeight: 600,
+              fontSize: '1.08rem',
+              letterSpacing: '0.04em',
+              padding: '0.45rem 1.2rem',
+              borderRadius: 8,
+              background: 'rgba(37,99,235,0.12)',
+              boxShadow: '0 1px 6px #2563eb22',
+              transition: 'background 0.18s, color 0.18s',
+              display: 'inline-block',
+              position: 'relative',
+              top: 0,
+            }}>View on GitHub</a>
+            <span style={{ fontSize: '0.98rem', opacity: 0.7, marginTop: 2 }}>
+              &copy; {new Date().getFullYear()} CloudDiagram.AI
+            </span>
+          </div>
+        </div>
       </footer>
     </div>
   );
