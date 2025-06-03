@@ -3,6 +3,7 @@ import Head from "next/head";
 import Script from "next/script";
 import React from "react";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 
 import { Header } from "../components/header";
 
@@ -37,7 +38,7 @@ const Home: NextPage = () => {
         position: 'relative',
       }}>
         <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '1.1rem' }}>
-          <img src="/clouddiagram-logo.svg" alt="CloudDiagram.AI Logo" style={{ width: 38, height: 38, marginLeft: 32, borderRadius: 12, boxShadow: '0 1px 6px #2563eb22' }} />
+          <Image src="/clouddiagram-logo.svg" alt="CloudDiagram.AI Logo" width={38} height={38} style={{ marginLeft: 32, borderRadius: 12, boxShadow: '0 1px 6px #2563eb22' }} priority />
           <span style={{
             fontSize: '1.35rem',
             fontWeight: 700,
@@ -108,6 +109,203 @@ const Home: NextPage = () => {
       <EditorWithPreview code={editorCode} />
       {/* Cloud provider logos bar at the top for branding */}
 
+
+
+
+      {/* Instructions and Example Diagram side-by-side section */}
+      <section style={{
+        width: '100%',
+        maxWidth: 1100,
+        margin: '2.5rem auto 0 auto',
+        padding: '2.2rem 1.5rem 1.5rem 1.5rem',
+        background: 'linear-gradient(90deg, #f0f9ff 0%, #e0e7ff 100%)',
+        borderRadius: 18,
+        boxShadow: '0 4px 32px 0 rgba(37,99,235,0.07)',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'flex-start',
+        gap: '2.5rem',
+        position: 'relative',
+        zIndex: 2,
+        flexWrap: 'wrap',
+      }}>
+        {/* Instructions */}
+        <div style={{ flex: 1, minWidth: 320, maxWidth: 520, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.2rem' }}>
+          <h2 style={{
+            fontSize: '1.35rem',
+            fontWeight: 700,
+            color: '#2563eb',
+            marginBottom: '0.5rem',
+            letterSpacing: '0.01em',
+            fontFamily: 'Sora, Inter, Montserrat, Arial, sans-serif',
+            textAlign: 'center',
+          }}>
+            How to generate an AI diagram
+          </h2>
+          <p style={{
+            color: '#334155',
+            fontSize: '1.08rem',
+            textAlign: 'center',
+            margin: 0,
+            maxWidth: 540,
+            opacity: 0.92,
+          }}>
+            Follow these simple steps to create a professional cloud architecture diagram in seconds:
+          </p>
+          <ol style={{
+            listStyle: 'none',
+            padding: 0,
+            margin: '1.2rem 0 0 0',
+            width: '100%',
+            maxWidth: 540,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1.1rem',
+          }}>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '1.1rem' }}>
+              <span style={{
+                background: 'linear-gradient(132deg, #ffb347, #ff5858 54%, #a259ff 86%)',
+                color: '#fff',
+                fontWeight: 700,
+                borderRadius: '50%',
+                width: 36,
+                height: 36,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '1.18rem',
+                boxShadow: '0 2px 8px #a259ff22',
+                flexShrink: 0,
+              }}>1</span>
+              <span style={{ fontSize: '1.08rem', color: '#334155', fontWeight: 500 }}>
+              <b>Describe your architecture</b> in plain English (e.g., &quot;A 3-tier web app with load balancer, 2 app servers, and a database&quot;).
+              </span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '1.1rem' }}>
+              <span style={{
+                background: 'linear-gradient(132deg, #ffb347, #ff5858 54%, #a259ff 86%)',
+                color: '#fff',
+                fontWeight: 700,
+                borderRadius: '50%',
+                width: 36,
+                height: 36,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '1.18rem',
+                boxShadow: '0 2px 8px #a259ff22',
+                flexShrink: 0,
+              }}>2</span>
+              <span style={{ fontSize: '1.08rem', color: '#334155', fontWeight: 500 }}>
+                <b>Select your cloud provider</b> (AWS, Azure, or GCP) from the dropdown.
+              </span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '1.1rem' }}>
+              <span style={{
+                background: 'linear-gradient(132deg, #ffb347, #ff5858 54%, #a259ff 86%)',
+                color: '#fff',
+                fontWeight: 700,
+                borderRadius: '50%',
+                width: 36,
+                height: 36,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '1.18rem',
+                boxShadow: '0 2px 8px #a259ff22',
+                flexShrink: 0,
+              }}>3</span>
+              <span style={{ fontSize: '1.08rem', color: '#334155', fontWeight: 500 }}>
+                <b>Click &quot;Generate&quot;</b> to let AI create your diagram and code instantly.
+              </span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '1.1rem' }}>
+              <span style={{
+                background: 'linear-gradient(132deg, #ffb347, #ff5858 54%, #a259ff 86%)',
+                color: '#fff',
+                fontWeight: 700,
+                borderRadius: '50%',
+                width: 36,
+                height: 36,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '1.18rem',
+                boxShadow: '0 2px 8px #a259ff22',
+                flexShrink: 0,
+              }}>4</span>
+              <span style={{ fontSize: '1.08rem', color: '#334155', fontWeight: 500 }}>
+                <b>Download</b> your diagram in your preferred format (PNG, SVG, PDF, etc.) or copy the code for further editing.
+              </span>
+            </li>
+            <li style={{ display: 'flex', alignItems: 'flex-start', gap: '1.1rem' }}>
+              <span style={{
+                background: 'linear-gradient(132deg, #ffb347, #ff5858 54%, #a259ff 86%)',
+                color: '#fff',
+                fontWeight: 700,
+                borderRadius: '50%',
+                width: 36,
+                height: 36,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '1.18rem',
+                boxShadow: '0 2px 8px #a259ff22',
+                flexShrink: 0,
+              }}>5</span>
+              <span style={{ fontSize: '1.08rem', color: '#334155', fontWeight: 500 }}>
+                <b>Iterate</b>: Paste the generated code back in to refine or expand your diagram with AI.
+              </span>
+            </li>
+          </ol>
+        </div>
+
+        {/* Example Diagram */}
+        <div style={{ flex: 1, minWidth: 320, maxWidth: 480, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.2rem' }}>
+          <h2 style={{
+            fontSize: '1.22rem',
+            fontWeight: 700,
+            color: '#2563eb',
+            marginBottom: '0.5rem',
+            letterSpacing: '0.01em',
+            fontFamily: 'Sora, Inter, Montserrat, Arial, sans-serif',
+            textAlign: 'center',
+          }}>
+            Example Diagram
+          </h2>
+          <div style={{
+            background: '#fff',
+            borderRadius: 16,
+            boxShadow: '0 2px 16px 0 rgba(162,89,255,0.07)',
+            padding: '1.2rem',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            maxWidth: 480,
+            width: '100%',
+          }}>
+            <Image src="/gcp.png" alt="GCP Simple Web App Example Diagram" width={340} height={340} style={{ width: '100%', maxWidth: 340, height: 'auto', borderRadius: 12, boxShadow: '0 2px 12px #2563eb11', marginBottom: '1.1rem', background: '#f8fafc' }} />
+            <div style={{
+              color: '#334155',
+              fontSize: '1.05rem',
+              fontWeight: 500,
+              textAlign: 'center',
+              marginBottom: '0.2rem',
+            }}>
+              <b>GCP Simple Web App</b>
+            </div>
+            <div style={{
+              color: '#64748b',
+              fontSize: '0.98rem',
+              textAlign: 'center',
+              opacity: 0.92,
+            }}>
+              A load-balanced web tier on Compute Engine connects to Cloud SQL and Cloud Storage.
+            </div>
+          </div>
+        </div>
+      </section>
+
       <footer style={{
         width: '100%',
         marginTop: '2rem',
@@ -138,7 +336,7 @@ const Home: NextPage = () => {
           zIndex: 0,
         }} />
         <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', zIndex: 1 }}>
-          <img src="/clouddiagram-logo.svg" alt="CloudDiagram.AI Logo" style={{ width: 28, height: 28, borderRadius: 8, boxShadow: '0 1px 4px #2563eb22' }} />
+          <Image src="/clouddiagram-logo.svg" alt="CloudDiagram.AI Logo" width={28} height={28} style={{ borderRadius: 8, boxShadow: '0 1px 4px #2563eb22' }} />
           <span style={{ fontWeight: 600, fontSize: '1.08rem', letterSpacing: '0.5px', color: '#fff', opacity: 0.92 }}>
             CloudDiagram.AI &mdash; Effortless Cloud Architecture Diagrams
           </span>
@@ -158,9 +356,13 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
   const [provider, setProvider] = React.useState("aws");
   const [loading, setLoading] = React.useState(false);
   const [result, setResult] = React.useState<string | null>(null);
-  const [downloadUrl, setDownloadUrl] = React.useState<string | null>(null);
+  const [downloadUrls, setDownloadUrls] = React.useState<{ [key: string]: string }>({});
   const [diagramDataUrl, setDiagramDataUrl] = React.useState<string | null>(null);
-  const [editableUrl, setEditableUrl] = React.useState<string | null>(null);
+  const [rawCodeUrl, setRawCodeUrl] = React.useState<string | null>(null);
+  const [sanitizedCodeUrl, setSanitizedCodeUrl] = React.useState<string | null>(null);
+  const [explanation, setExplanation] = React.useState<string | null>(null);
+  const [explanationSlide, setExplanationSlide] = React.useState(0);
+  const [explanationMdUrl, setExplanationMdUrl] = React.useState<string | null>(null);
   const [inputError, setInputError] = React.useState<string | null>(null);
 
   const handleGenerate = async () => {
@@ -213,8 +415,8 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
       }
       data = await response.json();
       setResult(typeof data === 'string' ? data : JSON.stringify(data, null, 2));
+      // Set code in editor if available
       if (data && data.raw_code_url) {
-        // Fetch the code from the raw_code_url and set it in the editor
         const url = data.raw_code_url.startsWith('http') ? data.raw_code_url : `http://localhost:5050${data.raw_code_url}`;
         const codeResp = await fetch(url);
         if (codeResp.ok) {
@@ -222,35 +424,45 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
           setEditorCode(codeText);
         }
       }
-      if (data && data.diagram_files && data.diagram_files.png) {
-        const pngUrl = data.diagram_files.png.startsWith('http') ? data.diagram_files.png : `http://localhost:5050${data.diagram_files.png}`;
-        setPngUrl(pngUrl);
-        setDownloadUrl(pngUrl);
-        // Fetch the PNG and convert to data URL for separate download
-        try {
-          const resp = await fetch(pngUrl);
-          const blob = await resp.blob();
-          const reader = new FileReader();
-          reader.onloadend = () => {
-            setDiagramDataUrl(reader.result as string);
-          };
-          reader.readAsDataURL(blob);
-        } catch {
-          setDiagramDataUrl(null);
-        }
-        // Try to get editable diagram (code) as a downloadable file
-        if (data.raw_code_url) {
-          const codeUrl = data.raw_code_url.startsWith('http') ? data.raw_code_url : `http://localhost:5050${data.raw_code_url}`;
-          setEditableUrl(codeUrl);
+      // Set all diagram file download URLs
+      if (data && data.diagram_files) {
+        const urls: { [key: string]: string } = {};
+        Object.entries(data.diagram_files).forEach(([type, path]) => {
+          if (typeof path === 'string') {
+            urls[type] = path.startsWith('http') ? path : `http://localhost:5050${path}`;
+          }
+        });
+        setDownloadUrls(urls);
+        // Set PNG for preview if available
+        if (urls.png) {
+          setPngUrl(urls.png);
+          // Fetch the PNG and convert to data URL for separate download
+          try {
+            const resp = await fetch(urls.png);
+            const blob = await resp.blob();
+            const reader = new FileReader();
+            reader.onloadend = () => {
+              setDiagramDataUrl(reader.result as string);
+            };
+            reader.readAsDataURL(blob);
+          } catch {
+            setDiagramDataUrl(null);
+          }
         } else {
-          setEditableUrl(null);
+          setPngUrl(null);
         }
       } else {
+        setDownloadUrls({});
         setPngUrl(null);
-        setDownloadUrl(null);
         setDiagramDataUrl(null);
-        setEditableUrl(null);
       }
+      // Set code download links
+      setRawCodeUrl(data?.raw_code_url ? (data.raw_code_url.startsWith('http') ? data.raw_code_url : `http://localhost:5050${data.raw_code_url}`) : null);
+      setSanitizedCodeUrl(data?.sanitized_code_url ? (data.sanitized_code_url.startsWith('http') ? data.sanitized_code_url : `http://localhost:5050${data.sanitized_code_url}`) : null);
+      // Set explanation and markdown url
+      setExplanation(data?.explanation || null);
+      setExplanationSlide(0);
+      setExplanationMdUrl(data?.explanation_md_url ? (data.explanation_md_url.startsWith('http') ? data.explanation_md_url : `http://localhost:5050${data.explanation_md_url}`) : null);
     } catch (err: any) {
       setResult('Error: ' + (err?.message || JSON.stringify(err) || 'Unknown error'));
     } finally {
@@ -478,31 +690,120 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
         </div>
       )}
       {/* Clear button removed */}
-      {downloadUrl && !loading && !result?.startsWith('Error:') && (
-        <div style={{ margin: '1rem 0' }}>
-          <a
-            href={downloadUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              padding: '0.75rem 2.5rem',
-              background: 'linear-gradient(90deg, #38bdf8 0%, #2563eb 100%)',
-              color: 'white',
-              border: 'none',
-              borderRadius: '6px',
-              fontWeight: 'bold',
-              fontSize: '1.1rem',
-              boxShadow: '0 2px 8px rgba(37,99,235,0.12)',
-              cursor: 'pointer',
-              textDecoration: 'none',
-              transition: 'background 0.2s',
-              display: 'inline-block',
-            }}
-          >
-            Download AI Generated Diagram
-          </a>
+      {/* Download links for all diagram files */}
+      {Object.keys(downloadUrls).length > 0 && !loading && !result?.startsWith('Error:') && (
+        <div style={{ margin: '1rem 0', display: 'flex', flexWrap: 'wrap', gap: '0.7rem' }}>
+          {Object.entries(downloadUrls).map(([type, url]) => (
+            <a
+              key={type}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                padding: '0.65rem 1.5rem',
+                background: 'linear-gradient(90deg, #38bdf8 0%, #2563eb 100%)',
+                color: 'white',
+                border: 'none',
+                borderRadius: '6px',
+                fontWeight: 'bold',
+                fontSize: '1.05rem',
+                boxShadow: '0 2px 8px rgba(37,99,235,0.12)',
+                cursor: 'pointer',
+                textDecoration: 'none',
+                transition: 'background 0.2s',
+                display: 'inline-block',
+              }}
+            >
+              Download {type.toUpperCase()}
+            </a>
+          ))}
         </div>
       )}
+      {/* Show explanation as a vibrant, compact slideshow if available */}
+      {explanation && !loading && !result?.startsWith('Error:') && (() => {
+        // Split explanation into bullet points (handle both '-' and '*')
+        const bullets = explanation
+          .split(/\n|\r/)
+          .map(line => line.trim())
+          .filter(line => line.match(/^[-*•]/))
+          .map(line => line.replace(/^[-*•]\s*/, ''));
+        // If no bullets, fallback to single slide
+        const slides = bullets.length > 0 ? bullets : [explanation];
+        const totalSlides = slides.length;
+        const current = explanationSlide >= 0 && explanationSlide < totalSlides ? explanationSlide : 0;
+        return (
+          <div style={{
+            margin: '0.5rem 0 1.2rem 0',
+            background: 'linear-gradient(90deg, #e0e7ff 0%, #f0f9ff 100%)',
+            color: '#2563eb',
+            borderRadius: '10px',
+            padding: '0.65rem 1.1rem',
+            fontSize: '0.98rem',
+            fontWeight: 500,
+            boxShadow: '0 2px 12px 0 rgba(162,89,255,0.07)',
+            maxWidth: 420,
+            minWidth: 0,
+            width: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.7rem',
+            position: 'relative',
+          }}>
+            <button
+              onClick={() => setExplanationSlide((current - 1 + totalSlides) % totalSlides)}
+              disabled={totalSlides <= 1}
+              style={{
+                background: 'none',
+                border: 'none',
+                color: '#a259ff',
+                fontSize: '1.2rem',
+                fontWeight: 700,
+                cursor: totalSlides > 1 ? 'pointer' : 'default',
+                opacity: totalSlides > 1 ? 1 : 0.3,
+                padding: '0 0.3rem',
+                transition: 'opacity 0.2s',
+                borderRadius: 6,
+              }}
+              aria-label="Previous explanation slide"
+            >
+              ‹
+            </button>
+            <span style={{ flex: 1, minWidth: 0, color: '#334155', fontWeight: 500, fontSize: '0.97rem', whiteSpace: 'pre-line', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+              {slides[current]}
+            </span>
+            <button
+              onClick={() => setExplanationSlide((current + 1) % totalSlides)}
+              disabled={totalSlides <= 1}
+              style={{
+                background: 'none',
+                border: 'none',
+                color: '#a259ff',
+                fontSize: '1.2rem',
+                fontWeight: 700,
+                cursor: totalSlides > 1 ? 'pointer' : 'default',
+                opacity: totalSlides > 1 ? 1 : 0.3,
+                padding: '0 0.3rem',
+                transition: 'opacity 0.2s',
+                borderRadius: 6,
+              }}
+              aria-label="Next explanation slide"
+            >
+              ›
+            </button>
+            {totalSlides > 1 && (
+              <span style={{
+                position: 'absolute',
+                bottom: 6,
+                right: 12,
+                fontSize: '0.85rem',
+                color: '#64748b',
+                fontWeight: 400,
+                opacity: 0.7,
+              }}>{current + 1}/{totalSlides}</span>
+            )}
+          </div>
+        );
+      })()}
       {loading && <div style={{ marginTop: '1rem', color: '#2563eb' }}>Generating...</div>}
       {result && result.startsWith('Error:') && (
         <pre style={{
