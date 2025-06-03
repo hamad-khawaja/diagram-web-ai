@@ -7,6 +7,8 @@ import { ExampleDiagramSlideshow } from "../components/ExampleDiagramSlideshow";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 
+import Link from "next/link";
+
 import { Header } from "../components/header";
 
 const EditorWithPreview = dynamic(
@@ -401,18 +403,20 @@ const Home: NextPage = () => {
               Visualize, edit, and share cloud diagrams for AWS, Azure, GCP, and more.
             </span>
             <div style={{ marginTop: '0.7rem', display: 'flex', gap: '0.7rem' }}>
-              <a href="/" style={{
-                background: 'linear-gradient(90deg, #38bdf8 0%, #2563eb 100%)',
-                color: '#fff',
-                fontWeight: 700,
-                fontSize: '1.07rem',
-                borderRadius: 8,
-                padding: '0.55rem 1.4rem',
-                textDecoration: 'none',
-                boxShadow: '0 2px 8px #2563eb22',
-                transition: 'background 0.18s',
-                display: 'inline-block',
-              }}>Start diagramming for free</a>
+              <Link href="/" legacyBehavior>
+                <a style={{
+                  background: 'linear-gradient(90deg, #38bdf8 0%, #2563eb 100%)',
+                  color: '#fff',
+                  fontWeight: 700,
+                  fontSize: '1.07rem',
+                  borderRadius: 8,
+                  padding: '0.55rem 1.4rem',
+                  textDecoration: 'none',
+                  boxShadow: '0 2px 8px #2563eb22',
+                  transition: 'background 0.18s',
+                  display: 'inline-block',
+                }}>Start diagramming for free</a>
+              </Link>
               <a href="mailto:support@clouddiagram.ai" style={{
                 color: '#fff',
                 fontWeight: 500,
