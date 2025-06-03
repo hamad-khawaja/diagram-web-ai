@@ -3,6 +3,7 @@ import Head from "next/head";
 import Script from "next/script";
 import React from "react";
 import { MarkdownSlide } from "../components/MarkdownSlide";
+import { ExampleDiagramSlideshow } from "../components/ExampleDiagramSlideshow";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 
@@ -261,7 +262,7 @@ const Home: NextPage = () => {
           </ol>
         </div>
 
-        {/* Example Diagram */}
+        {/* Example Diagram Slideshow */}
         <div style={{ flex: 1, minWidth: 320, maxWidth: 480, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.2rem' }}>
           <h2 style={{
             fontSize: '1.22rem',
@@ -272,38 +273,83 @@ const Home: NextPage = () => {
             fontFamily: 'Sora, Inter, Montserrat, Arial, sans-serif',
             textAlign: 'center',
           }}>
-            Example Diagram
+            Example Diagrams
           </h2>
-          <div style={{
-            background: '#fff',
-            borderRadius: 16,
-            boxShadow: '0 2px 16px 0 rgba(162,89,255,0.07)',
-            padding: '1.2rem',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            maxWidth: 480,
-            width: '100%',
-          }}>
-            <Image src="/gcp.png" alt="GCP Simple Web App Example Diagram" width={340} height={340} style={{ width: '100%', maxWidth: 340, height: 'auto', borderRadius: 12, boxShadow: '0 2px 12px #2563eb11', marginBottom: '1.1rem', background: '#f8fafc' }} />
-            <div style={{
-              color: '#334155',
-              fontSize: '1.05rem',
-              fontWeight: 500,
-              textAlign: 'center',
-              marginBottom: '0.2rem',
-            }}>
-              <b>GCP Simple Web App</b>
-            </div>
-            <div style={{
-              color: '#64748b',
-              fontSize: '0.98rem',
-              textAlign: 'center',
-              opacity: 0.92,
-            }}>
-              A load-balanced web tier on Compute Engine connects to Cloud SQL and Cloud Storage.
-            </div>
-          </div>
+          <ExampleDiagramSlideshow />
+        </div>
+      </section>
+
+      {/* Cloud Diagram Step-by-Step Guide section */}
+      <section style={{
+        width: '100%',
+        maxWidth: 900,
+        margin: '2.5rem auto 0 auto',
+        padding: '2.2rem 1.5rem 1.5rem 1.5rem',
+        background: 'linear-gradient(90deg, #f0f9ff 0%, #e0e7ff 100%)',
+        borderRadius: 18,
+        boxShadow: '0 4px 32px 0 rgba(37,99,235,0.07)',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '1.2rem',
+        position: 'relative',
+        zIndex: 2,
+      }}>
+        <h2 style={{
+          fontSize: '1.25rem',
+          fontWeight: 700,
+          color: '#2563eb',
+          marginBottom: '0.5rem',
+          letterSpacing: '0.01em',
+          fontFamily: 'Sora, Inter, Montserrat, Arial, sans-serif',
+          textAlign: 'center',
+        }}>
+          Step-by-step guide on generating a cloud architecture diagram
+        </h2>
+        <ol style={{
+          listStyle: 'decimal',
+          padding: '0 0 0 1.2rem',
+          margin: '0.7rem 0 0 0',
+          width: '100%',
+          maxWidth: 700,
+          color: '#334155',
+          fontSize: '1.08rem',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '0.85rem',
+        }}>
+          <li>
+            <b>Write a clear prompt describing your cloud architecture.</b> While a simple one-liner works, the best results come from prompts that are 3-4 sentences long. Start by listing the main resources and any logical or network groupings (like VPCs, subnets, microservices, or resource groups).
+          </li>
+          <li>
+            <b>Describe how the components connect and interact.</b> Outline the flow of data or requests through your system (e.g., “A user uploads a file to the web application, which stores it in object storage and triggers a compute function”).
+          </li>
+          <li>
+            <b>Generate your diagram</b> using the completed prompt.
+          </li>
+          <li>
+            <b>Refine your diagram with follow-up prompts.</b> You can iteratively improve the diagram by providing additional instructions or edits.
+          </li>
+          <li>
+            <b>Manually adjust the layout</b> using the diagram editor’s GUI controls for the perfect presentation (if supported).
+          </li>
+        </ol>
+        <div style={{
+          marginTop: '1.2rem',
+          background: '#f8fafc',
+          borderRadius: 12,
+          padding: '1.1rem 1.3rem',
+          color: '#2563eb',
+          fontSize: '1.05rem',
+          boxShadow: '0 2px 12px 0 rgba(37,99,235,0.07)',
+          maxWidth: 700,
+          width: '100%',
+        }}>
+          <b>Tips for generating cloud diagrams:</b>
+          <ul style={{ margin: '0.7rem 0 0 1.1rem', color: '#334155', fontSize: '1.03rem' }}>
+            <li>If you’re short on time, paste relevant excerpts from docs, transcripts, or code (like CloudFormation, Terraform, Pulumi, ARM, or Bicep) instead of writing a prompt from scratch.</li>
+            <li>Collaborate with an AI assistant to help list out resources and describe the data flow for a more complete prompt.</li>
+          </ul>
         </div>
       </section>
 
