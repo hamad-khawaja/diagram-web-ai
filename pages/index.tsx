@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Script from "next/script";
 import React from "react";
+import { MarkdownSlide } from "../components/MarkdownSlide";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 
@@ -693,30 +694,32 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
       {/* Download links for all diagram files */}
       {Object.keys(downloadUrls).length > 0 && !loading && !result?.startsWith('Error:') && (
         <div style={{ margin: '1rem 0', display: 'flex', flexWrap: 'wrap', gap: '0.7rem' }}>
-          {Object.entries(downloadUrls).map(([type, url]) => (
-            <a
-              key={type}
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                padding: '0.65rem 1.5rem',
-                background: 'linear-gradient(90deg, #38bdf8 0%, #2563eb 100%)',
-                color: 'white',
-                border: 'none',
-                borderRadius: '6px',
-                fontWeight: 'bold',
-                fontSize: '1.05rem',
-                boxShadow: '0 2px 8px rgba(37,99,235,0.12)',
-                cursor: 'pointer',
-                textDecoration: 'none',
-                transition: 'background 0.2s',
-                display: 'inline-block',
-              }}
-            >
-              Download {type.toUpperCase()}
-            </a>
-          ))}
+          {Object.entries(downloadUrls)
+            .filter(([type]) => type.toLowerCase() !== 'dot')
+            .map(([type, url]) => (
+              <a
+                key={type}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  padding: '0.65rem 1.5rem',
+                  background: 'linear-gradient(90deg, #38bdf8 0%, #2563eb 100%)',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '6px',
+                  fontWeight: 'bold',
+                  fontSize: '1.05rem',
+                  boxShadow: '0 2px 8px rgba(37,99,235,0.12)',
+                  cursor: 'pointer',
+                  textDecoration: 'none',
+                  transition: 'background 0.2s',
+                  display: 'inline-block',
+                }}
+              >
+                Download {type.toUpperCase()}
+              </a>
+            ))}
         </div>
       )}
       {/* Show explanation as a vibrant, compact slideshow if available */}
@@ -769,7 +772,7 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
               ‹
             </button>
             <span style={{ flex: 1, minWidth: 0, color: '#334155', fontWeight: 500, fontSize: '0.97rem', whiteSpace: 'pre-line', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-              {slides[current]}
+              <MarkdownSlide content={slides[current]} />
             </span>
             <button
               onClick={() => setExplanationSlide((current + 1) % totalSlides)}
