@@ -1,4 +1,6 @@
+
 import Head from "next/head";
+import Link from "next/link";
 
 export default function FAQ() {
   return (
@@ -17,7 +19,7 @@ export default function FAQ() {
       <h2>What formats can I download?</h2>
       <p>You can download diagrams as PNG or SVG images for easy sharing and documentation.</p>
       <h2>Is my data private?</h2>
-      <p>Yes. We do not sell or share your data. See our <a href="/privacy">Privacy Policy</a> for details.</p>
+      <p>Yes. We do not sell or share your data. See our <Link href="/privacy" style={{ color: '#2563eb', textDecoration: 'underline' }}>Privacy Policy</Link> for details.</p>
       <h2>Can I use this for AWS, Azure, and GCP?</h2>
       <p>Yes, CloudDiagram.AI supports all three major cloud providers.</p>
       <h2>Who is this for?</h2>
