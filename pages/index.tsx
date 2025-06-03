@@ -3,6 +3,7 @@ import Head from "next/head";
 import Script from "next/script";
 import React from "react";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 
 import { Header } from "../components/header";
 
@@ -37,7 +38,7 @@ const Home: NextPage = () => {
         position: 'relative',
       }}>
         <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '1.1rem' }}>
-          <img src="/clouddiagram-logo.svg" alt="CloudDiagram.AI Logo" style={{ width: 38, height: 38, marginLeft: 32, borderRadius: 12, boxShadow: '0 1px 6px #2563eb22' }} />
+          <Image src="/clouddiagram-logo.svg" alt="CloudDiagram.AI Logo" width={38} height={38} style={{ marginLeft: 32, borderRadius: 12, boxShadow: '0 1px 6px #2563eb22' }} priority />
           <span style={{
             fontSize: '1.35rem',
             fontWeight: 700,
@@ -177,7 +178,7 @@ const Home: NextPage = () => {
                 flexShrink: 0,
               }}>1</span>
               <span style={{ fontSize: '1.08rem', color: '#334155', fontWeight: 500 }}>
-                <b>Describe your architecture</b> in plain English (e.g., "A 3-tier web app with load balancer, 2 app servers, and a database").
+              <b>Describe your architecture</b> in plain English (e.g., &quot;A 3-tier web app with load balancer, 2 app servers, and a database&quot;).
               </span>
             </li>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '1.1rem' }}>
@@ -283,15 +284,7 @@ const Home: NextPage = () => {
             maxWidth: 480,
             width: '100%',
           }}>
-            <img src="/gcp.png" alt="GCP Simple Web App Example Diagram" style={{
-              width: '100%',
-              maxWidth: 340,
-              height: 'auto',
-              borderRadius: 12,
-              boxShadow: '0 2px 12px #2563eb11',
-              marginBottom: '1.1rem',
-              background: '#f8fafc',
-            }} />
+            <Image src="/gcp.png" alt="GCP Simple Web App Example Diagram" width={340} height={340} style={{ width: '100%', maxWidth: 340, height: 'auto', borderRadius: 12, boxShadow: '0 2px 12px #2563eb11', marginBottom: '1.1rem', background: '#f8fafc' }} />
             <div style={{
               color: '#334155',
               fontSize: '1.05rem',
@@ -343,7 +336,7 @@ const Home: NextPage = () => {
           zIndex: 0,
         }} />
         <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', zIndex: 1 }}>
-          <img src="/clouddiagram-logo.svg" alt="CloudDiagram.AI Logo" style={{ width: 28, height: 28, borderRadius: 8, boxShadow: '0 1px 4px #2563eb22' }} />
+          <Image src="/clouddiagram-logo.svg" alt="CloudDiagram.AI Logo" width={28} height={28} style={{ borderRadius: 8, boxShadow: '0 1px 4px #2563eb22' }} />
           <span style={{ fontWeight: 600, fontSize: '1.08rem', letterSpacing: '0.5px', color: '#fff', opacity: 0.92 }}>
             CloudDiagram.AI &mdash; Effortless Cloud Architecture Diagrams
           </span>
