@@ -735,7 +735,7 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
             <textarea
               value={input}
               onChange={e => setInput(e.target.value)}
-              placeholder='e.g. "A 3-tier web app with load balancer, 2 app servers, and a database"'
+              placeholder='e.g. &quot;A 3-tier web app with load balancer, 2 app servers, and a database&quot;'
               rows={1}
               style={{
                 flex: 1,

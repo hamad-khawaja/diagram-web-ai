@@ -80,7 +80,7 @@ export default function FAQ() {
           <h2 style={{marginTop: '2.2rem', color: '#a259ff', fontWeight: 700, fontSize: '1.18rem'}}>What is CloudDiagram AI?</h2>
           <p>CloudDiagram AI is an AI-powered tool that instantly generates professional cloud architecture diagrams for AWS, Azure, and GCP from your natural language prompts. Just describe your architecture, and get a ready-to-use diagram.</p>
           <h2 style={{marginTop: '2.2rem', color: '#a259ff', fontWeight: 700, fontSize: '1.18rem'}}>How does it work?</h2>
-          <p>Simply enter a description of your cloud architecture (e.g., "A 3-tier web app with load balancer, 2 app servers, and a database") and select your cloud provider. Our AI interprets your prompt and generates a visual diagram.</p>
+          <p>Simply enter a description of your cloud architecture (e.g., &quot;A 3-tier web app with load balancer, 2 app servers, and a database&quot;) and select your cloud provider. Our AI interprets your prompt and generates a visual diagram.</p>
           <h2 style={{marginTop: '2.2rem', color: '#a259ff', fontWeight: 700, fontSize: '1.18rem'}}>Is CloudDiagram AI free?</h2>
           <p>Yes! You can generate and download diagrams for free. No signup is required for basic usage.</p>
           <h2 style={{marginTop: '2.2rem', color: '#a259ff', fontWeight: 700, fontSize: '1.18rem'}}>What formats can I download?</h2>
