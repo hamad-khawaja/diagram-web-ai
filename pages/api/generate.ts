@@ -1,8 +1,36 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { getCognitoJwt, getCachedJwt } from '../../lib/cognitoAuth';
+import RATE_LIMIT from '../../lib/ipRateLimitStore';
 
 // This API route proxies requests to the AWS API Gateway, handling Cognito auth server-side
+const MAX_REQUESTS = 3;
+const WINDOW_MS = 12 * 60 * 60 * 1000; // 12 hours
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  // Get client IP (works for Vercel/Next.js API routes, may need adjustment for proxies)
+  const ip =
+    req.headers['x-forwarded-for']?.toString().split(',')[0].trim() ||
+    req.socket.remoteAddress ||
+    'unknown';
+
+  const now = Date.now();
+  const entry = RATE_LIMIT[ip];
+  if (entry) {
+    if (now - entry.firstRequest < WINDOW_MS) {
+      if (entry.count >= MAX_REQUESTS) {
+        const wait = Math.ceil((WINDOW_MS - (now - entry.firstRequest)) / (60 * 60 * 1000));
+        return res.status(429).json({ error: `Rate limit exceeded. Try again in ${wait} hour(s).` });
+      } else {
+        entry.count += 1;
+      }
+    } else {
+      // Reset window
+      entry.count = 1;
+      entry.firstRequest = now;
+    }
+  } else {
+    RATE_LIMIT[ip] = { count: 1, firstRequest: now };
+  }
   if (req.method !== 'POST') {
     res.setHeader('Allow', ['POST']);
     return res.status(405).json({ error: 'Method not allowed' });
