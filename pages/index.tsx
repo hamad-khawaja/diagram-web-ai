@@ -1,3 +1,4 @@
+// Cognito auth is now handled server-side in /api/generate
 import type { NextPage } from "next";
 import Head from "next/head";
 import Script from "next/script";
@@ -535,7 +536,8 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
     setLoading(true);
     setResult(null);
     try {
-      const response = await fetch('http://localhost:5050/generate', {
+      // Call the Next.js API route, which handles Cognito and AWS API Gateway
+      const response = await fetch('/api/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -552,7 +554,6 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
         try {
           const errorData = await response.json();
           console.log('API error JSON:', errorData);
-          // If errorData is an object with an error property, show it directly in the UI
           if (errorData && (errorData.error || errorData.message)) {
             setResult('Error: ' + (errorData.error || errorData.message));
             return;
@@ -574,7 +575,7 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
       setResult(typeof data === 'string' ? data : JSON.stringify(data, null, 2));
       // Set code in editor if available
       if (data && data.raw_code_url) {
-        const url = data.raw_code_url.startsWith('http') ? data.raw_code_url : `http://localhost:5050${data.raw_code_url}`;
+        const url = data.raw_code_url.startsWith('http') ? data.raw_code_url : data.raw_code_url;
         const codeResp = await fetch(url);
         if (codeResp.ok) {
           const codeText = await codeResp.text();
@@ -586,7 +587,7 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
         const urls: { [key: string]: string } = {};
         Object.entries(data.diagram_files).forEach(([type, path]) => {
           if (typeof path === 'string') {
-            urls[type] = path.startsWith('http') ? path : `http://localhost:5050${path}`;
+            urls[type] = path.startsWith('http') ? path : `https://oe4b2ep0ch.execute-api.us-east-1.amazonaws.com${path}`;
           }
         });
         setDownloadUrls(urls);
@@ -614,12 +615,12 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
         setDiagramDataUrl(null);
       }
       // Set code download links
-      setRawCodeUrl(data?.raw_code_url ? (data.raw_code_url.startsWith('http') ? data.raw_code_url : `http://localhost:5050${data.raw_code_url}`) : null);
-      setSanitizedCodeUrl(data?.sanitized_code_url ? (data.sanitized_code_url.startsWith('http') ? data.sanitized_code_url : `http://localhost:5050${data.sanitized_code_url}`) : null);
+      setRawCodeUrl(data?.raw_code_url ? (data.raw_code_url.startsWith('http') ? data.raw_code_url : `https://oe4b2ep0ch.execute-api.us-east-1.amazonaws.com${data.raw_code_url}`) : null);
+      setSanitizedCodeUrl(data?.sanitized_code_url ? (data.sanitized_code_url.startsWith('http') ? data.sanitized_code_url : `https://oe4b2ep0ch.execute-api.us-east-1.amazonaws.com${data.sanitized_code_url}`) : null);
       // Set explanation and markdown url
       setExplanation(data?.explanation || null);
       setExplanationSlide(0);
-      setExplanationMdUrl(data?.explanation_md_url ? (data.explanation_md_url.startsWith('http') ? data.explanation_md_url : `http://localhost:5050${data.explanation_md_url}`) : null);
+      setExplanationMdUrl(data?.explanation_md_url ? (data.explanation_md_url.startsWith('http') ? data.explanation_md_url : `https://oe4b2ep0ch.execute-api.us-east-1.amazonaws.com${data.explanation_md_url}`) : null);
     } catch (err: any) {
       setResult('Error: ' + (err?.message || JSON.stringify(err) || 'Unknown error'));
     } finally {
