@@ -6,9 +6,13 @@ import {
 } from 'amazon-cognito-identity-js';
 
 const poolData = {
-  UserPoolId: process.env.NEXT_PUBLIC_COGNITO_USER_POOL_ID!,
-  ClientId: process.env.NEXT_PUBLIC_COGNITO_CLIENT_ID!,
+  UserPoolId: process.env.NEXT_PUBLIC_COGNITO_USER_POOL_ID || 'dummy-pool-id',
+  ClientId: process.env.NEXT_PUBLIC_COGNITO_CLIENT_ID || 'dummy-client-id',
 };
+
+if (!process.env.NEXT_PUBLIC_COGNITO_USER_POOL_ID || !process.env.NEXT_PUBLIC_COGNITO_CLIENT_ID) {
+  console.warn('[Cognito] WARNING: Using dummy Cognito UserPoolId/ClientId. Set NEXT_PUBLIC_COGNITO_USER_POOL_ID and NEXT_PUBLIC_COGNITO_CLIENT_ID in your .env.local for real authentication.');
+}
 
 const userPool = new CognitoUserPool(poolData);
 

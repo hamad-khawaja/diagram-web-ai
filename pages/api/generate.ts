@@ -13,13 +13,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     req.socket.remoteAddress ||
     'unknown';
 
+  // Debug log for IP and rate limit entry
+  console.log('Client IP:', ip, 'RateLimit:', RATE_LIMIT[ip]);
+
   const now = Date.now();
   const entry = RATE_LIMIT[ip];
   if (entry) {
     if (now - entry.firstRequest < WINDOW_MS) {
       if (entry.count >= MAX_REQUESTS) {
         const wait = Math.ceil((WINDOW_MS - (now - entry.firstRequest)) / (60 * 60 * 1000));
-        return res.status(429).json({ error: `Rate limit exceeded. Try again in ${wait} hour(s).` });
+        // Debug log for rate limit exceeded
+        console.log('Rate limit exceeded for IP:', ip);
+        res.status(429).json({ error: `Rate limit exceeded. Try again in ${wait} hour(s).` });
+        return;
       } else {
         entry.count += 1;
       }

@@ -440,7 +440,7 @@ const Home: NextPage = () => {
               <Link href="/blog" style={{ color: '#fff', fontWeight: 500, fontSize: '1.07rem', opacity: 0.85, textDecoration: 'underline', borderRadius: 8, padding: '0.55rem 1.1rem', background: 'rgba(162,89,255,0.13)', boxShadow: '0 1px 4px #a259ff11', transition: 'background 0.18s', display: 'inline-block' }}>Blog</Link>
               <Link href="/privacy" style={{ color: '#fff', fontWeight: 500, fontSize: '1.07rem', opacity: 0.85, textDecoration: 'underline', borderRadius: 8, padding: '0.55rem 1.1rem', background: 'rgba(162,89,255,0.13)', boxShadow: '0 1px 4px #a259ff11', transition: 'background 0.18s', display: 'inline-block' }}>Privacy</Link>
               <Link href="/terms" style={{ color: '#fff', fontWeight: 500, fontSize: '1.07rem', opacity: 0.85, textDecoration: 'underline', borderRadius: 8, padding: '0.55rem 1.1rem', background: 'rgba(162,89,255,0.13)', boxShadow: '0 1px 4px #a259ff11', transition: 'background 0.18s', display: 'inline-block' }}>Terms</Link>
-              <a href="mailto:support@clouddiagram.ai" style={{
+              <a href="mailto:hamad.khawaja@outlook.com" style={{
                 color: '#fff',
                 fontWeight: 500,
                 fontSize: '1.07rem',
@@ -629,6 +629,36 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
   };
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      {/* New: Title and subtitle above the input box */}
+      <div style={{
+        width: '100%',
+        maxWidth: 700,
+        margin: '2.2rem auto 1.2rem auto',
+        textAlign: 'center',
+        padding: '0 1rem',
+      }}>
+        <h1 style={{
+          fontSize: '2.2rem',
+          fontWeight: 800,
+          letterSpacing: '-0.01em',
+          color: '#1e293b',
+          marginBottom: '0.35rem',
+          fontFamily: 'Sora, Inter, Montserrat, Arial, sans-serif',
+          textShadow: '0 2px 12px #a259ff11',
+        }}>
+          CloudDiagram AI
+        </h1>
+        <div style={{
+          fontSize: '1.18rem',
+          color: '#475569',
+          fontWeight: 500,
+          marginBottom: '0.7rem',
+          fontFamily: 'Inter, Montserrat, Arial, sans-serif',
+          opacity: 0.93,
+        }}>
+          Fast and efficient prompt to cloud architecture diagram generation.
+        </div>
+      </div>
       {/* Tip moved below the input box */}
       <div style={{ width: '100%', maxWidth: '600px', marginBottom: '1rem' }} />
       <div style={{ width: '100%', maxWidth: '820px', marginBottom: '1.5rem' }}>
