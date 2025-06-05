@@ -17,7 +17,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   // Debug log for IP and rate limit entry
   console.log('Client IP:', ip, 'RateLimit:', RATE_LIMIT[ip]);
 
-  // Skip rate limiting for exempt IP
+  // Skip rate limiting for exempt IP ??
   if (EXEMPT_IP && ip === EXEMPT_IP) {
     console.log('Rate limiting skipped for exempt IP:', ip);
   } else {
