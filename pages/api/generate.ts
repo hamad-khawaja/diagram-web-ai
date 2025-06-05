@@ -68,8 +68,25 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
   }
 
+  // Retry logic for backend 503 errors
+  async function fetchWithRetry(url: string, options: RequestInit, retries = 3, delayMs = 500): Promise<Response> {
+    let lastResp: Response | null = null;
+    for (let attempt = 1; attempt <= retries; attempt++) {
+      const resp = await fetch(url, options);
+      if (resp.status !== 503) {
+        return resp;
+      }
+      lastResp = resp;
+      if (attempt < retries) {
+        await new Promise(r => setTimeout(r, delayMs));
+      }
+    }
+    // lastResp is guaranteed to be set if we exit the loop
+    return lastResp!;
+  }
+
   try {
-    const apiResp = await fetch('https://oe4b2ep0ch.execute-api.us-east-1.amazonaws.com/generate', {
+    const apiResp = await fetchWithRetry('https://oe4b2ep0ch.execute-api.us-east-1.amazonaws.com/generate', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
