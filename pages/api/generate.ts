@@ -86,7 +86,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    const apiResp = await fetchWithRetry('https://oe4b2ep0ch.execute-api.us-east-1.amazonaws.com/generate', {
+    const apiResp = await fetchWithRetry('https://exxapi4h0e.execute-api.us-east-1.amazonaws.com/generate', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -584,12 +584,11 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
       }
       // Set all diagram file download URLs
       if (data && data.diagram_files) {
-        const urls: { [key: string]: string } = {};
-        Object.entries(data.diagram_files).forEach(([type, path]) => {
-          if (typeof path === 'string') {
-            urls[type] = path.startsWith('http') ? path : `https://oe4b2ep0ch.execute-api.us-east-1.amazonaws.com${path}`;
-          }
-        });
+        const urls: { [key: string]: string } = {};          Object.entries(data.diagram_files).forEach(([type, path]) => {
+            if (typeof path === 'string') {
+              urls[type] = path.startsWith('http') ? path : `https://exxapi4h0e.execute-api.us-east-1.amazonaws.com${path}`;
+            }
+          });
         setDownloadUrls(urls);
         // Set PNG for preview if available
         if (urls.png) {
@@ -615,12 +614,12 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
         setDiagramDataUrl(null);
       }
       // Set code download links
-      setRawCodeUrl(data?.raw_code_url ? (data.raw_code_url.startsWith('http') ? data.raw_code_url : `https://oe4b2ep0ch.execute-api.us-east-1.amazonaws.com${data.raw_code_url}`) : null);
-      setSanitizedCodeUrl(data?.sanitized_code_url ? (data.sanitized_code_url.startsWith('http') ? data.sanitized_code_url : `https://oe4b2ep0ch.execute-api.us-east-1.amazonaws.com${data.sanitized_code_url}`) : null);
+      setRawCodeUrl(data?.raw_code_url ? (data.raw_code_url.startsWith('http') ? data.raw_code_url : `https://exxapi4h0e.execute-api.us-east-1.amazonaws.com${data.raw_code_url}`) : null);
+      setSanitizedCodeUrl(data?.sanitized_code_url ? (data.sanitized_code_url.startsWith('http') ? data.sanitized_code_url : `https://exxapi4h0e.execute-api.us-east-1.amazonaws.com${data.sanitized_code_url}`) : null);
       // Set explanation and markdown url
       setExplanation(data?.explanation || null);
       setExplanationSlide(0);
-      setExplanationMdUrl(data?.explanation_md_url ? (data.explanation_md_url.startsWith('http') ? data.explanation_md_url : `https://oe4b2ep0ch.execute-api.us-east-1.amazonaws.com${data.explanation_md_url}`) : null);
+      setExplanationMdUrl(data?.explanation_md_url ? (data.explanation_md_url.startsWith('http') ? data.explanation_md_url : `https://exxapi4h0e.execute-api.us-east-1.amazonaws.com${data.explanation_md_url}`) : null);
     } catch (err: any) {
       setResult('Error: ' + (err?.message || JSON.stringify(err) || 'Unknown error'));
     } finally {
