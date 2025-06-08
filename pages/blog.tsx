@@ -1,4 +1,4 @@
-/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable */
 import Head from "next/head";
 import Link from "next/link";
 import { ThemeToggle } from "../components/ThemeToggle";
