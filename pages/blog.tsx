@@ -899,7 +899,7 @@ export default function Blog() {
                   lineHeight: 1.6, 
                   color: 'var(--text-secondary)'
                 }}>
-                  We define various failure modes and provide clear feedback when they occur. From "I need more details about your database setup" to "This seems outside the scope of cloud architecture," we help users understand and recover from issues.
+                  We define various failure modes and provide clear feedback when they occur. From &ldquo;I need more details about your database setup&rdquo; to &ldquo;This seems outside the scope of cloud architecture,&rdquo; we help users understand and recover from issues.
                 </p>
               </div>
             </div>
@@ -989,7 +989,7 @@ export default function Blog() {
                 lineHeight: 1.7, 
                 color: 'var(--text-secondary)'
               }}>
-                AI features work best when they solve a specific, well-defined problem. "Make diagramming easier with AI" was too vague. "Generate professional cloud architecture diagrams from natural language descriptions" gave us a clear target and success criteria.
+                AI features work best when they solve a specific, well-defined problem. &ldquo;Make diagramming easier with AI&rdquo; was too vague. &ldquo;Generate professional cloud architecture diagrams from natural language descriptions&rdquo; gave us a clear target and success criteria.
               </p>
             </div>
 
