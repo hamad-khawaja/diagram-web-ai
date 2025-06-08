@@ -752,7 +752,7 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
             <textarea
               value={input}
               onChange={e => setInput(e.target.value)}
-              placeholder='e.g. &quot;A 3-tier web app with load balancer, 2 app servers, and a database&quot;'
+              placeholder='e.g. &quot;A scalable e-commerce platform with CloudFront CDN, Application Load Balancer, Auto Scaling Group with 3 EC2 instances, RDS MySQL database with read replicas, ElastiCache Redis cluster, and S3 bucket for static assets&quot;'
               rows={4}
               style={{
                 flex: 1,
