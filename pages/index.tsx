@@ -864,7 +864,7 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
       >
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }} xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#2563eb" fillOpacity="0.13"/><path d="M12 7.5V13" stroke="#2563eb" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/><circle cx="12" cy="16" r="1" fill="#2563eb"/></svg>
         <span>
-          <span style={{ fontWeight: 700, color: '#2563eb' }}>Tip:</span>To get AI to improve or modify your diagram, provide detailed descriptions of your architecture. Include specific components, their connections, and how they interact with each other. The more comprehensive details you provide, the better quality diagram you'll receive.
+          <span style={{ fontWeight: 700, color: '#2563eb' }}>Tip:</span>To get AI to improve or modify your diagram, provide detailed descriptions of your architecture. Include specific components, their connections, and how they interact with each other. The more comprehensive details you provide, the better quality diagram you&apos;ll receive.
           <br></br><b>Current Limitations:</b>
           <ul>
             <li>Hybrid and multi-cloud diagrams are not supported</li>
