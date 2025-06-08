@@ -62,10 +62,10 @@ export const ExampleDiagramSlideshow: React.FC = () => {
           aspectRatio: '1 / 1',
         }}
       />
-      <div style={{ color: '#334155', fontSize: '1.05rem', fontWeight: 500, textAlign: 'center', marginBottom: '0.2rem' }}>
+      <div style={{ color: '#334155', fontSize: '1rem', fontWeight: 500, textAlign: 'center', marginBottom: '0.2rem' }}>
         <b>{current.title}</b>
       </div>
-      <div style={{ color: '#64748b', fontSize: '0.98rem', textAlign: 'center', opacity: 0.92 }}>
+      <div style={{ color: '#64748b', fontSize: '0.9rem', textAlign: 'center', opacity: 0.92 }}>
         {current.description}
       </div>
       <button
@@ -79,7 +79,7 @@ export const ExampleDiagramSlideshow: React.FC = () => {
         aria-label="Next example"
       >›</button>
       {total > 1 && (
-        <span style={{ position: 'absolute', bottom: 10, right: 18, fontSize: '0.92rem', color: '#64748b', fontWeight: 400, opacity: 0.7 }}>{index + 1}/{total}</span>
+        <span style={{ position: 'absolute', bottom: 10, right: 18, fontSize: '0.9rem', color: '#64748b', fontWeight: 400, opacity: 0.7 }}>{index + 1}/{total}</span>
       )}
     </div>
   );

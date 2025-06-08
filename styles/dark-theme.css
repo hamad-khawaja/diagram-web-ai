@@ -1,0 +1,103 @@
+/* Custom dark theme button styles */
+[data-theme='dark'] button,
+[data-theme='dark'] .button {
+  transition: all 0.2s ease;
+}
+
+[data-theme='dark'] button:hover,
+[data-theme='dark'] .button:hover {
+  background-color: rgba(124, 123, 255, 0.8) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Override form inputs in dark mode */
+[data-theme='dark'] input,
+[data-theme='dark'] textarea,
+[data-theme='dark'] select {
+  color: var(--text-primary);
+  background-color: var(--input-bg);
+  border-color: var(--border-color);
+}
+
+/* Add subtle hover effect to inputs in dark mode */
+[data-theme='dark'] input:hover,
+[data-theme='dark'] textarea:hover,
+[data-theme='dark'] select:hover {
+  background-color: rgba(54, 54, 54, 0.8);
+}
+
+/* Add focus effect to inputs in dark mode */
+[data-theme='dark'] input:focus,
+[data-theme='dark'] textarea:focus,
+[data-theme='dark'] select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(124, 123, 255, 0.4);
+}
+
+/* Card styles for dark mode */
+[data-theme='dark'] .card {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Override chart background in dark mode to keep it light */
+[data-theme='dark'] #chart {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Make sure the editor stays white in dark mode */
+[data-theme='dark'] .cm-editor {
+  background-color: #ffffff;
+  color: #1e293b;
+}
+
+/* Maintain syntax highlighting in dark mode */
+[data-theme='dark'] .cm-editor .cm-content {
+  color: #1e293b;
+}
+
+/* CodeMirror line number and gutter styles in dark mode */
+[data-theme='dark'] .cm-editor .cm-gutters {
+  background-color: #f0f0f0;
+  color: #64748b;
+  border-right: 1px solid #e2e8f0;
+}
+
+/* Eraser.io-inspired form styles */
+[data-theme='dark'] form {
+  background: linear-gradient(132deg, #333333, #2c2c2c 54%, #323232 86%) !important;
+}
+
+[data-theme='dark'] .editor-wrapper {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark mode scrollbar */
+[data-theme='dark'] ::-webkit-scrollbar {
+  width: 10px;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-track {
+  background: var(--background-alt);
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 5px;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Subtle transition for all elements when toggling themes */
+* {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}

@@ -58,4 +58,3 @@ And respond with:
 1. Enter a description and click **Generate**.
 2. The code editor will be filled with the generated Python code.
 3. The diagram PNG will appear on the right, aligned with the code.
-4. Click **Clear** to reset everything.

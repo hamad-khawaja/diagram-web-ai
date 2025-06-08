@@ -47,60 +47,210 @@ export const EditorWithPreview: React.FC<EditorWithPreviewProps> = ({ code }) =>
 
   return (
     <div
-      className="grid grid-cols-2"
+      className="editor-container"
       style={{
-        margin: '1.5rem 0',
-        background: '#f8fafc',
-        border: '1px solid #e5e7eb',
-        borderRadius: 12,
-        boxShadow: '0 2px 16px 0 rgba(100,116,139,0.06)',
+        margin: '0 0 1.5rem 0',
+        background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
+        border: '1px solid #e2e8f0',
+        borderRadius: 16,
+        boxShadow: '0 8px 32px 0 rgba(100,116,139,0.12), 0 2px 8px 0 rgba(148,163,184,0.08)',
+        overflow: 'hidden',
+        position: 'relative',
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
+        animation: 'fadeInEditor 0.6s ease-out',
       }}
     >
+      {/* Enhanced Left Panel - Code Editor */}
       <div
-        className="overflow-y-scroll border-r"
+        className="editor-panel overflow-hidden border-r"
         style={{
-          padding: '1.2rem 1.1rem 1.2rem 1.5rem',
-          minHeight: 'calc(100vh - 120px)',
           display: 'flex',
           flexDirection: 'column',
           height: '100%',
-          background: '#f9fafb',
-          borderRight: '1px solid #e5e7eb',
+          background: 'linear-gradient(180deg, #ffffff 0%, #fafbfc 100%)',
+          borderRight: '1px solid #e2e8f0',
+          position: 'relative',
         }}
       >
-        <div style={{
-          fontWeight: 700,
-          fontSize: '1.08rem',
-          marginBottom: '1.1rem',
-          color: '#2563eb',
-          letterSpacing: '0.01em',
+        {/* Editor Header with Toolbar */}
+        <div className="editor-toolbar" style={{
+          padding: '1rem 1.5rem',
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          color: '#ffffff',
+          borderBottom: '1px solid #e2e8f0',
+          width: '100%',
+          boxSizing: 'border-box',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          minHeight: '90px',
         }}>
-          CloudDiagram Code Editor
+          <div className="editor-toolbar-title" style={{
+            fontWeight: 700,
+            fontSize: '1rem',
+            letterSpacing: '0.01em',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+          }}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="16,18 22,12 16,6"></polyline>
+              <polyline points="8,6 2,12 8,18"></polyline>
+            </svg>
+            CloudDiagram Code Editor
+          </div>
+          <div className="editor-toolbar-buttons" style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+            <button
+              onClick={() => navigator.clipboard.writeText(editorCode)}
+              style={{
+                background: 'rgba(255,255,255,0.15)',
+                border: '1px solid rgba(255,255,255,0.2)',
+                borderRadius: '6px',
+                padding: '4px 8px',
+                color: 'white',
+                fontSize: '0.8rem',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '4px',
+                transition: 'all 0.2s',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'rgba(255,255,255,0.25)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'rgba(255,255,255,0.15)';
+              }}
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              Copy
+            </button>
+          </div>
         </div>
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+        
+        {/* Code Editor Area */}
+        <div className="editor-content" style={{
+          flex: 1,
+          padding: '1.2rem 1.5rem',
+          minHeight: 'calc(100vh - 180px)',
+          background: '#ffffff',
+          position: 'relative',
+        }}>
           <Editor code={editorCode} onChange={onChange} />
+        </div>
+        
+        {/* Status Bar */}
+        <div style={{
+          padding: '0.6rem 1.5rem',
+          background: '#f8fafc',
+          borderTop: '1px solid #e2e8f0',
+          fontSize: '0.8rem',
+          color: '#64748b',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}>
+          <span>Python | Diagrams Library</span>
+          <span>{editorCode.split('\n').length} lines</span>
         </div>
       </div>
 
+      {/* Enhanced Right Panel - Preview */}
       <div
         className="relative flex flex-col items-start justify-start h-full"
         style={{
-          padding: '1.2rem 1.5rem 1.2rem 1.1rem',
-          minHeight: 'calc(100vh - 120px)',
-          background: '#f9fafb',
+          background: 'linear-gradient(180deg, #ffffff 0%, #fafbfc 100%)',
+          position: 'relative',
         }}
       >
+        {/* Preview Header */}
         <div style={{
-          fontWeight: 700,
-          fontSize: '1.08rem',
-          marginBottom: '1.1rem',
-          color: '#38bdf8',
-          letterSpacing: '0.01em',
+          padding: '1rem 1.5rem',
+          background: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+          color: '#ffffff',
+          borderBottom: '1px solid #e2e8f0',
+          width: '100%',
+          boxSizing: 'border-box',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          minHeight: '90px',
         }}>
-          <span role="img" aria-label="diagram sparkle">✨</span> Your cloud diagram preview will appear here
+          <div style={{
+            fontWeight: 700,
+            fontSize: '1rem',
+            letterSpacing: '0.01em',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+          }}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="9" y1="3" x2="9" y2="21"></line>
+            </svg>
+            <span role="img" aria-label="diagram sparkle">✨</span> Live Preview
+          </div>
+          <div style={{
+            fontSize: '0.8rem',
+            opacity: 0.9,
+            display: 'flex',
+            alignItems: 'center',
+            gap: '6px',
+          }}>
+            {(loading || rendering) ? (
+              <>
+                <div style={{
+                  width: '8px',
+                  height: '8px',
+                  background: '#fbbf24',
+                  borderRadius: '50%',
+                  animation: 'pulse 1.5s infinite',
+                }}></div>
+                Rendering...
+              </>
+            ) : (
+              <>
+                <div style={{
+                  width: '8px',
+                  height: '8px',
+                  background: '#10b981',
+                  borderRadius: '50%',
+                }}></div>
+                Ready
+              </>
+            )}
+          </div>
         </div>
-        {(loading || rendering) && <Loading />}
-        <div id="chart" style={{ width: '100%' }}></div>
+        
+        {/* Preview Content */}
+        <div className="preview-content" style={{
+          flex: 1,
+          padding: '1.2rem 1.5rem',
+          minHeight: 'calc(100vh - 180px)',
+          width: '100%',
+          background: '#ffffff',
+          position: 'relative',
+        }}>
+          {(loading || rendering) && <Loading />}
+          <div id="chart" style={{ width: '100%' }}></div>
+        </div>
+        
+        {/* Preview Status Bar */}
+        <div style={{
+          padding: '0.6rem 1.5rem',
+          background: '#f8fafc',
+          borderTop: '1px solid #e2e8f0',
+          fontSize: '0.8rem',
+          color: '#64748b',
+          width: '100%',
+          textAlign: 'center',
+        }}>
+          Diagram updates automatically as you type
+        </div>
       </div>
     </div>
   );
