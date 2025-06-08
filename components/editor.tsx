@@ -24,6 +24,8 @@ export const Editor = ({
         setInternalCode(val);
         onChange?.(val);
       }}
+      className="editor-container"
+      theme="light"
     />
   );
 };

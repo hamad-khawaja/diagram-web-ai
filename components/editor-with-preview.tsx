@@ -49,9 +49,9 @@ export const EditorWithPreview: React.FC<EditorWithPreviewProps> = ({ code }) =>
     <div
       className="grid grid-cols-2"
       style={{
-        margin: '1.5rem 0',
-        background: '#f8fafc',
-        border: '1px solid #e5e7eb',
+        margin: '0 0 1.5rem 0',
+        background: 'var(--card-bg)',
+        border: '1px solid var(--border-color)',
         borderRadius: 12,
         boxShadow: '0 2px 16px 0 rgba(100,116,139,0.06)',
       }}
@@ -64,17 +64,23 @@ export const EditorWithPreview: React.FC<EditorWithPreviewProps> = ({ code }) =>
           display: 'flex',
           flexDirection: 'column',
           height: '100%',
-          background: '#f9fafb',
-          borderRight: '1px solid #e5e7eb',
+          background: '#ffffff',
+          borderRight: '1px solid var(--border-color)',
         }}
       >
         <div style={{
           fontWeight: 700,
           fontSize: '1.08rem',
           marginBottom: '1.1rem',
-          color: '#2563eb',
+          color: 'var(--text-accent)',
           letterSpacing: '0.01em',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '6px',
         }}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path>
+          </svg>
           CloudDiagram Code Editor
         </div>
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
@@ -87,16 +93,23 @@ export const EditorWithPreview: React.FC<EditorWithPreviewProps> = ({ code }) =>
         style={{
           padding: '1.2rem 1.5rem 1.2rem 1.1rem',
           minHeight: 'calc(100vh - 120px)',
-          background: '#f9fafb',
+          background: '#ffffff',
         }}
       >
         <div style={{
           fontWeight: 700,
           fontSize: '1.08rem',
           marginBottom: '1.1rem',
-          color: '#38bdf8',
+          color: 'var(--text-accent)',
           letterSpacing: '0.01em',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '6px',
         }}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="9" y1="3" x2="9" y2="21"></line>
+          </svg>
           <span role="img" aria-label="diagram sparkle">✨</span> Your cloud diagram preview will appear here
         </div>
         {(loading || rendering) && <Loading />}

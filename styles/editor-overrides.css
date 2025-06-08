@@ -1,0 +1,55 @@
+/* Additional styles to ensure white background for editor and chart areas regardless of theme */
+.cm-editor {
+  background-color: #ffffff !important;
+}
+
+/* Remove any unwanted borders */
+.grid-cols-2 {
+  margin-top: 0 !important;
+  border-top: none !important;
+}
+
+/* Remove borders from sections below header */
+section {
+  border-top: none !important;
+}
+
+header + section,
+header + * {
+  border-top: none !important;
+  margin-top: 0 !important;
+}
+
+/* Ensure no white space between header and content */
+header {
+  margin-bottom: 0 !important;
+}
+
+header + * {
+  margin-top: 0 !important;
+}
+
+/* Ensure CodeMirror editor maintains white background */
+.w-tc-editor {
+  background: white !important;
+}
+
+/* Editor and chart containers */
+.editor-container, 
+.chart-container {
+  background-color: #ffffff !important;
+}
+
+/* Ensure any scrollbars in the editor area are styled consistently */
+.cm-editor ::-webkit-scrollbar-track {
+  background: #f1f1f1 !important;
+}
+
+.cm-editor ::-webkit-scrollbar-thumb {
+  background: #c1c1c1 !important;
+}
+
+/* Ensure chart remains white in all scenarios */
+#chart {
+  background-color: #ffffff !important;
+}

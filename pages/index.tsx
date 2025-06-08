@@ -7,7 +7,7 @@ import { MarkdownSlide } from "../components/MarkdownSlide";
 import { ExampleDiagramSlideshow } from "../components/ExampleDiagramSlideshow";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-
+import { ThemeToggle } from "../components/ThemeToggle";
 import Link from "next/link";
 
 
@@ -31,7 +31,7 @@ const Home: NextPage = () => {
       <CookieConsent />
       <header style={{
         width: '100%',
-        background: 'linear-gradient(132deg, #ffb347, #ff5858 54%, #a259ff 86%)',
+        background: 'var(--header-bg)',
         color: '#fff',
         padding: '0.65rem 0',
         textAlign: 'left',
@@ -61,11 +61,13 @@ const Home: NextPage = () => {
             CloudDiagram.AI
           </span>
         </div>
-        <a
-          href="https://github.com/hamad-khawaja/diagram-web-ai"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <ThemeToggle />
+          <a
+            href="https://github.com/hamad-khawaja/diagram-web-ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
             color: '#fff',
             textDecoration: 'none',
             fontWeight: 600,
@@ -86,6 +88,7 @@ const Home: NextPage = () => {
         >
           View on GitHub
         </a>
+        </div>
       </header>
       <Script
         data-domain="diagrams-web.vercel.app"
@@ -112,7 +115,7 @@ const Home: NextPage = () => {
       </Head>
 
       {/* New Generate Section at the top */}
-      <section style={{ margin: '0 0 1.5rem 0', padding: '1rem', border: '1px solid #ccc' }}>
+      <section style={{ margin: '0', padding: '1rem', border: 'none', borderTop: 'none' }}>
         <GenerateSection setEditorCode={setEditorCode} setPngUrl={setPngUrl} clearAll={() => {
           setEditorCode("");
           setPngUrl(null);
@@ -136,7 +139,7 @@ const Home: NextPage = () => {
       <section style={{
         width: '100%',
         maxWidth: 1100,
-        margin: '2.5rem auto 0 auto',
+        margin: '4rem auto 0 auto',
         padding: '2.2rem 1.5rem 1.5rem 1.5rem',
         background: 'linear-gradient(90deg, #f0f9ff 0%, #e0e7ff 100%)',
         borderRadius: 18,
@@ -640,7 +643,7 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
           fontSize: '2.2rem',
           fontWeight: 800,
           letterSpacing: '-0.01em',
-          color: '#1e293b',
+          color: 'var(--text-primary)',
           marginBottom: '0.35rem',
           fontFamily: 'Sora, Inter, Montserrat, Arial, sans-serif',
           textShadow: '0 2px 12px #a259ff11',
@@ -649,7 +652,7 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
         </h1>
         <div style={{
           fontSize: '1.18rem',
-          color: '#475569',
+          color: 'var(--text-secondary)',
           fontWeight: 500,
           marginBottom: '0.7rem',
           fontFamily: 'Inter, Montserrat, Arial, sans-serif',
@@ -725,7 +728,7 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
           </div>
           <div style={{
             flex: 1,
-            background: 'rgba(255,255,255,0.97)',
+            background: 'var(--input-bg)',
             borderRadius: 0,
             display: 'flex',
             alignItems: 'center',
@@ -747,7 +750,7 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
                 boxShadow: 'none',
                 fontFamily: 'inherit',
                 background: 'transparent',
-                color: '#1e293b',
+                color: 'var(--text-primary)',
                 whiteSpace: 'normal',
                 outline: 'none',
                 resize: 'vertical',
@@ -760,13 +763,13 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
               aria-invalid={!!inputError}
               onFocus={e => {
                 if (e.currentTarget.parentElement) {
-                  e.currentTarget.parentElement.style.background = '#f0f6ff';
-                  e.currentTarget.parentElement.style.boxShadow = '0 0 0 2px #2563eb33';
+                  e.currentTarget.parentElement.style.background = 'var(--background-accent)';
+                  e.currentTarget.parentElement.style.boxShadow = '0 0 0 2px var(--text-accent)33';
                 }
               }}
               onBlur={e => {
                 if (e.currentTarget.parentElement) {
-                  e.currentTarget.parentElement.style.background = 'rgba(255,255,255,0.97)';
+                  e.currentTarget.parentElement.style.background = 'var(--input-bg)';
                   e.currentTarget.parentElement.style.boxShadow = '0 2px 12px 0 rgba(37,99,235,0.08)';
                 }
               }}

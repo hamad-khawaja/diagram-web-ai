@@ -1,0 +1,48 @@
+/* Additional styling to eliminate white borders and gaps */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove border between header and main content */
+header {
+  border-bottom: none !important;
+}
+
+/* Eliminate any white gap between header and content */
+.GenerateSection,
+.grid-cols-2 {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Allow specified margins for sections */
+section:not(:first-of-type) {
+  margin-top: auto;
+}
+
+/* Ensure no borders on editor component */
+.cm-editor, 
+.cm-editor .cm-scroller,
+.cm-editor .cm-gutters {
+  border-top: none !important;
+}
+
+/* Remove any unwanted borders from specific components */
+.EditorWithPreview,
+#chart,
+.editor-wrapper {
+  border-top: none !important;
+}
+
+/* Make sure elements directly after header have no top margin */
+header + * {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  border-top: none !important;
+}
+
+/* Fix spacing issues between elements */
+:root {
+  --header-spacing: 0;
+}
