@@ -2,8 +2,26 @@ import Head from "next/head";
 import Link from "next/link";
 import { ThemeToggle } from "../components/ThemeToggle";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export default function Blog() {
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+  const [showSidebar, setShowSidebar] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setShowSidebar(window.innerWidth > 1200);
+    };
+
+    // Set initial state
+    handleResize();
+
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   return (
     <div>
       <Head>
@@ -11,6 +29,13 @@ export default function Blog() {
         <meta name="description" content="The journey of building CloudDiagram.AI: strategic decisions, technical challenges, and lessons learned in creating an AI-powered cloud architecture diagramming tool." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://clouddiagram.ai/blog" />
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            html {
+              scroll-behavior: smooth;
+            }
+          `
+        }} />
       </Head>
       
       {/* Header */}
@@ -107,11 +132,143 @@ export default function Blog() {
         </div>
       </div>
       
+      {/* Table of Contents Sidebar */}
+      {showSidebar && (
+        <div className="sidebar-toc" style={{
+          position: 'fixed',
+          top: '50%',
+          right: '20px',
+          transform: 'translateY(-50%)',
+          background: 'var(--card-bg)',
+          border: '1px solid var(--border-color)',
+          borderRadius: '12px',
+          padding: '20px',
+          maxWidth: '200px',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+          zIndex: 1000
+        }}>
+        <h3 style={{
+          fontSize: '0.9rem',
+          fontWeight: 600,
+          marginBottom: '15px',
+          color: 'var(--text-primary)',
+          textTransform: 'uppercase',
+          letterSpacing: '0.5px'
+        }}>
+          Contents
+        </h3>
+        <nav>
+          <ul style={{
+            listStyle: 'none',
+            padding: 0,
+            margin: 0
+          }}>
+            <li style={{ marginBottom: '8px' }}>
+              <a href="#introduction" style={{
+                fontSize: '0.85rem',
+                color: hoveredLink === 'introduction' ? 'var(--text-accent)' : 'var(--text-secondary)',
+                textDecoration: 'none',
+                display: 'block',
+                padding: '4px 0',
+                borderLeft: `2px solid ${hoveredLink === 'introduction' ? 'var(--text-accent)' : 'transparent'}`,
+                paddingLeft: '8px',
+                transition: 'all 0.2s ease'
+              }}
+              onMouseEnter={() => setHoveredLink('introduction')}
+              onMouseLeave={() => setHoveredLink(null)}>
+                Introduction
+              </a>
+            </li>
+            <li style={{ marginBottom: '8px' }}>
+              <a href="#ai-strategy" style={{
+                fontSize: '0.85rem',
+                color: hoveredLink === 'ai-strategy' ? 'var(--text-accent)' : 'var(--text-secondary)',
+                textDecoration: 'none',
+                display: 'block',
+                padding: '4px 0',
+                borderLeft: `2px solid ${hoveredLink === 'ai-strategy' ? 'var(--text-accent)' : 'transparent'}`,
+                paddingLeft: '8px',
+                transition: 'all 0.2s ease'
+              }}
+              onMouseEnter={() => setHoveredLink('ai-strategy')}
+              onMouseLeave={() => setHoveredLink(null)}>
+                AI Strategy: What to Build
+              </a>
+            </li>
+            <li style={{ marginBottom: '8px' }}>
+              <a href="#how-we-ship" style={{
+                fontSize: '0.85rem',
+                color: hoveredLink === 'how-we-ship' ? 'var(--text-accent)' : 'var(--text-secondary)',
+                textDecoration: 'none',
+                display: 'block',
+                padding: '4px 0',
+                borderLeft: `2px solid ${hoveredLink === 'how-we-ship' ? 'var(--text-accent)' : 'transparent'}`,
+                paddingLeft: '8px',
+                transition: 'all 0.2s ease'
+              }}
+              onMouseEnter={() => setHoveredLink('how-we-ship')}
+              onMouseLeave={() => setHoveredLink(null)}>
+                How We Ship
+              </a>
+            </li>
+            <li style={{ marginBottom: '8px' }}>
+              <a href="#how-it-works" style={{
+                fontSize: '0.85rem',
+                color: hoveredLink === 'how-it-works' ? 'var(--text-accent)' : 'var(--text-secondary)',
+                textDecoration: 'none',
+                display: 'block',
+                padding: '4px 0',
+                borderLeft: `2px solid ${hoveredLink === 'how-it-works' ? 'var(--text-accent)' : 'transparent'}`,
+                paddingLeft: '8px',
+                transition: 'all 0.2s ease'
+              }}
+              onMouseEnter={() => setHoveredLink('how-it-works')}
+              onMouseLeave={() => setHoveredLink(null)}>
+                How It Works
+              </a>
+            </li>
+            <li style={{ marginBottom: '8px' }}>
+              <a href="#lessons-learned" style={{
+                fontSize: '0.85rem',
+                color: hoveredLink === 'lessons-learned' ? 'var(--text-accent)' : 'var(--text-secondary)',
+                textDecoration: 'none',
+                display: 'block',
+                padding: '4px 0',
+                borderLeft: `2px solid ${hoveredLink === 'lessons-learned' ? 'var(--text-accent)' : 'transparent'}`,
+                paddingLeft: '8px',
+                transition: 'all 0.2s ease'
+              }}
+              onMouseEnter={() => setHoveredLink('lessons-learned')}
+              onMouseLeave={() => setHoveredLink(null)}>
+                Key Lessons Learned
+              </a>
+            </li>
+            <li style={{ marginBottom: '8px' }}>
+              <a href="#tldr" style={{
+                fontSize: '0.85rem',
+                color: hoveredLink === 'tldr' ? 'var(--text-accent)' : 'var(--text-secondary)',
+                textDecoration: 'none',
+                display: 'block',
+                padding: '4px 0',
+                borderLeft: `2px solid ${hoveredLink === 'tldr' ? 'var(--text-accent)' : 'transparent'}`,
+                paddingLeft: '8px',
+                transition: 'all 0.2s ease'
+              }}
+              onMouseEnter={() => setHoveredLink('tldr')}
+              onMouseLeave={() => setHoveredLink(null)}>
+                TL;DR
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      )}
+      
       {/* Article Content */}
       <article style={{ maxWidth: '800px', margin: '0 auto', padding: '60px 20px' }}>
         
         {/* Introduction */}
-        <section style={{ marginBottom: '60px' }}>
+        <section id="introduction" style={{ marginBottom: '60px' }}>
           <h2 style={{ 
             fontSize: '2.2rem', 
             fontWeight: 700, 
@@ -199,7 +356,7 @@ export default function Blog() {
         </section>
 
         {/* AI Strategy Section */}
-        <section style={{ marginBottom: '60px' }}>
+        <section id="ai-strategy" style={{ marginBottom: '60px' }}>
           <h2 style={{ 
             fontSize: '2.2rem', 
             fontWeight: 700, 
@@ -388,7 +545,7 @@ export default function Blog() {
         </section>
 
         {/* How We Ship Section */}
-        <section style={{ marginBottom: '60px' }}>
+        <section id="how-we-ship" style={{ marginBottom: '60px' }}>
           <h2 style={{ 
             fontSize: '2.2rem', 
             fontWeight: 700, 
@@ -543,7 +700,7 @@ export default function Blog() {
         </section>
 
         {/* How It Works Section */}
-        <section style={{ marginBottom: '60px' }}>
+        <section id="how-it-works" style={{ marginBottom: '60px' }}>
           <h2 style={{ 
             fontSize: '2.2rem', 
             fontWeight: 700, 
@@ -796,7 +953,7 @@ export default function Blog() {
         </section>
 
         {/* Lessons Learned Section */}
-        <section style={{ marginBottom: '60px' }}>
+        <section id="lessons-learned" style={{ marginBottom: '60px' }}>
           <h2 style={{ 
             fontSize: '2.2rem', 
             fontWeight: 700, 
@@ -908,7 +1065,7 @@ export default function Blog() {
         </section>
 
         {/* TL;DR Section */}
-        <section style={{ marginBottom: '60px' }}>
+        <section id="tldr" style={{ marginBottom: '60px' }}>
           <h2 style={{ 
             fontSize: '2.2rem', 
             fontWeight: 700, 
