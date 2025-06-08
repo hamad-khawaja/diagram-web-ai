@@ -300,7 +300,7 @@ export default function Blog() {
               color: 'var(--text-secondary)',
               marginBottom: '20px'
             }}>
-              <strong>CloudDiagram.AI</strong> is an AI-powered cloud architecture diagramming tool for engineering teams. Our conviction: most developers and architects want to create clear, professional cloud infrastructure diagrams, but don't because:
+              <strong>CloudDiagram.AI</strong> is an AI-powered cloud architecture diagramming tool for engineering teams. Our conviction: most developers and architects want to create clear, professional cloud infrastructure diagrams, but don&rsquo;t because:
             </p>
             <ul style={{ 
               fontSize: '1.1rem', 
@@ -309,8 +309,8 @@ export default function Blog() {
               paddingLeft: '20px'
             }}>
               <li style={{ marginBottom: '10px' }}>Switching from coding to diagramming feels like going from flow and productivity to anxiously staring at a blank canvas with unfamiliar tools.</li>
-              <li style={{ marginBottom: '10px' }}>Traditional diagramming tools require extensive manual work and design skills that many engineers don't have or want to develop.</li>
-              <li style={{ marginBottom: '10px' }}>Even when we do create diagrams, they often become outdated quickly and don't reflect the actual infrastructure.</li>
+              <li style={{ marginBottom: '10px' }}>Traditional diagramming tools require extensive manual work and design skills that many engineers don&rsquo;t have or want to develop.</li>
+              <li style={{ marginBottom: '10px' }}>Even when we do create diagrams, they often become outdated quickly and don&rsquo;t reflect the actual infrastructure.</li>
               <li style={{ marginBottom: '10px' }}>The disconnect between infrastructure-as-code and visual documentation creates a maintenance burden that teams avoid.</li>
             </ul>
             <p style={{ 
@@ -319,7 +319,7 @@ export default function Blog() {
               color: 'var(--text-secondary)',
               marginTop: '20px'
             }}>
-              We've made significant progress solving these problems by bringing AI to the diagramming process, and in due time, we aim to solve them all.
+              We&rsquo;ve made significant progress solving these problems by bringing AI to the diagramming process, and in due time, we aim to solve them all.
             </p>
           </div>
 
@@ -329,7 +329,7 @@ export default function Blog() {
             color: 'var(--text-secondary)',
             marginBottom: '30px'
           }}>
-            In just a few short years, AI has revolutionized the world of software development. Every new model features improved intelligence, better performance, and seemingly magical capabilities. For app builders, it has evoked a mix of "kid in a candy shop" excitement and "keeping up with the Joneses" anxiety.
+            In just a few short years, AI has revolutionized the world of software development. Every new model features improved intelligence, better performance, and seemingly magical capabilities. For app builders, it has evoked a mix of &ldquo;kid in a candy shop&rdquo; excitement and &ldquo;keeping up with the Joneses&rdquo; anxiety.
           </p>
 
           <p style={{ 
@@ -338,7 +338,7 @@ export default function Blog() {
             color: 'var(--text-secondary)',
             marginBottom: '30px'
           }}>
-            At CloudDiagram.AI, we started our AI journey by addressing a fundamental problem: the tedious, time-consuming process of creating cloud architecture diagrams. Today, we'll explore the decisions we made along the way, addressing some in a strategic manner, and others more tactically:
+            At CloudDiagram.AI, we started our AI journey by addressing a fundamental problem: the tedious, time-consuming process of creating cloud architecture diagrams. Today, we&rsquo;ll explore the decisions we made along the way, addressing some in a strategic manner, and others more tactically:
           </p>
 
           <ul style={{ 
