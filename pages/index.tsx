@@ -850,7 +850,7 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
           maxWidth: '820px',
           margin: '0.5rem auto 0.15rem auto',
           color: '#2563eb',
-          fontSize: '1.1rem',
+          fontSize: '0.9rem',
           background: 'linear-gradient(90deg, #e0e7ff 0%, #f0f9ff 100%)',
           borderRadius: '18px',
           padding: '0.85rem 1.2rem',
@@ -864,8 +864,13 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
       >
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }} xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#2563eb" fillOpacity="0.13"/><path d="M12 7.5V13" stroke="#2563eb" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/><circle cx="12" cy="16" r="1" fill="#2563eb"/></svg>
         <span>
-          <span style={{ fontWeight: 700, color: '#2563eb' }}>Tip:</span> Want AI to improve or change your diagram? Paste the generated code back in and generate again for iterative refinement.
-        </span>
+          <span style={{ fontWeight: 700, color: '#2563eb' }}>Tip:</span>To get AI to improve or modify your diagram, provide detailed descriptions of your architecture. Include specific components, their connections, and how they interact with each other. The more comprehensive details you provide, the better quality diagram you'll receive.
+          <br></br><b>Current Limitations:</b>
+          <ul>
+            <li>Hybrid and multi-cloud diagrams are not supported</li>
+            <li>Focus on a single cloud provider (AWS, Azure, or GCP) per diagram</li>
+            <li>Available diagram resources are limited to those supported by the diagrams library <b><a href="https://diagrams.mingrammer.com/docs/getting-started/examples" target="_blank" rel="noopener noreferrer">https://diagrams.mingrammer.com/docs/getting-started/examples</a></b></li>
+          </ul></span>
       </div>
       </div>
       {inputError && (
