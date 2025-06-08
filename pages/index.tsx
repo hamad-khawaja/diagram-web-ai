@@ -685,13 +685,13 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
           {/* Provider dropdown inside the input bar */}
           <div style={{
             display: 'flex',
-            alignItems: 'center',
+            alignItems: 'flex-start',
             background: 'rgba(255,255,255,0.97)',
             borderTopLeftRadius: '24px',
             borderBottomLeftRadius: '24px',
-            padding: '0 0.7rem 0 1.1rem',
+            padding: '1rem 0.7rem 0 1.1rem',
             borderRight: '1.5px solid #e5e7eb',
-            height: 48,
+            minHeight: 100,
             minWidth: 0,
             zIndex: 2,
           }}>
@@ -701,7 +701,7 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
               onChange={e => setProvider(e.target.value)}
               style={{
                 fontSize: '1.08rem',
-                padding: '0.45rem 1.1rem 0.45rem 0.7rem',
+                padding: '0.7rem 1.1rem 0.7rem 0.7rem',
                 border: 'none',
                 borderRadius: '12px',
                 background: '#f8fafc',
@@ -714,6 +714,8 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
                 marginRight: 0,
                 marginLeft: 0,
                 cursor: 'pointer',
+                position: 'sticky',
+                top: '0.5rem',
               }}
             >
               <option value="aws">AWS</option>
@@ -735,7 +737,7 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
               value={input}
               onChange={e => setInput(e.target.value)}
               placeholder='e.g. &quot;A 3-tier web app with load balancer, 2 app servers, and a database&quot;'
-              rows={1}
+              rows={4}
               style={{
                 flex: 1,
                 fontSize: '1.15rem',
@@ -746,11 +748,11 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
                 fontFamily: 'inherit',
                 background: 'transparent',
                 color: '#1e293b',
-                whiteSpace: 'nowrap',
+                whiteSpace: 'normal',
                 outline: 'none',
-                resize: 'none',
-                minHeight: 38,
-                maxHeight: 60,
+                resize: 'vertical',
+                minHeight: 100,
+                maxHeight: 200,
                 letterSpacing: '0.01em',
                 animation: 'slideInInput 0.7s cubic-bezier(.4,2,.6,1)',
                 overflow: 'hidden',
