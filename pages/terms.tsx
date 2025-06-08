@@ -27,7 +27,7 @@ export default function Terms() {
           <Image src="/clouddiagram-logo.svg" alt="CloudDiagram.AI Logo" width={38} height={38} style={{ marginLeft: 32, borderRadius: 12, boxShadow: '0 1px 6px #2563eb22' }} priority />
           <Link href="/" style={{ textDecoration: 'none' }}>
             <span style={{
-              fontSize: '1.35rem',
+              fontSize: '1.1rem',
               fontWeight: 700,
               letterSpacing: '0.03em',
               fontFamily: 'Sora, Inter, Montserrat, Arial, sans-serif',
@@ -50,7 +50,7 @@ export default function Terms() {
             color: '#fff',
             textDecoration: 'none',
             fontWeight: 600,
-            fontSize: '1.08rem',
+            fontSize: '1rem',
             letterSpacing: '0.04em',
             marginRight: 32,
             padding: '0.45rem 1.2rem',
@@ -75,15 +75,15 @@ export default function Terms() {
           <meta name="robots" content="index, follow" />
           <link rel="canonical" href="https://clouddiagram.ai/terms" />
         </Head>
-        <h1 style={{fontSize: "2.2rem", fontWeight: 800, marginBottom: "1.5rem", color: '#2563eb', letterSpacing: '-0.01em', fontFamily: 'Sora, Inter, Montserrat, Arial, sans-serif'}}>Terms of Service</h1>
-        <div style={{fontSize: '1.13rem', color: '#334155', lineHeight: 1.7, fontFamily: 'Inter, Montserrat, Arial, sans-serif'}}>
+        <h1 style={{fontSize: "2.5rem", fontWeight: 800, marginBottom: "1.5rem", color: '#2563eb', letterSpacing: '-0.01em', fontFamily: 'Sora, Inter, Montserrat, Arial, sans-serif'}}>Terms of Service</h1>
+        <div style={{fontSize: '1rem', color: '#334155', lineHeight: 1.7, fontFamily: 'Inter, Montserrat, Arial, sans-serif'}}>
           <p style={{marginBottom: '1.5rem'}}>By using CloudDiagram.AI, you agree to use the service for lawful purposes only. We provide no warranty for generated diagrams. You are responsible for verifying the accuracy and compliance of your diagrams.</p>
-          <h2 style={{marginTop: '2.2rem', color: '#a259ff', fontWeight: 700, fontSize: '1.18rem'}}>Acceptable Use</h2>
+          <h2 style={{marginTop: '2.2rem', color: '#a259ff', fontWeight: 700, fontSize: '1.2rem'}}>Acceptable Use</h2>
           <ul style={{marginLeft: '1.2rem', marginBottom: '1.5rem'}}>
             <li>No illegal, harmful, or abusive content.</li>
             <li>No attempts to reverse engineer or disrupt the service.</li>
           </ul>
-          <h2 style={{marginTop: '2.2rem', color: '#a259ff', fontWeight: 700, fontSize: '1.18rem'}}>Limitation of Liability</h2>
+          <h2 style={{marginTop: '2.2rem', color: '#a259ff', fontWeight: 700, fontSize: '1.2rem'}}>Limitation of Liability</h2>
           <ul style={{marginLeft: '1.2rem', marginBottom: '1.5rem'}}>
             <li>CloudDiagram.AI is provided as-is, without warranty.</li>
             <li>We are not liable for any damages arising from use of the service.</li>
@@ -126,15 +126,15 @@ export default function Terms() {
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.1rem' }}>
             <Image src="/clouddiagram-logo.svg" alt="CloudDiagram.AI Logo" width={38} height={38} style={{ borderRadius: 10, boxShadow: '0 1px 6px #2563eb22' }} />
-            <span style={{ fontWeight: 700, fontSize: '1.25rem', letterSpacing: '0.03em', color: '#fff', textShadow: '0 2px 8px #a259ff33, 0 1px 0 #fff' }}>
+            <span style={{ fontWeight: 700, fontSize: '1.1rem', letterSpacing: '0.03em', color: '#fff', textShadow: '0 2px 8px #a259ff33, 0 1px 0 #fff' }}>
               CloudDiagram.AI
             </span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '0.5rem', minWidth: 220 }}>
-            <span style={{ fontSize: '1.08rem', fontWeight: 500, opacity: 0.96 }}>
+            <span style={{ fontSize: '1rem', fontWeight: 500, opacity: 0.96 }}>
               Effortless Cloud Architecture Diagrams
             </span>
-            <span style={{ fontSize: '1.01rem', opacity: 0.82, marginTop: 2 }}>
+            <span style={{ fontSize: '0.9rem', opacity: 0.82, marginTop: 2 }}>
               Visualize, edit, and share cloud diagrams for AWS, Azure, GCP, and more.
             </span>
             <div style={{ marginTop: '0.7rem', display: 'flex', gap: '0.7rem', flexWrap: 'wrap' }}>
@@ -144,7 +144,7 @@ export default function Terms() {
                   background: 'linear-gradient(90deg, #38bdf8 0%, #2563eb 100%)',
                   color: '#fff',
                   fontWeight: 700,
-                  fontSize: '1.07rem',
+                  fontSize: '1rem',
                   borderRadius: 8,
                   padding: '0.55rem 1.4rem',
                   textDecoration: 'none',
@@ -155,14 +155,14 @@ export default function Terms() {
               >
                 Start diagramming for free
               </Link>
-              <Link href="/faq" style={{ color: '#fff', fontWeight: 500, fontSize: '1.07rem', opacity: 0.85, textDecoration: 'underline', borderRadius: 8, padding: '0.55rem 1.1rem', background: 'rgba(162,89,255,0.13)', boxShadow: '0 1px 4px #a259ff11', transition: 'background 0.18s', display: 'inline-block' }}>FAQ</Link>
-              <Link href="/blog" style={{ color: '#fff', fontWeight: 500, fontSize: '1.07rem', opacity: 0.85, textDecoration: 'underline', borderRadius: 8, padding: '0.55rem 1.1rem', background: 'rgba(162,89,255,0.13)', boxShadow: '0 1px 4px #a259ff11', transition: 'background 0.18s', display: 'inline-block' }}>Blog</Link>
-              <Link href="/privacy" style={{ color: '#fff', fontWeight: 500, fontSize: '1.07rem', opacity: 0.85, textDecoration: 'underline', borderRadius: 8, padding: '0.55rem 1.1rem', background: 'rgba(162,89,255,0.13)', boxShadow: '0 1px 4px #a259ff11', transition: 'background 0.18s', display: 'inline-block' }}>Privacy</Link>
-              <Link href="/terms" style={{ color: '#fff', fontWeight: 500, fontSize: '1.07rem', opacity: 0.85, textDecoration: 'underline', borderRadius: 8, padding: '0.55rem 1.1rem', background: 'rgba(162,89,255,0.13)', boxShadow: '0 1px 4px #a259ff11', transition: 'background 0.18s', display: 'inline-block' }}>Terms</Link>
+              <Link href="/faq" style={{ color: '#fff', fontWeight: 500, fontSize: '1rem', opacity: 0.85, textDecoration: 'underline', borderRadius: 8, padding: '0.55rem 1.1rem', background: 'rgba(162,89,255,0.13)', boxShadow: '0 1px 4px #a259ff11', transition: 'background 0.18s', display: 'inline-block' }}>FAQ</Link>
+              <Link href="/blog" style={{ color: '#fff', fontWeight: 500, fontSize: '1rem', opacity: 0.85, textDecoration: 'underline', borderRadius: 8, padding: '0.55rem 1.1rem', background: 'rgba(162,89,255,0.13)', boxShadow: '0 1px 4px #a259ff11', transition: 'background 0.18s', display: 'inline-block' }}>Blog</Link>
+              <Link href="/privacy" style={{ color: '#fff', fontWeight: 500, fontSize: '1rem', opacity: 0.85, textDecoration: 'underline', borderRadius: 8, padding: '0.55rem 1.1rem', background: 'rgba(162,89,255,0.13)', boxShadow: '0 1px 4px #a259ff11', transition: 'background 0.18s', display: 'inline-block' }}>Privacy</Link>
+              <Link href="/terms" style={{ color: '#fff', fontWeight: 500, fontSize: '1rem', opacity: 0.85, textDecoration: 'underline', borderRadius: 8, padding: '0.55rem 1.1rem', background: 'rgba(162,89,255,0.13)', boxShadow: '0 1px 4px #a259ff11', transition: 'background 0.18s', display: 'inline-block' }}>Terms</Link>
               <a href="mailto:hamad.khawaja@outlook.com" style={{
                 color: '#fff',
                 fontWeight: 500,
-                fontSize: '1.07rem',
+                fontSize: '1rem',
                 opacity: 0.85,
                 textDecoration: 'underline',
                 borderRadius: 8,
@@ -178,7 +178,7 @@ export default function Terms() {
             <a href="https://github.com/hamad-khawaja/diagram-web-ai" target="_blank" rel="noopener noreferrer" style={{
               color: '#fff',
               fontWeight: 600,
-              fontSize: '1.08rem',
+              fontSize: '1rem',
               letterSpacing: '0.04em',
               padding: '0.45rem 1.2rem',
               borderRadius: 8,
@@ -189,7 +189,7 @@ export default function Terms() {
               position: 'relative',
               top: 0,
             }}>View on GitHub</a>
-            <span style={{ fontSize: '0.98rem', opacity: 0.7, marginTop: 2 }}>
+            <span style={{ fontSize: '0.9rem', opacity: 0.7, marginTop: 2 }}>
               &copy; {new Date().getFullYear()} CloudDiagram.AI
             </span>
           </div>

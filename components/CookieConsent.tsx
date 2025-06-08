@@ -24,7 +24,7 @@ export const CookieConsent: React.FC = () => {
       background: "linear-gradient(90deg, #2563eb 0%, #a259ff 100%)",
       color: "#fff", padding: "1.1rem 2rem", borderRadius: 12, maxWidth: 420, margin: "0 auto", boxShadow: "0 2px 16px #2563eb22", display: "flex", alignItems: "center", gap: 16
     }}>
-      <span style={{flex: 1, fontSize: "1.05rem"}}>
+      <span style={{flex: 1, fontSize: "1rem"}}>
         This site uses privacy-friendly analytics (Plausible) to improve your experience. By continuing, you accept our <Link href="/privacy" style={{color: "#fff", textDecoration: "underline"}}>Privacy Policy</Link>.
       </span>
       <button onClick={accept} style={{background: "#fff", color: "#2563eb", fontWeight: 700, border: "none", borderRadius: 8, padding: "0.5rem 1.2rem", cursor: "pointer"}}>Accept</button>

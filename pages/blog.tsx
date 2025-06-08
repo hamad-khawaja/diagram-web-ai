@@ -60,7 +60,7 @@ export default function Blog() {
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '1.1rem', textDecoration: 'none' }}>
               <Image src="/clouddiagram-logo.svg" alt="CloudDiagram.AI Logo" width={38} height={38} style={{ marginLeft: 32, borderRadius: 12, boxShadow: '0 1px 6px #2563eb22' }} priority />
               <span style={{
-                fontSize: '1.35rem',
+                fontSize: '1.2rem',
                 fontWeight: 700,
                 letterSpacing: '0.03em',
                 fontFamily: 'Sora, Inter, Montserrat, Arial, sans-serif',
@@ -99,10 +99,10 @@ export default function Blog() {
             CloudDiagram.AI Journey
           </span>
           <h1 style={{ 
-            fontSize: '3rem', 
-            fontWeight: 800, 
+            fontSize: '2.5rem', 
+            fontWeight: 700, 
             marginBottom: '2rem',
-            lineHeight: 1.2,
+            lineHeight: 1.3,
             background: 'linear-gradient(132deg, #ffb347, #ff5858 54%, #a259ff 86%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
@@ -111,7 +111,7 @@ export default function Blog() {
             On Building CloudDiagram.AI with AI
           </h1>
           <p style={{ 
-            fontSize: '1.3rem', 
+            fontSize: '1.1rem', 
             color: 'var(--text-secondary)', 
             lineHeight: 1.6,
             marginBottom: '30px'
@@ -123,7 +123,7 @@ export default function Blog() {
             alignItems: 'center', 
             justifyContent: 'center',
             gap: '20px',
-            fontSize: '0.95rem',
+            fontSize: '0.9rem',
             color: 'var(--text-secondary)'
           }}>
             <span>June 8, 2025</span>
@@ -271,7 +271,7 @@ export default function Blog() {
         {/* Introduction */}
         <section id="introduction" style={{ marginBottom: '60px' }}>
           <h2 style={{ 
-            fontSize: '2.2rem', 
+            fontSize: '1.8rem', 
             fontWeight: 700, 
             marginBottom: '30px',
             color: 'var(--text-primary)',
@@ -288,7 +288,7 @@ export default function Blog() {
             borderLeft: '4px solid var(--text-accent)'
           }}>
             <h3 style={{ 
-              fontSize: '1.3rem', 
+              fontSize: '1.2rem', 
               fontWeight: 600, 
               marginBottom: '20px',
               color: 'var(--text-primary)'
@@ -296,7 +296,7 @@ export default function Blog() {
               Who we are
             </h3>
             <p style={{ 
-              fontSize: '1.1rem', 
+              fontSize: '1rem', 
               lineHeight: 1.7, 
               color: 'var(--text-secondary)',
               marginBottom: '20px'
@@ -304,7 +304,7 @@ export default function Blog() {
               <strong>CloudDiagram.AI</strong> is an AI-powered cloud architecture diagramming tool for engineering teams. Our conviction: most developers and architects want to create clear, professional cloud infrastructure diagrams, but don&rsquo;t because:
             </p>
             <ul style={{ 
-              fontSize: '1.1rem', 
+              fontSize: '1rem', 
               lineHeight: 1.7, 
               color: 'var(--text-secondary)',
               paddingLeft: '20px'
@@ -315,7 +315,7 @@ export default function Blog() {
               <li style={{ marginBottom: '10px' }}>The disconnect between infrastructure-as-code and visual documentation creates a maintenance burden that teams avoid.</li>
             </ul>
             <p style={{ 
-              fontSize: '1.1rem', 
+              fontSize: '1rem', 
               lineHeight: 1.7, 
               color: 'var(--text-secondary)',
               marginTop: '20px'
@@ -325,8 +325,8 @@ export default function Blog() {
           </div>
 
           <p style={{ 
-            fontSize: '1.2rem', 
-            lineHeight: 1.8, 
+            fontSize: '1rem', 
+            lineHeight: 1.7, 
             color: 'var(--text-secondary)',
             marginBottom: '30px'
           }}>
@@ -334,8 +334,8 @@ export default function Blog() {
           </p>
 
           <p style={{ 
-            fontSize: '1.2rem', 
-            lineHeight: 1.8, 
+            fontSize: '1rem', 
+            lineHeight: 1.7, 
             color: 'var(--text-secondary)',
             marginBottom: '30px'
           }}>
@@ -343,8 +343,8 @@ export default function Blog() {
           </p>
 
           <ul style={{ 
-            fontSize: '1.2rem', 
-            lineHeight: 1.8, 
+            fontSize: '1rem', 
+            lineHeight: 1.7, 
             color: 'var(--text-secondary)',
             paddingLeft: '30px',
             marginBottom: '30px'
@@ -359,7 +359,7 @@ export default function Blog() {
         {/* AI Strategy Section */}
         <section id="ai-strategy" style={{ marginBottom: '60px' }}>
           <h2 style={{ 
-            fontSize: '2.2rem', 
+            fontSize: '1.8rem', 
             fontWeight: 700, 
             marginBottom: '30px',
             color: 'var(--text-primary)',
@@ -391,7 +391,7 @@ export default function Blog() {
           </div>
 
           <p style={{ 
-            fontSize: '1.2rem', 
+            fontSize: '1rem', 
             lineHeight: 1.8, 
             color: 'var(--text-secondary)',
             marginBottom: '30px'
@@ -401,7 +401,7 @@ export default function Blog() {
 
           <div style={{ marginBottom: '40px' }}>
             <h3 style={{ 
-              fontSize: '1.5rem', 
+              fontSize: '1.2rem', 
               fontWeight: 600, 
               marginBottom: '20px',
               color: 'var(--text-primary)'
@@ -422,7 +422,7 @@ export default function Blog() {
                 border: '1px solid var(--border-color)'
               }}>
                 <h4 style={{ 
-                  fontSize: '1.2rem', 
+                  fontSize: '1rem', 
                   fontWeight: 600, 
                   marginBottom: '15px',
                   color: 'var(--text-accent)'
@@ -445,7 +445,7 @@ export default function Blog() {
                 border: '1px solid var(--border-color)'
               }}>
                 <h4 style={{ 
-                  fontSize: '1.2rem', 
+                  fontSize: '1rem', 
                   fontWeight: 600, 
                   marginBottom: '15px',
                   color: 'var(--text-accent)'
@@ -468,7 +468,7 @@ export default function Blog() {
                 border: '1px solid var(--border-color)'
               }}>
                 <h4 style={{ 
-                  fontSize: '1.2rem', 
+                  fontSize: '1rem', 
                   fontWeight: 600, 
                   marginBottom: '15px',
                   color: 'var(--text-accent)'
@@ -487,7 +487,7 @@ export default function Blog() {
           </div>
 
           <p style={{ 
-            fontSize: '1.2rem', 
+            fontSize: '1rem', 
             lineHeight: 1.8, 
             color: 'var(--text-secondary)',
             marginBottom: '30px'
@@ -496,7 +496,7 @@ export default function Blog() {
           </p>
 
           <ul style={{ 
-            fontSize: '1.2rem', 
+            fontSize: '1rem', 
             lineHeight: 1.8, 
             color: 'var(--text-secondary)',
             paddingLeft: '30px',
@@ -514,7 +514,7 @@ export default function Blog() {
             marginBottom: '30px'
           }}>
             <h3 style={{ 
-              fontSize: '1.5rem', 
+              fontSize: '1.2rem', 
               fontWeight: 600, 
               marginBottom: '20px',
               color: 'var(--text-primary)'
@@ -548,7 +548,7 @@ export default function Blog() {
         {/* How We Ship Section */}
         <section id="how-we-ship" style={{ marginBottom: '60px' }}>
           <h2 style={{ 
-            fontSize: '2.2rem', 
+            fontSize: '1.8rem', 
             fontWeight: 700, 
             marginBottom: '30px',
             color: 'var(--text-primary)',
@@ -580,7 +580,7 @@ export default function Blog() {
           </div>
 
           <p style={{ 
-            fontSize: '1.2rem', 
+            fontSize: '1rem', 
             lineHeight: 1.8, 
             color: 'var(--text-secondary)',
             marginBottom: '30px'
@@ -589,7 +589,7 @@ export default function Blog() {
           </p>
 
           <ul style={{ 
-            fontSize: '1.2rem', 
+            fontSize: '1rem', 
             lineHeight: 1.8, 
             color: 'var(--text-secondary)',
             paddingLeft: '30px',
@@ -602,7 +602,7 @@ export default function Blog() {
           </ul>
 
           <p style={{ 
-            fontSize: '1.2rem', 
+            fontSize: '1rem', 
             lineHeight: 1.8, 
             color: 'var(--text-secondary)',
             marginBottom: '30px'
@@ -618,7 +618,7 @@ export default function Blog() {
             marginBottom: '30px'
           }}>
             <h3 style={{ 
-              fontSize: '1.5rem', 
+              fontSize: '1.2rem', 
               fontWeight: 600, 
               marginBottom: '20px',
               color: 'var(--text-primary)'
@@ -637,7 +637,7 @@ export default function Blog() {
 
             <div style={{ marginBottom: '20px' }}>
               <h4 style={{ 
-                fontSize: '1.2rem', 
+                fontSize: '1rem', 
                 fontWeight: 600, 
                 marginBottom: '15px',
                 color: 'var(--text-accent)'
@@ -658,7 +658,7 @@ export default function Blog() {
 
             <div style={{ marginBottom: '20px' }}>
               <h4 style={{ 
-                fontSize: '1.2rem', 
+                fontSize: '1rem', 
                 fontWeight: 600, 
                 marginBottom: '15px',
                 color: 'var(--text-accent)'
@@ -679,7 +679,7 @@ export default function Blog() {
 
             <div>
               <h4 style={{ 
-                fontSize: '1.2rem', 
+                fontSize: '1rem', 
                 fontWeight: 600, 
                 marginBottom: '15px',
                 color: 'var(--text-accent)'
@@ -703,7 +703,7 @@ export default function Blog() {
         {/* How It Works Section */}
         <section id="how-it-works" style={{ marginBottom: '60px' }}>
           <h2 style={{ 
-            fontSize: '2.2rem', 
+            fontSize: '1.8rem', 
             fontWeight: 700, 
             marginBottom: '30px',
             color: 'var(--text-primary)',
@@ -719,7 +719,7 @@ export default function Blog() {
             marginBottom: '40px'
           }}>
             <h3 style={{ 
-              fontSize: '1.5rem', 
+              fontSize: '1.2rem', 
               fontWeight: 600, 
               marginBottom: '20px',
               color: 'var(--text-primary)'
@@ -742,7 +742,7 @@ export default function Blog() {
                   1️⃣
                 </div>
                 <h4 style={{ 
-                  fontSize: '1.2rem', 
+                  fontSize: '1rem', 
                   fontWeight: 600, 
                   marginBottom: '10px',
                   color: 'var(--text-primary)'
@@ -767,7 +767,7 @@ export default function Blog() {
                   2️⃣
                 </div>
                 <h4 style={{ 
-                  fontSize: '1.2rem', 
+                  fontSize: '1rem', 
                   fontWeight: 600, 
                   marginBottom: '10px',
                   color: 'var(--text-primary)'
@@ -792,7 +792,7 @@ export default function Blog() {
                   3️⃣
                 </div>
                 <h4 style={{ 
-                  fontSize: '1.2rem', 
+                  fontSize: '1rem', 
                   fontWeight: 600, 
                   marginBottom: '10px',
                   color: 'var(--text-primary)'
@@ -812,7 +812,7 @@ export default function Blog() {
 
           <div style={{ marginBottom: '40px' }}>
             <h3 style={{ 
-              fontSize: '1.5rem', 
+              fontSize: '1.2rem', 
               fontWeight: 600, 
               marginBottom: '20px',
               color: 'var(--text-primary)'
@@ -821,7 +821,7 @@ export default function Blog() {
             </h3>
             
             <p style={{ 
-              fontSize: '1.2rem', 
+              fontSize: '1rem', 
               lineHeight: 1.8, 
               color: 'var(--text-secondary)',
               marginBottom: '30px'
@@ -842,7 +842,7 @@ export default function Blog() {
                 border: '1px solid var(--border-color)'
               }}>
                 <h4 style={{ 
-                  fontSize: '1.2rem', 
+                  fontSize: '1rem', 
                   fontWeight: 600, 
                   marginBottom: '15px',
                   color: 'var(--text-accent)'
@@ -865,7 +865,7 @@ export default function Blog() {
                 border: '1px solid var(--border-color)'
               }}>
                 <h4 style={{ 
-                  fontSize: '1.2rem', 
+                  fontSize: '1rem', 
                   fontWeight: 600, 
                   marginBottom: '15px',
                   color: 'var(--text-accent)'
@@ -888,7 +888,7 @@ export default function Blog() {
                 border: '1px solid var(--border-color)'
               }}>
                 <h4 style={{ 
-                  fontSize: '1.2rem', 
+                  fontSize: '1rem', 
                   fontWeight: 600, 
                   marginBottom: '15px',
                   color: 'var(--text-accent)'
@@ -913,7 +913,7 @@ export default function Blog() {
             marginBottom: '30px'
           }}>
             <h3 style={{ 
-              fontSize: '1.5rem', 
+              fontSize: '1.2rem', 
               fontWeight: 600, 
               marginBottom: '20px',
               color: 'var(--text-primary)'
@@ -956,7 +956,7 @@ export default function Blog() {
         {/* Lessons Learned Section */}
         <section id="lessons-learned" style={{ marginBottom: '60px' }}>
           <h2 style={{ 
-            fontSize: '2.2rem', 
+            fontSize: '1.8rem', 
             fontWeight: 700, 
             marginBottom: '30px',
             color: 'var(--text-primary)',
@@ -978,7 +978,7 @@ export default function Blog() {
               border: '1px solid var(--border-color)'
             }}>
               <h3 style={{ 
-                fontSize: '1.4rem', 
+                fontSize: '1.2rem', 
                 fontWeight: 600, 
                 marginBottom: '20px',
                 color: 'var(--text-accent)'
@@ -1001,7 +1001,7 @@ export default function Blog() {
               border: '1px solid var(--border-color)'
             }}>
               <h3 style={{ 
-                fontSize: '1.4rem', 
+                fontSize: '1.2rem', 
                 fontWeight: 600, 
                 marginBottom: '20px',
                 color: 'var(--text-accent)'
@@ -1024,7 +1024,7 @@ export default function Blog() {
               border: '1px solid var(--border-color)'
             }}>
               <h3 style={{ 
-                fontSize: '1.4rem', 
+                fontSize: '1.2rem', 
                 fontWeight: 600, 
                 marginBottom: '20px',
                 color: 'var(--text-accent)'
@@ -1047,7 +1047,7 @@ export default function Blog() {
               border: '1px solid var(--border-color)'
             }}>
               <h3 style={{ 
-                fontSize: '1.4rem', 
+                fontSize: '1.2rem', 
                 fontWeight: 600, 
                 marginBottom: '20px',
                 color: 'var(--text-accent)'
@@ -1068,7 +1068,7 @@ export default function Blog() {
         {/* TL;DR Section */}
         <section id="tldr" style={{ marginBottom: '60px' }}>
           <h2 style={{ 
-            fontSize: '2.2rem', 
+            fontSize: '1.8rem', 
             fontWeight: 700, 
             marginBottom: '30px',
             color: 'var(--text-primary)',
@@ -1090,7 +1090,7 @@ export default function Blog() {
             }}>
               <div>
                 <h3 style={{ 
-                  fontSize: '1.3rem', 
+                  fontSize: '1.2rem', 
                   fontWeight: 600, 
                   marginBottom: '15px',
                   color: 'var(--text-primary)'
@@ -1108,7 +1108,7 @@ export default function Blog() {
               
               <div>
                 <h3 style={{ 
-                  fontSize: '1.3rem', 
+                  fontSize: '1.2rem', 
                   fontWeight: 600, 
                   marginBottom: '15px',
                   color: 'var(--text-primary)'
@@ -1126,7 +1126,7 @@ export default function Blog() {
               
               <div>
                 <h3 style={{ 
-                  fontSize: '1.3rem', 
+                  fontSize: '1.2rem', 
                   fontWeight: 600, 
                   marginBottom: '15px',
                   color: 'var(--text-primary)'
@@ -1145,7 +1145,7 @@ export default function Blog() {
           </div>
 
           <p style={{ 
-            fontSize: '1.2rem', 
+            fontSize: '1rem', 
             lineHeight: 1.8, 
             color: 'var(--text-secondary)',
             textAlign: 'center',
@@ -1164,7 +1164,7 @@ export default function Blog() {
           marginBottom: '40px'
         }}>
           <h2 style={{ 
-            fontSize: '2rem', 
+            fontSize: '1.8rem', 
             fontWeight: 700, 
             marginBottom: '20px',
             color: 'var(--text-primary)'
@@ -1172,7 +1172,7 @@ export default function Blog() {
             Try CloudDiagram.AI Today
           </h2>
           <p style={{ 
-            fontSize: '1.2rem', 
+            fontSize: '1rem', 
             lineHeight: 1.6, 
             color: 'var(--text-secondary)',
             marginBottom: '30px',
@@ -1206,7 +1206,7 @@ export default function Blog() {
       }}>
         <div style={{ maxWidth: '600px', margin: '0 auto' }}>
           <h2 style={{ 
-            fontSize: '2rem', 
+            fontSize: '1.8rem', 
             fontWeight: 800, 
             marginBottom: '20px',
             color: 'var(--text-primary)'
@@ -1279,14 +1279,14 @@ export default function Blog() {
             <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none', marginBottom: '15px' }}>
                 <Image src="/clouddiagram-logo.svg" alt="CloudDiagram.AI Logo" width={30} height={30} style={{ borderRadius: 8 }} />
                 <span style={{ 
-                  fontSize: '1.2rem', 
+                  fontSize: '1rem', 
                   fontWeight: 700, 
                   color: 'var(--text-primary)' 
                 }}>
                   CloudDiagram.AI
                 </span>
             </Link>
-            <p style={{ maxWidth: '300px', fontSize: '0.95rem', lineHeight: 1.6 }}>
+            <p style={{ maxWidth: '300px', fontSize: '0.9rem', lineHeight: 1.6 }}>
               AI-powered cloud architecture diagrams for AWS, Azure, and GCP. Generate professional diagrams in seconds.
             </p>
           </div>
@@ -1297,12 +1297,12 @@ export default function Blog() {
             </h3>
             <ul style={{ padding: 0, listStyle: 'none' }}>
               <li style={{ marginBottom: '10px' }}>
-                <Link href="/blog" style={{ textDecoration: 'none', color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
+                <Link href="/blog" style={{ textDecoration: 'none', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
                   Blog
                 </Link>
               </li>
               <li style={{ marginBottom: '10px' }}>
-                <Link href="/faq" style={{ textDecoration: 'none', color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
+                <Link href="/faq" style={{ textDecoration: 'none', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
                   FAQ
                 </Link>
               </li>
@@ -1315,12 +1315,12 @@ export default function Blog() {
             </h3>
             <ul style={{ padding: 0, listStyle: 'none' }}>
               <li style={{ marginBottom: '10px' }}>
-                <Link href="/privacy" style={{ textDecoration: 'none', color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
+                <Link href="/privacy" style={{ textDecoration: 'none', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
                   Privacy Policy
                 </Link>
               </li>
               <li style={{ marginBottom: '10px' }}>
-                <Link href="/terms" style={{ textDecoration: 'none', color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
+                <Link href="/terms" style={{ textDecoration: 'none', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
                   Terms of Service
                 </Link>
               </li>
@@ -1333,7 +1333,7 @@ export default function Blog() {
             </h3>
             <ul style={{ padding: 0, listStyle: 'none' }}>
               <li style={{ marginBottom: '10px' }}>
-                <a href="https://github.com/hamad-khawaja/diagram-web-ai" style={{ textDecoration: 'none', color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
+                <a href="https://github.com/hamad-khawaja/diagram-web-ai" style={{ textDecoration: 'none', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
                   GitHub
                 </a>
               </li>

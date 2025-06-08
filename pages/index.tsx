@@ -48,7 +48,7 @@ const Home: NextPage = () => {
         <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '1.1rem' }}>
           <Image src="/clouddiagram-logo.svg" alt="CloudDiagram.AI Logo" width={38} height={38} style={{ marginLeft: 32, borderRadius: 12, boxShadow: '0 1px 6px #2563eb22' }} priority />
           <span style={{
-            fontSize: '1.35rem',
+            fontSize: '1.1rem',
             fontWeight: 700,
             letterSpacing: '0.03em',
             fontFamily: 'Sora, Inter, Montserrat, Arial, sans-serif',
@@ -71,7 +71,7 @@ const Home: NextPage = () => {
             color: '#fff',
             textDecoration: 'none',
             fontWeight: 600,
-            fontSize: '1.08rem',
+            fontSize: '1rem',
             letterSpacing: '0.04em',
             marginRight: 32,
             padding: '0.45rem 1.2rem',
@@ -114,6 +114,34 @@ const Home: NextPage = () => {
         <meta name="robots" content="index, follow" />
       </Head>
 
+      {/* SEO: Keyword-rich intro for homepage */}
+      <section style={{ maxWidth: 900, margin: '0.5rem auto 0 auto', padding: '1.5rem', background: 'linear-gradient(90deg, #f0f9ff 0%, #e0e7ff 100%)', borderRadius: 18, boxShadow: '0 4px 32px 0 rgba(37,99,235,0.07)', textAlign: 'center' }}>
+        <h1 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#2563eb', marginBottom: '1.1rem', letterSpacing: '0.01em', fontFamily: 'Sora, Inter, Montserrat, Arial, sans-serif' }}>
+          AI Cloud Architecture Diagram Generator for AWS, Azure, and GCP
+        </h1>
+        <p style={{ color: '#334155', fontSize: '1rem', maxWidth: 700, margin: '0 auto', opacity: 0.96 }}>
+          Instantly generate, visualize, and share professional cloud architecture diagrams for AWS, Azure, and Google Cloud using AI. No signup required. Perfect for DevOps, architects, and cloud engineers who want fast, accurate, and beautiful diagrams.
+        </p>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "CloudDiagram.AI",
+          "url": "https://clouddiagram.ai/",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "All",
+          "description": "Generate professional cloud architecture diagrams for AWS, Azure, and GCP using AI. Visualize, edit, and share your cloud diagrams instantly.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "CloudDiagram.AI"
+          }
+        }) }} />
+      </section>
+
       {/* New Generate Section at the top */}
       <section style={{ margin: '0', padding: '1rem', border: 'none', borderTop: 'none' }}>
         <GenerateSection setEditorCode={setEditorCode} setPngUrl={setPngUrl} clearAll={() => {
@@ -155,7 +183,7 @@ const Home: NextPage = () => {
         {/* Instructions */}
         <div style={{ flex: 1, minWidth: 320, maxWidth: 520, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.2rem' }}>
           <h2 style={{
-            fontSize: '1.35rem',
+            fontSize: '1.1rem',
             fontWeight: 700,
             color: '#2563eb',
             marginBottom: '0.5rem',
@@ -167,7 +195,7 @@ const Home: NextPage = () => {
           </h2>
           <p style={{
             color: '#334155',
-            fontSize: '1.08rem',
+            fontSize: '1rem',
             textAlign: 'center',
             margin: 0,
             maxWidth: 540,
@@ -196,11 +224,11 @@ const Home: NextPage = () => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontSize: '1.18rem',
+                fontSize: '1rem',
                 boxShadow: '0 2px 8px #a259ff22',
                 flexShrink: 0,
               }}>1</span>
-              <span style={{ fontSize: '1.08rem', color: '#334155', fontWeight: 500 }}>
+              <span style={{ fontSize: '1rem', color: '#334155', fontWeight: 500 }}>
               <b>Describe your architecture</b> in plain English (e.g., &quot;A 3-tier web app with load balancer, 2 app servers, and a database&quot;).
               </span>
             </li>
@@ -215,11 +243,11 @@ const Home: NextPage = () => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontSize: '1.18rem',
+                fontSize: '1rem',
                 boxShadow: '0 2px 8px #a259ff22',
                 flexShrink: 0,
               }}>2</span>
-              <span style={{ fontSize: '1.08rem', color: '#334155', fontWeight: 500 }}>
+              <span style={{ fontSize: '1rem', color: '#334155', fontWeight: 500 }}>
                 <b>Select your cloud provider</b> (AWS, Azure, or GCP) from the dropdown.
               </span>
             </li>
@@ -234,11 +262,11 @@ const Home: NextPage = () => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontSize: '1.18rem',
+                fontSize: '1rem',
                 boxShadow: '0 2px 8px #a259ff22',
                 flexShrink: 0,
               }}>3</span>
-              <span style={{ fontSize: '1.08rem', color: '#334155', fontWeight: 500 }}>
+              <span style={{ fontSize: '1rem', color: '#334155', fontWeight: 500 }}>
                 <b>Click &quot;Generate&quot;</b> to let AI create your diagram and code instantly.
               </span>
             </li>
@@ -253,11 +281,11 @@ const Home: NextPage = () => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontSize: '1.18rem',
+                fontSize: '1rem',
                 boxShadow: '0 2px 8px #a259ff22',
                 flexShrink: 0,
               }}>4</span>
-              <span style={{ fontSize: '1.08rem', color: '#334155', fontWeight: 500 }}>
+              <span style={{ fontSize: '1rem', color: '#334155', fontWeight: 500 }}>
                 <b>Download</b> your diagram in your preferred format (PNG, SVG, PDF, etc.) or copy the code for further editing.
               </span>
             </li>
@@ -272,11 +300,11 @@ const Home: NextPage = () => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontSize: '1.18rem',
+                fontSize: '1rem',
                 boxShadow: '0 2px 8px #a259ff22',
                 flexShrink: 0,
               }}>5</span>
-              <span style={{ fontSize: '1.08rem', color: '#334155', fontWeight: 500 }}>
+              <span style={{ fontSize: '1rem', color: '#334155', fontWeight: 500 }}>
                 <b>Iterate</b>: Paste the generated code back in to refine or expand your diagram with AI.
               </span>
             </li>
@@ -286,7 +314,7 @@ const Home: NextPage = () => {
         {/* Example Diagram Slideshow */}
         <div style={{ flex: 1, minWidth: 320, maxWidth: 480, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.2rem' }}>
           <h2 style={{
-            fontSize: '1.22rem',
+            fontSize: '1.1rem',
             fontWeight: 700,
             color: '#2563eb',
             marginBottom: '0.5rem',
@@ -317,7 +345,7 @@ const Home: NextPage = () => {
         zIndex: 2,
       }}>
         <h2 style={{
-          fontSize: '1.25rem',
+          fontSize: '1.1rem',
           fontWeight: 700,
           color: '#2563eb',
           marginBottom: '0.5rem',
@@ -334,7 +362,7 @@ const Home: NextPage = () => {
           width: '100%',
           maxWidth: 700,
           color: '#334155',
-          fontSize: '1.08rem',
+          fontSize: '1rem',
           display: 'flex',
           flexDirection: 'column',
           gap: '0.85rem',
@@ -361,13 +389,13 @@ const Home: NextPage = () => {
           borderRadius: 12,
           padding: '1.1rem 1.3rem',
           color: '#2563eb',
-          fontSize: '1.05rem',
+          fontSize: '1rem',
           boxShadow: '0 2px 12px 0 rgba(37,99,235,0.07)',
           maxWidth: 700,
           width: '100%',
         }}>
           <b>Tips for generating cloud diagrams:</b>
-          <ul style={{ margin: '0.7rem 0 0 1.1rem', color: '#334155', fontSize: '1.03rem' }}>
+          <ul style={{ margin: '0.7rem 0 0 1.1rem', color: '#334155', fontSize: '1rem' }}>
             <li>If you’re short on time, paste relevant excerpts from docs, transcripts, or code (like CloudFormation, Terraform, Pulumi, ARM, or Bicep) instead of writing a prompt from scratch.</li>
             <li>Collaborate with an AI assistant to help list out resources and describe the data flow for a more complete prompt.</li>
           </ul>
@@ -410,15 +438,15 @@ const Home: NextPage = () => {
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.1rem' }}>
             <Image src="/clouddiagram-logo.svg" alt="CloudDiagram.AI Logo" width={38} height={38} style={{ borderRadius: 10, boxShadow: '0 1px 6px #2563eb22' }} />
-            <span style={{ fontWeight: 700, fontSize: '1.25rem', letterSpacing: '0.03em', color: '#fff', textShadow: '0 2px 8px #a259ff33, 0 1px 0 #fff' }}>
+            <span style={{ fontWeight: 700, fontSize: '1.1rem', letterSpacing: '0.03em', color: '#fff', textShadow: '0 2px 8px #a259ff33, 0 1px 0 #fff' }}>
               CloudDiagram.AI
             </span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '0.5rem', minWidth: 220 }}>
-            <span style={{ fontSize: '1.08rem', fontWeight: 500, opacity: 0.96 }}>
+            <span style={{ fontSize: '1rem', fontWeight: 500, opacity: 0.96 }}>
               Effortless Cloud Architecture Diagrams
             </span>
-            <span style={{ fontSize: '1.01rem', opacity: 0.82, marginTop: 2 }}>
+            <span style={{ fontSize: '0.9rem', opacity: 0.82, marginTop: 2 }}>
               Visualize, edit, and share cloud diagrams for AWS, Azure, GCP, and more.
             </span>
             <div style={{ marginTop: '0.7rem', display: 'flex', gap: '0.7rem', flexWrap: 'wrap' }}>
@@ -428,7 +456,7 @@ const Home: NextPage = () => {
                   background: 'linear-gradient(90deg, #38bdf8 0%, #2563eb 100%)',
                   color: '#fff',
                   fontWeight: 700,
-                  fontSize: '1.07rem',
+                  fontSize: '1rem',
                   borderRadius: 8,
                   padding: '0.55rem 1.4rem',
                   textDecoration: 'none',
@@ -439,14 +467,14 @@ const Home: NextPage = () => {
               >
                 Start diagramming for free
               </Link>
-              <Link href="/faq" style={{ color: '#fff', fontWeight: 500, fontSize: '1.07rem', opacity: 0.85, textDecoration: 'underline', borderRadius: 8, padding: '0.55rem 1.1rem', background: 'rgba(162,89,255,0.13)', boxShadow: '0 1px 4px #a259ff11', transition: 'background 0.18s', display: 'inline-block' }}>FAQ</Link>
-              <Link href="/blog" style={{ color: '#fff', fontWeight: 500, fontSize: '1.07rem', opacity: 0.85, textDecoration: 'underline', borderRadius: 8, padding: '0.55rem 1.1rem', background: 'rgba(162,89,255,0.13)', boxShadow: '0 1px 4px #a259ff11', transition: 'background 0.18s', display: 'inline-block' }}>Blog</Link>
-              <Link href="/privacy" style={{ color: '#fff', fontWeight: 500, fontSize: '1.07rem', opacity: 0.85, textDecoration: 'underline', borderRadius: 8, padding: '0.55rem 1.1rem', background: 'rgba(162,89,255,0.13)', boxShadow: '0 1px 4px #a259ff11', transition: 'background 0.18s', display: 'inline-block' }}>Privacy</Link>
-              <Link href="/terms" style={{ color: '#fff', fontWeight: 500, fontSize: '1.07rem', opacity: 0.85, textDecoration: 'underline', borderRadius: 8, padding: '0.55rem 1.1rem', background: 'rgba(162,89,255,0.13)', boxShadow: '0 1px 4px #a259ff11', transition: 'background 0.18s', display: 'inline-block' }}>Terms</Link>
+              <Link href="/faq" style={{ color: '#fff', fontWeight: 500, fontSize: '1rem', opacity: 0.85, textDecoration: 'underline', borderRadius: 8, padding: '0.55rem 1.1rem', background: 'rgba(162,89,255,0.13)', boxShadow: '0 1px 4px #a259ff11', transition: 'background 0.18s', display: 'inline-block' }}>FAQ</Link>
+              <Link href="/blog" style={{ color: '#fff', fontWeight: 500, fontSize: '1rem', opacity: 0.85, textDecoration: 'underline', borderRadius: 8, padding: '0.55rem 1.1rem', background: 'rgba(162,89,255,0.13)', boxShadow: '0 1px 4px #a259ff11', transition: 'background 0.18s', display: 'inline-block' }}>Blog</Link>
+              <Link href="/privacy" style={{ color: '#fff', fontWeight: 500, fontSize: '1rem', opacity: 0.85, textDecoration: 'underline', borderRadius: 8, padding: '0.55rem 1.1rem', background: 'rgba(162,89,255,0.13)', boxShadow: '0 1px 4px #a259ff11', transition: 'background 0.18s', display: 'inline-block' }}>Privacy</Link>
+              <Link href="/terms" style={{ color: '#fff', fontWeight: 500, fontSize: '1rem', opacity: 0.85, textDecoration: 'underline', borderRadius: 8, padding: '0.55rem 1.1rem', background: 'rgba(162,89,255,0.13)', boxShadow: '0 1px 4px #a259ff11', transition: 'background 0.18s', display: 'inline-block' }}>Terms</Link>
               <a href="mailto:hamad.khawaja@outlook.com" style={{
                 color: '#fff',
                 fontWeight: 500,
-                fontSize: '1.07rem',
+                fontSize: '1rem',
                 opacity: 0.85,
                 textDecoration: 'underline',
                 borderRadius: 8,
@@ -457,39 +485,12 @@ const Home: NextPage = () => {
                 display: 'inline-block',
               }}>Contact</a>
             </div>
-      {/* SEO: Keyword-rich intro for homepage */}
-      <section style={{ maxWidth: 900, margin: '2.5rem auto 0 auto', padding: '1.5rem', background: 'linear-gradient(90deg, #f0f9ff 0%, #e0e7ff 100%)', borderRadius: 18, boxShadow: '0 4px 32px 0 rgba(37,99,235,0.07)', textAlign: 'center' }}>
-        <h1 style={{ fontSize: '2.1rem', fontWeight: 800, color: '#2563eb', marginBottom: '1.1rem', letterSpacing: '0.01em', fontFamily: 'Sora, Inter, Montserrat, Arial, sans-serif' }}>
-          AI Cloud Architecture Diagram Generator for AWS, Azure, and GCP
-        </h1>
-        <p style={{ color: '#334155', fontSize: '1.18rem', maxWidth: 700, margin: '0 auto', opacity: 0.96 }}>
-          Instantly generate, visualize, and share professional cloud architecture diagrams for AWS, Azure, and Google Cloud using AI. No signup required. Perfect for DevOps, architects, and cloud engineers who want fast, accurate, and beautiful diagrams.
-        </p>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "SoftwareApplication",
-          "name": "CloudDiagram.AI",
-          "url": "https://clouddiagram.ai/",
-          "applicationCategory": "DeveloperApplication",
-          "operatingSystem": "All",
-          "description": "Generate professional cloud architecture diagrams for AWS, Azure, and GCP using AI. Visualize, edit, and share your cloud diagrams instantly.",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "CloudDiagram.AI"
-          }
-        }) }} />
-      </section>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.7rem', minWidth: 180 }}>
             <a href="https://github.com/hamad-khawaja/diagram-web-ai" target="_blank" rel="noopener noreferrer" style={{
               color: '#fff',
               fontWeight: 600,
-              fontSize: '1.08rem',
+              fontSize: '1rem',
               letterSpacing: '0.04em',
               padding: '0.45rem 1.2rem',
               borderRadius: 8,
@@ -640,7 +641,7 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
         padding: '0 1rem',
       }}>
         <h1 style={{
-          fontSize: '2.2rem',
+          fontSize: '1.8rem',
           fontWeight: 800,
           letterSpacing: '-0.01em',
           color: 'var(--text-primary)',
@@ -651,7 +652,7 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
           CloudDiagram AI
         </h1>
         <div style={{
-          fontSize: '1.18rem',
+          fontSize: '1rem',
           color: 'var(--text-secondary)',
           fontWeight: 500,
           marginBottom: '0.7rem',
@@ -703,7 +704,7 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
               value={provider}
               onChange={e => setProvider(e.target.value)}
               style={{
-                fontSize: '1.08rem',
+                fontSize: '1rem',
                 padding: '0.7rem 1.1rem 0.7rem 0.7rem',
                 border: 'none',
                 borderRadius: '12px',
@@ -743,7 +744,7 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
               rows={4}
               style={{
                 flex: 1,
-                fontSize: '1.15rem',
+                fontSize: '1.1rem',
                 padding: '0.9rem 1.25rem',
                 border: 'none',
                 borderRadius: 0,
@@ -784,7 +785,7 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
               border: 'none',
               borderRadius: '0 22px 22px 0',
               fontWeight: 700,
-              fontSize: '1.15rem',
+              fontSize: '1.1rem',
               boxShadow: '0 6px 24px 0 #2563eb33',
               cursor: 'pointer',
               transition: 'background 0.2s, box-shadow 0.2s, transform 0.18s cubic-bezier(.4,2,.6,1)',
@@ -837,7 +838,7 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
           maxWidth: '820px',
           margin: '0.5rem auto 0.15rem auto',
           color: '#2563eb',
-          fontSize: '1.09rem',
+          fontSize: '1.1rem',
           background: 'linear-gradient(90deg, #e0e7ff 0%, #f0f9ff 100%)',
           borderRadius: '18px',
           padding: '0.85rem 1.2rem',
@@ -900,7 +901,7 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
                   border: 'none',
                   borderRadius: '6px',
                   fontWeight: 'bold',
-                  fontSize: '1.05rem',
+                  fontSize: '1rem',
                   boxShadow: '0 2px 8px rgba(37,99,235,0.12)',
                   cursor: 'pointer',
                   textDecoration: 'none',

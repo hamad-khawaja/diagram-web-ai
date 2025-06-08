@@ -70,7 +70,7 @@ export const EditorWithPreview: React.FC<EditorWithPreviewProps> = ({ code }) =>
       >
         <div style={{
           fontWeight: 700,
-          fontSize: '1.08rem',
+          fontSize: '1rem',
           marginBottom: '1.1rem',
           color: 'var(--text-accent)',
           letterSpacing: '0.01em',
@@ -98,7 +98,7 @@ export const EditorWithPreview: React.FC<EditorWithPreviewProps> = ({ code }) =>
       >
         <div style={{
           fontWeight: 700,
-          fontSize: '1.08rem',
+          fontSize: '1rem',
           marginBottom: '1.1rem',
           color: 'var(--text-accent)',
           letterSpacing: '0.01em',
