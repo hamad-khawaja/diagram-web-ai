@@ -395,7 +395,7 @@ export default function Blog() {
             color: 'var(--text-secondary)',
             marginBottom: '30px'
           }}>
-            To answer the question of what to build, let's start with a simple model of AI features. We can focus on three key areas:
+            To answer the question of what to build, let&rsquo;s start with a simple model of AI features. We can focus on three key areas:
           </p>
 
           <div style={{ marginBottom: '40px' }}>
@@ -491,7 +491,7 @@ export default function Blog() {
             color: 'var(--text-secondary)',
             marginBottom: '30px'
           }}>
-            Because AI models are so powerful, it's easy to feel drawn in many directions. As a focused team, we found value in articulating what we <em>didn't</em> want to build (for now, at least):
+            Because AI models are so powerful, it&rsquo;s easy to feel drawn in many directions. As a focused team, we found value in articulating what we <em>didn&rsquo;t</em> want to build (for now, at least):
           </p>
 
           <ul style={{ 
@@ -503,7 +503,7 @@ export default function Blog() {
           }}>
             <li style={{ marginBottom: '15px' }}>Features that would be very impressive when they worked, but would rarely do so consistently</li>
             <li style={{ marginBottom: '15px' }}>Features that would overreach and try to do too much, requiring more time to sort through than would be saved</li>
-            <li style={{ marginBottom: '15px' }}>Generic AI features that provided widely available functionality (e.g., "make it prettier", "change colors")</li>
+            <li style={{ marginBottom: '15px' }}>Generic AI features that provided widely available functionality (e.g., &ldquo;make it prettier&rdquo;, &ldquo;change colors&rdquo;)</li>
           </ul>
 
           <div style={{ 
@@ -538,7 +538,7 @@ export default function Blog() {
             }}>
               <li style={{ marginBottom: '15px' }}><strong>Proven value:</strong> Cloud documentation was already a pain point for most engineering teams. We had conviction that solving this problem was worthwhile, even if the AI features needed refinement.</li>
               <li style={{ marginBottom: '15px' }}><strong>AI-friendly domain:</strong> Cloud architectures can be described effectively in natural language. Infrastructure patterns, service relationships, and data flows are concepts that modern LLMs understand well.</li>
-              <li style={{ marginBottom: '15px' }}><strong>Clear value proposition:</strong> When you're architecting in the cloud, you shouldn't have to think about how to draw perfect rectangles and arrows. We want CloudDiagram.AI to embody that - to let you focus on the architecture being communicated, not the mechanics of diagramming.</li>
+              <li style={{ marginBottom: '15px' }}><strong>Clear value proposition:</strong> When you&rsquo;re architecting in the cloud, you shouldn&rsquo;t have to think about how to draw perfect rectangles and arrows. We want CloudDiagram.AI to embody that - to let you focus on the architecture being communicated, not the mechanics of diagramming.</li>
               <li style={{ marginBottom: '15px' }}><strong>A touch of magic:</strong> Describing your AWS infrastructure in a few sentences and seeing a professional diagram appear still feels wondrous.</li>
             </ul>
           </div>
@@ -594,7 +594,7 @@ export default function Blog() {
             paddingLeft: '30px',
             marginBottom: '30px'
           }}>
-            <li style={{ marginBottom: '15px' }}>Used OpenAI's API directly to test the concept</li>
+            <li style={{ marginBottom: '15px' }}>Used OpenAI&rsquo;s API directly to test the concept</li>
             <li style={{ marginBottom: '15px' }}>Tried 20-30 examples designed to be realistic but straightforward</li>
             <li style={{ marginBottom: '15px' }}>Did minimal prompt engineering to start</li>
             <li style={{ marginBottom: '15px' }}>Focused on AWS, Azure, and GCP common patterns</li>
@@ -691,7 +691,7 @@ export default function Blog() {
                 color: 'var(--text-secondary)',
                 paddingLeft: '20px'
               }}>
-                <li>Leverages the popular 'diagrams' Python library</li>
+                <li>Leverages the popular &lsquo;diagrams&rsquo; Python library</li>
                 <li>Supports AWS, Azure, GCP, and Kubernetes icons</li>
                 <li>Generates clean, professional output</li>
               </ul>
@@ -778,7 +778,7 @@ export default function Blog() {
                   lineHeight: 1.6, 
                   color: 'var(--text-secondary)'
                 }}>
-                  Structured Python code is generated using the 'diagrams' library syntax, following best practices.
+                  Structured Python code is generated using the &lsquo;diagrams&rsquo; library syntax, following best practices.
                 </p>
               </div>
               
@@ -853,7 +853,7 @@ export default function Blog() {
                   lineHeight: 1.6, 
                   color: 'var(--text-secondary)'
                 }}>
-                  We've crafted specialized prompts that understand cloud architecture patterns, enforce diagram best practices, and guide the AI away from common mistakes. Our prompts include examples of excellent diagrams and clear constraints.
+                  We&rsquo;ve crafted specialized prompts that understand cloud architecture patterns, enforce diagram best practices, and guide the AI away from common mistakes. Our prompts include examples of excellent diagrams and clear constraints.
                 </p>
               </div>
               
