@@ -525,9 +525,6 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
   const [diagramDataUrl, setDiagramDataUrl] = React.useState<string | null>(null);
   const [rawCodeUrl, setRawCodeUrl] = React.useState<string | null>(null);
   const [sanitizedCodeUrl, setSanitizedCodeUrl] = React.useState<string | null>(null);
-  const [explanation, setExplanation] = React.useState<string | null>(null);
-  const [explanationSlide, setExplanationSlide] = React.useState(0);
-  const [explanationMdUrl, setExplanationMdUrl] = React.useState<string | null>(null);
   const [inputError, setInputError] = React.useState<string | null>(null);
 
   const handleGenerate = async () => {
@@ -623,10 +620,7 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
       // Set code download links
       setRawCodeUrl(data?.raw_code_url ? (data.raw_code_url.startsWith('http') ? data.raw_code_url : `https://exxapi4h0e.execute-api.us-east-1.amazonaws.com${data.raw_code_url}`) : null);
       setSanitizedCodeUrl(data?.sanitized_code_url ? (data.sanitized_code_url.startsWith('http') ? data.sanitized_code_url : `https://exxapi4h0e.execute-api.us-east-1.amazonaws.com${data.sanitized_code_url}`) : null);
-      // Set explanation and markdown url
-      setExplanation(data?.explanation || null);
-      setExplanationSlide(0);
-      setExplanationMdUrl(data?.explanation_md_url ? (data.explanation_md_url.startsWith('http') ? data.explanation_md_url : `https://exxapi4h0e.execute-api.us-east-1.amazonaws.com${data.explanation_md_url}`) : null);
+
     } catch (err: any) {
       setResult('Error: ' + (err?.message || JSON.stringify(err) || 'Unknown error'));
     } finally {
@@ -931,91 +925,7 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
             ))}
         </div>
       )}
-      {/* Show explanation as a vibrant, compact slideshow if available */}
-      {explanation && !loading && !result?.startsWith('Error:') && (() => {
-        // Split explanation into bullet points (handle both '-' and '*')
-        const bullets = explanation
-          .split(/\n|\r/)
-          .map(line => line.trim())
-          .filter(line => line.match(/^[-*•]/))
-          .map(line => line.replace(/^[-*•]\s*/, ''));
-        // If no bullets, fallback to single slide
-        const slides = bullets.length > 0 ? bullets : [explanation];
-        const totalSlides = slides.length;
-        const current = explanationSlide >= 0 && explanationSlide < totalSlides ? explanationSlide : 0;
-        return (
-          <div style={{
-            margin: '0.5rem 0 1.2rem 0',
-            background: 'linear-gradient(90deg, #e0e7ff 0%, #f0f9ff 100%)',
-            color: '#2563eb',
-            borderRadius: '10px',
-            padding: '0.65rem 1.1rem',
-            fontSize: '0.98rem',
-            fontWeight: 500,
-            boxShadow: '0 2px 12px 0 rgba(162,89,255,0.07)',
-            maxWidth: 420,
-            minWidth: 0,
-            width: '100%',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.7rem',
-            position: 'relative',
-          }}>
-            <button
-              onClick={() => setExplanationSlide((current - 1 + totalSlides) % totalSlides)}
-              disabled={totalSlides <= 1}
-              style={{
-                background: 'none',
-                border: 'none',
-                color: '#a259ff',
-                fontSize: '1.2rem',
-                fontWeight: 700,
-                cursor: totalSlides > 1 ? 'pointer' : 'default',
-                opacity: totalSlides > 1 ? 1 : 0.3,
-                padding: '0 0.3rem',
-                transition: 'opacity 0.2s',
-                borderRadius: 6,
-              }}
-              aria-label="Previous explanation slide"
-            >
-              ‹
-            </button>
-            <span style={{ flex: 1, minWidth: 0, color: '#334155', fontWeight: 500, fontSize: '0.97rem', whiteSpace: 'pre-line', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-              <MarkdownSlide content={slides[current]} />
-            </span>
-            <button
-              onClick={() => setExplanationSlide((current + 1) % totalSlides)}
-              disabled={totalSlides <= 1}
-              style={{
-                background: 'none',
-                border: 'none',
-                color: '#a259ff',
-                fontSize: '1.2rem',
-                fontWeight: 700,
-                cursor: totalSlides > 1 ? 'pointer' : 'default',
-                opacity: totalSlides > 1 ? 1 : 0.3,
-                padding: '0 0.3rem',
-                transition: 'opacity 0.2s',
-                borderRadius: 6,
-              }}
-              aria-label="Next explanation slide"
-            >
-              ›
-            </button>
-            {totalSlides > 1 && (
-              <span style={{
-                position: 'absolute',
-                bottom: 6,
-                right: 12,
-                fontSize: '0.85rem',
-                color: '#64748b',
-                fontWeight: 400,
-                opacity: 0.7,
-              }}>{current + 1}/{totalSlides}</span>
-            )}
-          </div>
-        );
-      })()}
+
       {loading && <div style={{ marginTop: '1rem', color: '#2563eb' }}>Generating...</div>}
       {result && result.startsWith('Error:') && (
         <pre style={{
