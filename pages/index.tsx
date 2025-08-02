@@ -101,15 +101,15 @@ const Home: NextPage = () => {
       <Head>
         <title>CloudDiagram.AI | AI Cloud Architecture Diagram Generator</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Generate professional cloud architecture diagrams for AWS, Azure, and GCP using AI. Visualize, edit, and share your cloud diagrams instantly. No signup required." />
-        <meta name="keywords" content="cloud diagram, architecture diagram, AWS, Azure, GCP, AI, generator, SaaS, cloud architecture, infrastructure, devops, cloud design" />
+        <meta name="description" content="Generate professional cloud architecture diagrams for AWS using AI. Visualize, edit, and share your cloud diagrams instantly. No signup required." />
+        <meta name="keywords" content="cloud diagram, architecture diagram, AWS, AI, generator, SaaS, cloud architecture, infrastructure, devops, cloud design" />
         <meta property="og:title" content="CloudDiagram.AI | AI Cloud Architecture Diagram Generator" />
-        <meta property="og:description" content="Generate professional cloud architecture diagrams for AWS, Azure, and GCP using AI. Visualize, edit, and share your cloud diagrams instantly." />
+        <meta property="og:description" content="Generate professional cloud architecture diagrams for AWS using AI. Visualize, edit, and share your cloud diagrams instantly." />
         <meta property="og:image" content="/clouddiagram-logo.svg" />
         <meta property="og:url" content="https://clouddiagram.ai/" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="CloudDiagram.AI | AI Cloud Architecture Diagram Generator" />
-        <meta name="twitter:description" content="Generate professional cloud architecture diagrams for AWS, Azure, and GCP using AI. Visualize, edit, and share your cloud diagrams instantly." />
+        <meta name="twitter:description" content="Generate professional cloud architecture diagrams for AWS using AI. Visualize, edit, and share your cloud diagrams instantly." />
         <meta name="twitter:image" content="/clouddiagram-logo.svg" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="alternate icon" href="/favicon.ico" />
@@ -222,7 +222,7 @@ const Home: NextPage = () => {
                 flexShrink: 0,
               }}>2</span>
               <span style={{ fontSize: '1rem', color: '#334155', fontWeight: 500 }}>
-                <b>Select your cloud provider</b> (AWS, Azure, or GCP) from the dropdown.
+                <b>Cloud provider is set to AWS</b> for all diagrams.
               </span>
             </li>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '1.1rem' }}>
@@ -421,7 +421,7 @@ const Home: NextPage = () => {
               Effortless Cloud Architecture Diagrams
             </span>
             <span style={{ fontSize: '0.85rem', opacity: 0.82, marginTop: 2, lineHeight: 1.4 }}>
-              Visualize, edit, and share cloud diagrams for AWS, Azure, GCP, and more.
+              Visualize, edit, and share cloud diagrams for AWS.
             </span>
             <div style={{ marginTop: '1rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
               <Link
@@ -484,10 +484,10 @@ const Home: NextPage = () => {
           {/* SEO: Keyword-rich content for homepage */}
           <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(255,255,255,0.05)', borderRadius: 12, maxWidth: 600, textAlign: 'center' }}>
             <h1 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#fff', marginBottom: '0.5rem', letterSpacing: '0.01em', fontFamily: 'Sora, Inter, Montserrat, Arial, sans-serif', lineHeight: 1.3, opacity: 0.9 }}>
-              AI Cloud Architecture Diagram Generator for AWS, Azure, and GCP
+              AI Cloud Architecture Diagram Generator for AWS
             </h1>
             <p style={{ color: '#fff', fontSize: '0.85rem', margin: '0 auto', opacity: 0.75, lineHeight: 1.4 }}>
-              Instantly generate, visualize, and share professional cloud architecture diagrams for AWS, Azure, and Google Cloud using AI. No signup required. Perfect for DevOps, architects, and cloud engineers who want fast, accurate, and beautiful diagrams.
+              Instantly generate, visualize, and share professional cloud architecture diagrams for AWS using AI. No signup required. Perfect for DevOps, architects, and cloud engineers who want fast, accurate, and beautiful diagrams.
             </p>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
               "@context": "https://schema.org",
@@ -496,7 +496,7 @@ const Home: NextPage = () => {
               "url": "https://clouddiagram.ai/",
               "applicationCategory": "DeveloperApplication",
               "operatingSystem": "All",
-              "description": "Generate professional cloud architecture diagrams for AWS, Azure, and GCP using AI. Visualize, edit, and share your cloud diagrams instantly.",
+              "description": "Generate professional cloud architecture diagrams for AWS using AI. Visualize, edit, and share your cloud diagrams instantly.",
               "offers": {
                 "@type": "Offer",
                 "price": "0",
@@ -518,7 +518,8 @@ const Home: NextPage = () => {
 const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngUrl: (url: string | null) => void, clearAll: () => void }> = ({ setEditorCode, setPngUrl, clearAll }) => {
   // Note: Encourage users to feed back the code for iterative improvement
   const [input, setInput] = React.useState("");
-  const [provider, setProvider] = React.useState("aws");
+  // Provider is always 'aws', no dropdown needed
+  const provider = "aws";
   const [loading, setLoading] = React.useState(false);
   const [result, setResult] = React.useState<string | null>(null);
   const [downloadUrls, setDownloadUrls] = React.useState<{ [key: string]: string }>({});
@@ -698,40 +699,30 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
             zIndex: 2,
             gap: '0.5rem',
           }}>
-            {/* Cloud provider icon */}
+            {/* Cloud provider icon (AWS only) */}
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.3rem' }}>
               <Image 
-                src={provider === 'aws' ? '/assets/aws.jpeg' : provider === 'azure' ? '/assets/azure.svg' : '/assets/gcp.png'}
-                alt={`${provider.toUpperCase()} Logo`}
-                width={provider === 'aws' ? 32 : 24}
-                height={provider === 'aws' ? 32 : 24}
+                src={'/assets/aws.jpeg'}
+                alt={'AWS Logo'}
+                width={32}
+                height={32}
                 style={{ borderRadius: 4 }}
               />
             </div>
-            <select
-              id="provider"
-              value={provider}
-              onChange={e => setProvider(e.target.value)}
-              style={{
-                fontSize: '0.9rem',
-                padding: '0.6rem 0.8rem',
-                border: 'none',
-                borderRadius: '12px',
-                background: '#f8fafc',
-                color: '#2563eb',
-                fontWeight: 700,
-                outline: 'none',
-                minWidth: '80px',
-                boxShadow: '0 1px 4px #2563eb11',
-                transition: 'background 0.18s',
-                cursor: 'pointer',
-                textAlign: 'center',
-              }}
-            >
-              <option value="aws">AWS</option>
-              <option value="azure">Azure</option>
-              <option value="gcp">GCP</option>
-            </select>
+            <span style={{
+              fontSize: '0.95rem',
+              fontWeight: 700,
+              color: '#2563eb',
+              background: '#f8fafc',
+              borderRadius: '12px',
+              padding: '0.6rem 0.8rem',
+              minWidth: '80px',
+              boxShadow: '0 1px 4px #2563eb11',
+              textAlign: 'center',
+              display: 'inline-block',
+            }}>
+              AWS
+            </span>
           </div>
           <div style={{
             flex: 1,
@@ -862,7 +853,6 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
           <br></br><b>Current Limitations:</b>
           <ul>
             <li>Hybrid and multi-cloud diagrams are not supported</li>
-            <li>Focus on a single cloud provider (AWS, Azure, or GCP) per diagram</li>
             <li>Available diagram resources are limited to those supported by the diagrams library <b><a href="https://diagrams.mingrammer.com/docs/getting-started/examples" target="_blank" rel="noopener noreferrer">https://diagrams.mingrammer.com/docs/getting-started/examples</a></b></li>
           </ul></span>
       </div>

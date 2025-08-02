@@ -3,10 +3,10 @@ import Image from "next/image";
 
 const EXAMPLES = [
   {
-    src: "/gcp.png",
-    alt: "GCP Simple Web App Example Diagram",
-    title: "GCP Simple Web App",
-    description: "A load-balanced web tier on Compute Engine connects to Cloud SQL and Cloud Storage."
+    src: "/ecom.png",
+    alt: "Ecommerece Web App Example Diagram",
+    title: "GCP E-commerce Web App",
+    description: "A scalable e-commerce architecture using GCP services like Cloud Run, Cloud SQL, and Cloud Storage."
   },
   {
     src: "/aws.png",

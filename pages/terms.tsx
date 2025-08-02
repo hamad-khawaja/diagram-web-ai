@@ -135,7 +135,7 @@ export default function Terms() {
               Effortless Cloud Architecture Diagrams
             </span>
             <span style={{ fontSize: '0.9rem', opacity: 0.82, marginTop: 2 }}>
-              Visualize, edit, and share cloud diagrams for AWS, Azure, GCP, and more.
+              Visualize, edit, and share cloud diagrams for AWS.
             </span>
             <div style={{ marginTop: '0.7rem', display: 'flex', gap: '0.7rem', flexWrap: 'wrap' }}>
               <Link
