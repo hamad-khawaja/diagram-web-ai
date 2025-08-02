@@ -101,15 +101,15 @@ const Home: NextPage = () => {
       <Head>
         <title>CloudDiagram.AI | AI Cloud Architecture Diagram Generator</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Generate professional cloud architecture diagrams for AWS, Azure, and GCP using AI. Visualize, edit, and share your cloud diagrams instantly. No signup required." />
-        <meta name="keywords" content="cloud diagram, architecture diagram, AWS, Azure, GCP, AI, generator, SaaS, cloud architecture, infrastructure, devops, cloud design" />
+        <meta name="description" content="Generate professional cloud architecture diagrams for AWS using AI. Visualize, edit, and share your cloud diagrams instantly. No signup required." />
+        <meta name="keywords" content="cloud diagram, architecture diagram, AWS, AI, generator, SaaS, cloud architecture, infrastructure, devops, cloud design" />
         <meta property="og:title" content="CloudDiagram.AI | AI Cloud Architecture Diagram Generator" />
-        <meta property="og:description" content="Generate professional cloud architecture diagrams for AWS, Azure, and GCP using AI. Visualize, edit, and share your cloud diagrams instantly." />
+        <meta property="og:description" content="Generate professional cloud architecture diagrams for AWS using AI. Visualize, edit, and share your cloud diagrams instantly." />
         <meta property="og:image" content="/clouddiagram-logo.svg" />
         <meta property="og:url" content="https://clouddiagram.ai/" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="CloudDiagram.AI | AI Cloud Architecture Diagram Generator" />
-        <meta name="twitter:description" content="Generate professional cloud architecture diagrams for AWS, Azure, and GCP using AI. Visualize, edit, and share your cloud diagrams instantly." />
+        <meta name="twitter:description" content="Generate professional cloud architecture diagrams for AWS using AI. Visualize, edit, and share your cloud diagrams instantly." />
         <meta name="twitter:image" content="/clouddiagram-logo.svg" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="alternate icon" href="/favicon.ico" />
@@ -222,7 +222,7 @@ const Home: NextPage = () => {
                 flexShrink: 0,
               }}>2</span>
               <span style={{ fontSize: '1rem', color: '#334155', fontWeight: 500 }}>
-                <b>Select your cloud provider</b> (AWS, Azure, or GCP) from the dropdown.
+                <b>Cloud provider is set to AWS</b> for all diagrams.
               </span>
             </li>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '1.1rem' }}>
@@ -421,7 +421,7 @@ const Home: NextPage = () => {
               Effortless Cloud Architecture Diagrams
             </span>
             <span style={{ fontSize: '0.85rem', opacity: 0.82, marginTop: 2, lineHeight: 1.4 }}>
-              Visualize, edit, and share cloud diagrams for AWS, Azure, GCP, and more.
+              Visualize, edit, and share cloud diagrams for AWS.
             </span>
             <div style={{ marginTop: '1rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
               <Link
@@ -484,10 +484,10 @@ const Home: NextPage = () => {
           {/* SEO: Keyword-rich content for homepage */}
           <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(255,255,255,0.05)', borderRadius: 12, maxWidth: 600, textAlign: 'center' }}>
             <h1 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#fff', marginBottom: '0.5rem', letterSpacing: '0.01em', fontFamily: 'Sora, Inter, Montserrat, Arial, sans-serif', lineHeight: 1.3, opacity: 0.9 }}>
-              AI Cloud Architecture Diagram Generator for AWS, Azure, and GCP
+              AI Cloud Architecture Diagram Generator for AWS
             </h1>
             <p style={{ color: '#fff', fontSize: '0.85rem', margin: '0 auto', opacity: 0.75, lineHeight: 1.4 }}>
-              Instantly generate, visualize, and share professional cloud architecture diagrams for AWS, Azure, and Google Cloud using AI. No signup required. Perfect for DevOps, architects, and cloud engineers who want fast, accurate, and beautiful diagrams.
+              Instantly generate, visualize, and share professional cloud architecture diagrams for AWS using AI. No signup required. Perfect for DevOps, architects, and cloud engineers who want fast, accurate, and beautiful diagrams.
             </p>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
               "@context": "https://schema.org",
@@ -496,7 +496,7 @@ const Home: NextPage = () => {
               "url": "https://clouddiagram.ai/",
               "applicationCategory": "DeveloperApplication",
               "operatingSystem": "All",
-              "description": "Generate professional cloud architecture diagrams for AWS, Azure, and GCP using AI. Visualize, edit, and share your cloud diagrams instantly.",
+              "description": "Generate professional cloud architecture diagrams for AWS using AI. Visualize, edit, and share your cloud diagrams instantly.",
               "offers": {
                 "@type": "Offer",
                 "price": "0",
@@ -518,16 +518,14 @@ const Home: NextPage = () => {
 const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngUrl: (url: string | null) => void, clearAll: () => void }> = ({ setEditorCode, setPngUrl, clearAll }) => {
   // Note: Encourage users to feed back the code for iterative improvement
   const [input, setInput] = React.useState("");
-  const [provider, setProvider] = React.useState("aws");
+  // Provider is always 'aws', no dropdown needed
+  const provider = "aws";
   const [loading, setLoading] = React.useState(false);
   const [result, setResult] = React.useState<string | null>(null);
   const [downloadUrls, setDownloadUrls] = React.useState<{ [key: string]: string }>({});
   const [diagramDataUrl, setDiagramDataUrl] = React.useState<string | null>(null);
   const [rawCodeUrl, setRawCodeUrl] = React.useState<string | null>(null);
   const [sanitizedCodeUrl, setSanitizedCodeUrl] = React.useState<string | null>(null);
-  const [explanation, setExplanation] = React.useState<string | null>(null);
-  const [explanationSlide, setExplanationSlide] = React.useState(0);
-  const [explanationMdUrl, setExplanationMdUrl] = React.useState<string | null>(null);
   const [inputError, setInputError] = React.useState<string | null>(null);
 
   const handleGenerate = async () => {
@@ -623,10 +621,7 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
       // Set code download links
       setRawCodeUrl(data?.raw_code_url ? (data.raw_code_url.startsWith('http') ? data.raw_code_url : `https://exxapi4h0e.execute-api.us-east-1.amazonaws.com${data.raw_code_url}`) : null);
       setSanitizedCodeUrl(data?.sanitized_code_url ? (data.sanitized_code_url.startsWith('http') ? data.sanitized_code_url : `https://exxapi4h0e.execute-api.us-east-1.amazonaws.com${data.sanitized_code_url}`) : null);
-      // Set explanation and markdown url
-      setExplanation(data?.explanation || null);
-      setExplanationSlide(0);
-      setExplanationMdUrl(data?.explanation_md_url ? (data.explanation_md_url.startsWith('http') ? data.explanation_md_url : `https://exxapi4h0e.execute-api.us-east-1.amazonaws.com${data.explanation_md_url}`) : null);
+
     } catch (err: any) {
       setResult('Error: ' + (err?.message || JSON.stringify(err) || 'Unknown error'));
     } finally {
@@ -704,40 +699,30 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
             zIndex: 2,
             gap: '0.5rem',
           }}>
-            {/* Cloud provider icon */}
+            {/* Cloud provider icon (AWS only) */}
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.3rem' }}>
               <Image 
-                src={provider === 'aws' ? '/assets/aws.jpeg' : provider === 'azure' ? '/assets/azure.svg' : '/assets/gcp.png'}
-                alt={`${provider.toUpperCase()} Logo`}
-                width={provider === 'aws' ? 32 : 24}
-                height={provider === 'aws' ? 32 : 24}
+                src={'/assets/aws.jpeg'}
+                alt={'AWS Logo'}
+                width={32}
+                height={32}
                 style={{ borderRadius: 4 }}
               />
             </div>
-            <select
-              id="provider"
-              value={provider}
-              onChange={e => setProvider(e.target.value)}
-              style={{
-                fontSize: '0.9rem',
-                padding: '0.6rem 0.8rem',
-                border: 'none',
-                borderRadius: '12px',
-                background: '#f8fafc',
-                color: '#2563eb',
-                fontWeight: 700,
-                outline: 'none',
-                minWidth: '80px',
-                boxShadow: '0 1px 4px #2563eb11',
-                transition: 'background 0.18s',
-                cursor: 'pointer',
-                textAlign: 'center',
-              }}
-            >
-              <option value="aws">AWS</option>
-              <option value="azure">Azure</option>
-              <option value="gcp">GCP</option>
-            </select>
+            <span style={{
+              fontSize: '0.95rem',
+              fontWeight: 700,
+              color: '#2563eb',
+              background: '#f8fafc',
+              borderRadius: '12px',
+              padding: '0.6rem 0.8rem',
+              minWidth: '80px',
+              boxShadow: '0 1px 4px #2563eb11',
+              textAlign: 'center',
+              display: 'inline-block',
+            }}>
+              AWS
+            </span>
           </div>
           <div style={{
             flex: 1,
@@ -850,7 +835,7 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
           maxWidth: '820px',
           margin: '0.5rem auto 0.15rem auto',
           color: '#2563eb',
-          fontSize: '1.1rem',
+          fontSize: '0.9rem',
           background: 'linear-gradient(90deg, #e0e7ff 0%, #f0f9ff 100%)',
           borderRadius: '18px',
           padding: '0.85rem 1.2rem',
@@ -864,8 +849,12 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
       >
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }} xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#2563eb" fillOpacity="0.13"/><path d="M12 7.5V13" stroke="#2563eb" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/><circle cx="12" cy="16" r="1" fill="#2563eb"/></svg>
         <span>
-          <span style={{ fontWeight: 700, color: '#2563eb' }}>Tip:</span> Want AI to improve or change your diagram? Paste the generated code back in and generate again for iterative refinement.
-        </span>
+          <span style={{ fontWeight: 700, color: '#2563eb' }}>Tip:</span>To get AI to improve or modify your diagram, provide detailed descriptions of your architecture. Include specific components, their connections, and how they interact with each other. The more comprehensive details you provide, the better quality diagram you&apos;ll receive.
+          <br></br><b>Current Limitations:</b>
+          <ul>
+            <li>Hybrid and multi-cloud diagrams are not supported</li>
+            <li>Available diagram resources are limited to those supported by the diagrams library <b><a href="https://diagrams.mingrammer.com/docs/getting-started/examples" target="_blank" rel="noopener noreferrer">https://diagrams.mingrammer.com/docs/getting-started/examples</a></b></li>
+          </ul></span>
       </div>
       </div>
       {inputError && (
@@ -926,91 +915,7 @@ const GenerateSection: React.FC<{ setEditorCode: (code: string) => void, setPngU
             ))}
         </div>
       )}
-      {/* Show explanation as a vibrant, compact slideshow if available */}
-      {explanation && !loading && !result?.startsWith('Error:') && (() => {
-        // Split explanation into bullet points (handle both '-' and '*')
-        const bullets = explanation
-          .split(/\n|\r/)
-          .map(line => line.trim())
-          .filter(line => line.match(/^[-*•]/))
-          .map(line => line.replace(/^[-*•]\s*/, ''));
-        // If no bullets, fallback to single slide
-        const slides = bullets.length > 0 ? bullets : [explanation];
-        const totalSlides = slides.length;
-        const current = explanationSlide >= 0 && explanationSlide < totalSlides ? explanationSlide : 0;
-        return (
-          <div style={{
-            margin: '0.5rem 0 1.2rem 0',
-            background: 'linear-gradient(90deg, #e0e7ff 0%, #f0f9ff 100%)',
-            color: '#2563eb',
-            borderRadius: '10px',
-            padding: '0.65rem 1.1rem',
-            fontSize: '0.98rem',
-            fontWeight: 500,
-            boxShadow: '0 2px 12px 0 rgba(162,89,255,0.07)',
-            maxWidth: 420,
-            minWidth: 0,
-            width: '100%',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.7rem',
-            position: 'relative',
-          }}>
-            <button
-              onClick={() => setExplanationSlide((current - 1 + totalSlides) % totalSlides)}
-              disabled={totalSlides <= 1}
-              style={{
-                background: 'none',
-                border: 'none',
-                color: '#a259ff',
-                fontSize: '1.2rem',
-                fontWeight: 700,
-                cursor: totalSlides > 1 ? 'pointer' : 'default',
-                opacity: totalSlides > 1 ? 1 : 0.3,
-                padding: '0 0.3rem',
-                transition: 'opacity 0.2s',
-                borderRadius: 6,
-              }}
-              aria-label="Previous explanation slide"
-            >
-              ‹
-            </button>
-            <span style={{ flex: 1, minWidth: 0, color: '#334155', fontWeight: 500, fontSize: '0.97rem', whiteSpace: 'pre-line', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-              <MarkdownSlide content={slides[current]} />
-            </span>
-            <button
-              onClick={() => setExplanationSlide((current + 1) % totalSlides)}
-              disabled={totalSlides <= 1}
-              style={{
-                background: 'none',
-                border: 'none',
-                color: '#a259ff',
-                fontSize: '1.2rem',
-                fontWeight: 700,
-                cursor: totalSlides > 1 ? 'pointer' : 'default',
-                opacity: totalSlides > 1 ? 1 : 0.3,
-                padding: '0 0.3rem',
-                transition: 'opacity 0.2s',
-                borderRadius: 6,
-              }}
-              aria-label="Next explanation slide"
-            >
-              ›
-            </button>
-            {totalSlides > 1 && (
-              <span style={{
-                position: 'absolute',
-                bottom: 6,
-                right: 12,
-                fontSize: '0.85rem',
-                color: '#64748b',
-                fontWeight: 400,
-                opacity: 0.7,
-              }}>{current + 1}/{totalSlides}</span>
-            )}
-          </div>
-        );
-      })()}
+
       {loading && <div style={{ marginTop: '1rem', color: '#2563eb' }}>Generating...</div>}
       {result && result.startsWith('Error:') && (
         <pre style={{

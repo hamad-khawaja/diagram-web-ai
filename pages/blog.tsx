@@ -598,7 +598,7 @@ export default function Blog() {
             <li style={{ marginBottom: '15px' }}>Used OpenAI&rsquo;s API directly to test the concept</li>
             <li style={{ marginBottom: '15px' }}>Tried 20-30 examples designed to be realistic but straightforward</li>
             <li style={{ marginBottom: '15px' }}>Did minimal prompt engineering to start</li>
-            <li style={{ marginBottom: '15px' }}>Focused on AWS, Azure, and GCP common patterns</li>
+            <li style={{ marginBottom: '15px' }}>Focused on AWS common patterns</li>
           </ul>
 
           <p style={{ 
@@ -693,7 +693,7 @@ export default function Blog() {
                 paddingLeft: '20px'
               }}>
                 <li>Leverages the popular &lsquo;diagrams&rsquo; Python library</li>
-                <li>Supports AWS, Azure, GCP, and Kubernetes icons</li>
+                <li>Supports AWS and Kubernetes icons</li>
                 <li>Generates clean, professional output</li>
               </ul>
             </div>
@@ -1287,7 +1287,7 @@ export default function Blog() {
                 </span>
             </Link>
             <p style={{ maxWidth: '300px', fontSize: '0.9rem', lineHeight: 1.6 }}>
-              AI-powered cloud architecture diagrams for AWS, Azure, and GCP. Generate professional diagrams in seconds.
+              AI-powered cloud architecture diagrams for AWS. Generate professional diagrams in seconds.
             </p>
           </div>
           
